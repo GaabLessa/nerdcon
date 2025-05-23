@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NerdCon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Oxanium', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+        header {
+            background: linear-gradient(90deg, #240244, #aa46e4);
+            padding: 40px;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(162, 0, 255, 0.5);
+            letter-spacing: 2px;
+        }
+.carousel-container {
+    width: 90%;
+    margin: 40px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 15px;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 25%; /* 4 imagens por vez */
+}
+
+.carousel-item img {
+    width: 100%;
+    max-width: 100%;
+    height: 300px; /* Força altura igual */
+    object-fit: cover; /* Corta e ajusta a imagem sem distorcer */
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+.carousel-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(235, 14, 235, 0.3);
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+
+        }
+        .info, .programacao, .detalhes, .quem-somos {
+            padding: 40px;
+            background: rgb(64, 8, 114);
+            margin: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(57, 6, 87, 0.849);
+            background-image: url()
+        }
+        .programacao ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .programacao li {
+            background: rgba(32, 1, 44, 0.829);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+    
+        a {color: rgb(255, 255, 255);
+        text-decoration: none;
+        }
+        a:hover {color: rgb(255, 255, 255);
+        } 
+        button:hover{
+            background-color: rgb(172, 28, 255);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        a.botao-inscrever {
+    background: #8009e0;
+    color: rgb(255, 255, 255);
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, transform 0.2s;
+}
+
+        a.botao-inscrever:hover {
+    background: #ce0ebed8;
+    transform: scale(1.05);
+}
+
+    .equipe {  
+    background: #8009e0;
+    color: rgb(255, 255, 255);
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, transform 0.2s;
+
+}
+    a.equipe :hover {
+    background: #ce0ebed8;
+    transform: scale(1.05);
+}
+</style>
+    
+</head>
+<body>
+    <header>NerdCon</header>
+<div class="carousel-container">
+<button class="nav left" onclick="prevSlide()">&#10094;</button>
+
+<div class="carousel-track" id="carousel">
+    <div class="carousel-item">
+        <img src="Imagens/boardgames.jpg" alt="Boardgame">
+    </div>
+    <div class="carousel-item">
+        <img src="Imagens/rpg.jpg" alt="RPG de Mesa">
+    </div>
+    <div class="carousel-item">
+        <img src="Imagens/Magic-The-Gathering-Card-Game-25-Rares-Cards-Boost-Your-Decks-with-25-Unique-Rares-Cards_344e704d-8356-4a52-bdf3-99c2cf06b14e.cda2367e2af64db55e041a07685117fb.jpg" alt="Card Games">
+    </div>
+    <div class="carousel-item">
+        <img src="Imagens/cosplays.jpg" alt="Cosplay">
+    </div>
+    <div class="carousel-item">
+        <img src="Imagens/meeple.JPG" alt="Card Games">
+    </div>
+    <div class="carousel-item">
+        <img src="Imagens/mesao.JPG" alt="Cosplay">
+    </div>
+    <div class="carousel-item">
+        <img src="Imagens/boardgames2.jpg" alt="Card Games">
+    </div>
+    <div class="carousel-item">
+        <img src="Imagens/pokemon.jpg" alt="Cosplay">
+    </div>
+    <div class="carousel-item">
+        <img src="Imagens/yugioh.jpg" alt="Card Games">
+    </div>
+
+    
+    </div>
+
+    <button class="nav right" onclick="nextSlide()">&#10095;</button>
+</div>
+    <div class="info">
+        <h2> CHEGOU A HORA, ITAPECERICA! </h2>
+        <h3>A Primeira Edição!</h3> 
+        <p> Cosplays, quadrinhos, games, animes, cultura geek e MUITA diversão! Se você é fã do universo nerd, esse é o seu lugar!</p>
+        
+    </div>
+    <div class="quem-somos">
+        <h2>Quem Somos</h2>
+        <p>Somos um grupo apaixonado por RPGs,jogos de tabuleiro, Card Games e eventos geek. Nosso objetivo é criar um ambiente divertido e acolhedor para todos os jogadores, desde iniciantes até veteranos. Durante muito tempo tendo que ir para lugares muito longe da nossa região, trouxemos para nossa querida cidade o evento que vai deixar todos os nerds daqui felizes, buscamos  oferecer a melhor experiência, e diversao a todos!</p>
+        <h1>Role Iniciativa!</h1>
+            <a href="inscrição.html" class="botao-inscrever">Inscreva-se agora</a>
+    </div>
+
+    <div class="programacao 23/08">
+        <h2>Programação Sabado 23/08</h2>
+        <ul>
+            <li><strong>9:00 - Abertura </strong>  </li>
+            <li><strong>9:30 - Abertura Inscrições </strong>  </li>
+            <li><strong>10:00 - 1ª Seção RPG </strong>  </li>  
+            <li><strong>10:30 - 1º Campeonato Magic </strong>  </li>            
+            <li><strong>12:00 - 13:00 - Feira Gastronomica</strong>  </li>
+            <li><strong>13:30 - Video Games </strong>  </li>
+            <li><strong>15:00 - 2ª Seção RPG </strong>  </li>
+            <li><strong>15:30 - 2º Campeonato Magic </strong>  </li>
+            <li><strong>16:00 - Duelo de Klaves </strong>  </li>
+            <li><strong>17:00 - Concurso de Cosplays </strong>  </li>
+            <li><strong>18:00 - Peça de Teatro </strong>  </li>
+            <li><strong>19:30 - Encerramento </strong>  </li>
+        </ul>
+    </div>
+    <div class="programacao 24/08">
+        <h2>Programação Domingo 24/08</h2>
+        <ul>
+            <li><strong>9:00 - Abertura </strong>  </li>
+            <li><strong>9:30 - Abertura Inscrições </strong>  </li>
+            <li><strong>10:00 - 1ª Seção RPG </strong>  </li>  
+            <li><strong>10:30 - 1º Campeonato Magic </strong>  </li>            
+            <li><strong>12:00 - 13:00 - Feira Gastronomica</strong>  </li>
+            <li><strong>13:30 - Video Games </strong>  </li>
+            <li><strong>15:00 - 2ª Seção RPG </strong>  </li>
+            <li><strong>15:30 - 2º Campeonato Magic </strong>  </li>
+            <li><strong>16:00 - Duelo de Klaves </strong>  </li>
+            <li><strong>17:00 - Concurso de Cosplays </strong>  </li>
+            <li><strong>17:30 - Encerramento </strong>  </li>
+        </ul>
+    </div>
+    <div class="detalhes">
+        <h2>Detalhes do Evento</h2>
+        <p><strong>Data:</strong> 23 e 24 de Agosto de 2025 </p>
+        <p><strong>Horário:</strong> Das 10h às 20h</p>
+        <p><strong>Endereço:</strong> Rod. Pref. Bento Rotger Domingues, n° 500, - Mombaça, Itapecerica da Serra - SP, 06872-255</p>
+    </div>
+    
+    <div class="equipe">
+        <p><strong>  <a href="formulario.html"> Venha Fazer Parte da Nossa equipe </a></strong></p>
+    </div>
+        
+    <footer>
+        <p>&copy;GabrielLessaNascimento</p>
+    </footer>    
+</body>
+</html>
+<script>
+  let currentIndex = 0;
+  const visibleItems = 4;
+  const items = document.querySelectorAll(".carousel-item");
+  const track = document.querySelector(".carousel-track");
+
+  function updateCarousel() {
+    const itemWidth = track.offsetWidth / visibleItems + 15;
+    const offset = currentIndex * itemWidth;
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  function nextSlide() {
+    currentIndex++;
+    if (currentIndex > items.length - visibleItems) {
+      currentIndex = 0; // volta pro começo
+    }
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = items.length - visibleItems; // vai pro fim
+    }
+    updateCarousel();
+  }
+
+  window.addEventListener("resize", updateCarousel);
+</script>

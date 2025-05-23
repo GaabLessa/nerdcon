@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Oxanium', cursive;
+            margin: 0;
+            padding: 0;
+            background-image: url('Imagens/DSC07547.JPG');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        header {
+            background: linear-gradient(90deg, #6a00ff, #a200ff);
+            padding: 40px;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(162, 0, 255, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .form-container {
+            background: rgba(106, 0, 255, 0.8);
+            padding: 30px;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(162, 0, 255, 0.5);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            background: #222;
+            color: white;
+            border: 2px solid #ffffff;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background: #ff00ff;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+            align-self: center;
+        }
+
+        input[type="submit"]:hover {
+            background: #d400d4;
+            transform: scale(1.05);
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .checkbox-group.coluna-area input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkbox-group.coluna-area label {
+            flex: 1 1 calc(33.333% - 10px);
+            padding: 10px;
+            background-color: #1a1a1a;
+            border: 2px solid #a200ff;
+            border-radius: 10px;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .checkbox-group.coluna-area label:hover {
+            background-color: #7404be;
+            color: #fff;
+        }
+
+        .checkbox-group.coluna-area input[type="checkbox"]:checked + label {
+            background-color: #ff00ff;
+            color: #000;
+            font-weight: bold;
+            border-color: #ff00ff;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkbox-group label {
+            padding: 10px 16px;
+            background-color: #1a1a1a;
+            border: 2px solid #a200ff;
+            border-radius: 10px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .checkbox-group label:hover {
+            background-color: #7404be;
+            color: #fff;
+        }
+
+        .checkbox-group input[type="checkbox"]:checked + label {
+            background-color: #ff00ff;
+            color: #000;
+            font-weight: bold;
+            border-color: #ff00ff;
+        }
+
+        .galeria {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            background-color: #0a0a0a;
+            padding: 20px;
+        }
+
+        .galeria img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #a200ff;
+        }
+
+        a.botao-voltar {
+            background: #ff00ff;
+            color: white;
+            padding: 15px 25px;
+            font-size: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        a.botao-voltar:hover {
+            background: #d400d4;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Faça Parte da Nossa Equipe</h1>
+
+    <section class="form-container">
+        <h2>Inscreva-se Agora</h2>
+        <form action="https://formsubmit.co/nerdscongeek@gmail.com" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required placeholder="(11) 91234-5678">
+
+            <label>Disponibilidade na Semana do Evento:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="quinta" name="disponibilidade[]" value="21/08 Quinta-feira">
+                <label for="quinta">21/08 Quinta-feira</label>
+                <input type="checkbox" id="sexta" name="disponibilidade[]" value="22/08 Sexta-feira">
+                <label for="sexta">22/08 Sexta-feira</label>
+                <input type="checkbox" id="sabado" name="disponibilidade[]" value="23/08 Sábado">
+                <label for="sabado">23/08 Sábado</label>
+                <input type="checkbox" id="domingo" name="disponibilidade[]" value="24/08 Domingo">
+                <label for="domingo">24/08 Domingo</label>
+            </div>
+
+            <label>Em qual área gostaria de atuar? (Selecione até 3 opções)</label>
+            <div class="checkbox-group coluna-area"> 
+                <input type="checkbox" id="rpg" name="area[]" value="RPG">
+                <label for="rpg">RPG</label>
+
+                <input type="checkbox" id="cardgame" name="area[]" value="Card Game">
+                <label for="cardgame">Card Game</label>
+
+                <input type="checkbox" id="boardgame" name="area[]" value="Board Game">
+                <label for="boardgame">Board Game</label>
+
+                <input type="checkbox" id="cosplay" name="area[]" value="Cosplay">
+                <label for="cosplay">Cosplay</label>
+
+                <input type="checkbox" id="campal" name="area[]" value="Batalha Campal">
+                <label for="campal">Batalha Campal</label>
+
+                <input type="checkbox" id="bardos" name="area[]" value="Área dos Bardos">
+                <label for="bardos">Área dos Bardos</label>
+
+                <input type="checkbox" id="qualquer" name="area[]" value="Qualquer área">
+                <label for="qualquer">Qualquer área</label>
+            </div>
+
+            <input type="hidden" name="_subject" value="Nova inscrição no Evento de Jogos de Tabuleiro!">
+            <input type="hidden" name="_autoresponse" value="Olá! Recebemos sua inscrição no Evento de Jogos de Tabuleiro. Em breve entraremos em contato com mais detalhes. Obrigado!">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+            
+            <input type="submit" value="Enviar Inscrição"> 
+        </form>
+    </section>
+
+    <section class="galeria">
+        <img src="Imagens/DSC07613.JPG" alt="Foto 1">
+        <img src="Imagens/DSC07654.JPG" alt="Foto 2">
+        <img src="Imagens/DSC07667.JPG" alt="Foto 3">
+        <img src="Imagens/DSC07717.JPG" alt="Foto 4">
+    </section>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="nerdscon.html" class="botao-voltar">Voltar à página principal</a>
+    </div>
+
+    <script>
+        const telefoneInput = document.getElementById('telefone');
+
+        telefoneInput.addEventListener('input', function (e) {
+            let x = e.target.value.replace(/\D/g, '').slice(0, 11);
+            let formatado = '';
+
+            if (x.length > 0) {
+                formatado = '(' + x.substring(0, 2);
+            }
+            if (x.length >= 3) {
+                formatado += ') ' + x.substring(2, 7);
+            }
+            if (x.length >= 8) {
+                formatado += '-' + x.substring(7, 11);
+            }
+
+            e.target.value = formatado;
+        });
+
+        const checkboxes = document.querySelectorAll('input[name="area[]"]');
+        const max = 3;
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const checked = document.querySelectorAll('input[name="area[]"]:checked');
+                if (checked.length > max) {
+                    checkbox.checked = false;
+                    alert('Você só pode selecionar até 3 opções.');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
