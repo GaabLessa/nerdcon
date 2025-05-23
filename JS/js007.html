@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somando Numeros </title>
+  <style>
+    body{
+      font: normal 18pt  Arial;
+    }
+    input{ 
+      font: normal 18pt  Arial;
+      width: 100px;
+    }
+    div#res{
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1">
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()"> 
+    <div id="res1">Resultado</div>
+</p>
+
+<p>
+  <h1>Subtraindo Valores</h1>
+  <input type="number" name="txtn3" id="txtn3">
+  <input type="number" name="txtn4" id="txtn4">
+  <input type="button" value="Subtrair" onclick= "subtrair()">
+  <div id="res2"> Resultado </div>
+</p>
+  <script>
+    function somar() {
+      let tn1 = document.getElementById("txtn1")
+      let tn2 =  document.getElementById("txtn2")
+      let res1 = document.getElementById("res1")
+      let n1 = Number(tn1.value)
+      let n2 = Number(tn2.value)
+      s1 = n1 + n2 
+      res1.innerHTML = `O resultado é ${s1}`
+    }
+    function subtrair() {
+      let tn3 = document.getElementById("txtn3")
+      let tn4 = document.getElementById("txtn4")
+      let res2 = document.getElementById("res2")
+      let n3 = Number(tn3.value)
+      let n4 = Number(tn4.value)
+      s2 = n3 - n4 
+      res2.innerHTML = `O resultado é ${s2}`
+
+    }
+  </script>
+</body>
+</html>
