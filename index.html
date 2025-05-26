@@ -1,282 +1,384 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NerdCon</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NerdCon</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
 
-        body {
-            font-family: 'Oxanium', cursive;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #0a0a0a;
-            color: #ffffff;
-        }
-        header {
-            background: linear-gradient(90deg, #240244, #aa46e4);
-            padding: 40px;
-            font-size: 32px;
-            font-weight: bold;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(162, 0, 255, 0.5);
-            letter-spacing: 2px;
-        }
+    body {
+      font-family: 'Oxanium', cursive;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0a;
+      color: #ffffff;
+    }
 
-        .carousel-container {
-            width: 90%;
-            margin: 40px auto;
-            overflow: hidden;
-            position: relative;
-        }
+    header {
+      background: linear-gradient(90deg, #240244, #aa46e4);
+      padding: 40px 15px;
+      font-size: 50px;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(162, 0, 255, 0.5);
+      letter-spacing: 2px;
+    }
 
-        .carousel-track {
-            display: flex;
-            gap: 15px;
-            transition: transform 0.5s ease;
-        }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-        .carousel-item {
-            flex: 0 0 25%;
-        }
+    .header-img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      min-width: 80px;
+    }
 
-        .carousel-item img {
-            width: 100%;
-            max-width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: transform 0.3s;
-        }
+    .caption {
+      font-size: 10px;
+      color: #ffffff;
+      margin-top: 4px;
+      text-align: center;
+      line-height: 1.2;
+    }
 
-        .carousel-item img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(235, 14, 235, 0.3);
-        }
+    .header-title {
+      font-size: 36px;
+      margin: 10px;
+      flex: 1;
+      text-align: center;
+    }
 
-        .nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
-            background: rgba(255, 255, 255, 0.7);
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 2;
-            border-radius: 50%;
-        }
+    .logo-pequena {
+      width: 60px;
+      height: 60px;
+      border-radius: 40%;
+      object-fit: cover;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    }
 
-        .left {
-            left: 10px;
-        }
+    nav {
+      background: #240244;
+      padding: 10px 0;
+      box-shadow: 0 4px 10px rgba(162, 0, 255, 0.5);
+      margin-bottom: 40px;
+    }
 
-        .right {
-            right: 10px;
-        }
+    .menu {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
 
-        .info, .programacao, .detalhes, .quem-somos {
-            padding: 40px;
-            background: rgb(64, 8, 114);
-            margin: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(57, 6, 87, 0.849);
-        }
+    .menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 20px;
+      font-family: 'Oxanium', cursive;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
 
-        .programacao ul {
-            list-style-type: none;
-            padding: 0;
-        }
+    .menu li a:hover {
+      color: #ce0ebed8;
+    }
 
-        .programacao li {
-            background: rgba(32, 1, 44, 0.829);
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-        }
+    .carousel-container {
+      width: 90%;
+      margin: 40px auto;
+      overflow: hidden;
+      position: relative;
+    }
 
-        a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-        }
+    .carousel-track {
+      display: flex;
+      gap: 15px;
+      transition: transform 0.5s ease;
+    }
 
-        a:hover {
-            color: rgb(255, 255, 255);
-        }
+    .carousel-item {
+      flex: 0 0 25%;
+    }
 
-        button:hover {
-            background-color: rgb(172, 28, 255);
-            border-radius: 10px;
-            cursor: pointer;
-        }
+    .carousel-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s;
+    }
 
-        a.botao-inscrever {
-            background: #8009e0;
-            color: rgb(255, 255, 255);
-            padding: 15px 25px;
-            font-size: 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s, transform 0.2s;
-        }
+    .carousel-item img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(235, 14, 235, 0.3);
+    }
 
-        a.botao-inscrever:hover {
-            background: #ce0ebed8;
-            transform: scale(1.05);
-        }
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 2;
+      border-radius: 50%;
+    }
 
-        .equipe {
-            background: #8009e0;
-            color: rgb(255, 255, 255);
-            padding: 15px 25px;
-            font-size: 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s, transform 0.2s;
-        }
+    .left {
+      left: 10px;
+    }
 
-        a.equipe:hover {
-            background: #ce0ebed8;
-            transform: scale(1.05);
-        }
+    .right {
+      right: 10px;
+    }
 
-        @media (max-width: 992px) {
-            .carousel-item {
-                flex: 0 0 50%;
-            }
-        }
+    .info, .programacao, .detalhes, .quem-somos {
+      padding: 40px;
+      background: rgb(64, 8, 114);
+      margin: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(57, 6, 87, 0.849);
+    }
 
-        @media (max-width: 600px) {
-            .carousel-item {
-                flex: 0 0 100%;
-            }
-        }
-    </style>
+    .programacao ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .programacao li {
+      background: rgba(32, 1, 44, 0.829);
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: rgb(255, 255, 255);
+    }
+
+    button:hover {
+      background-color: rgb(172, 28, 255);
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    a.botao-inscrever {
+      background: #8009e0;
+      color: rgb(255, 255, 255);
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    a.botao-inscrever:hover {
+      background: #ce0ebed8;
+      transform: scale(1.05);
+    }
+
+    .equipe {
+      background: #8009e0;
+      color: rgb(255, 255, 255);
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    a.equipe:hover {
+      background: #ce0ebed8;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 992px) {
+      .carousel-item {
+        flex: 0 0 50%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .carousel-item {
+        flex: 0 0 100%;
+      }
+
+      .header-content {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .header-title {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <img src="" alt=""><header>NerdCon</header>
-
-    <div class="carousel-container">
-        <button class="nav left" onclick="prevSlide()">&#10094;</button>
-        <div class="carousel-track" id="carousel">
-            <div class="carousel-item"><img src="Imagens/meeple.JPG" alt="Meeple"></div>
-            <div class="carousel-item"><img src="Imagens/rpg.jpg" alt="RPG de Mesa"></div>
-            <div class="carousel-item"><img src="Imagens/Magic-The-Gathering-Card-Game-25-Rares-Cards-Boost-Your-Decks-with-25-Unique-Rares-Cards_344e704d-8356-4a52-bdf3-99c2cf06b14e.cda2367e2af64db55e041a07685117fb.jpg" alt="Card Games"></div>
-            <div class="carousel-item"><img src="Imagens/cosplays.jpg" alt="Cosplay"></div>
-            <div class="carousel-item"><img src="Imagens/boardgames.jpg" alt="BoardGame"></div>
-            <div class="carousel-item"><img src="Imagens/mesao.JPG" alt="Mesão"></div>
-            <div class="carousel-item"><img src="Imagens/boardgames2.jpg" alt="Boardgames 2"></div>
-            <div class="carousel-item"><img src="Imagens/pokemon.jpg" alt="Pokémon"></div>
-            <div class="carousel-item"><img src="Imagens/yugioh.jpg" alt="Yu-Gi-Oh!"></div>
-        </div>
-        <button class="nav right" onclick="nextSlide()">&#10095;</button>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-img">
+        <a href="https://www.facebook.com/tudonossosim/?locale=pt_BR"> <img src="Imagens/272039117_1860238454164774_9199699531486288273_n.jpg" alt="Logo Esquerda" class="logo-pequena">
+        <p class="caption">Tudo Nosso</p></a>
+      </div>
+      <h1 class="header-title">NerdCon</h1>
+      <div class="header-img">
+        <a href="https://www.itapecerica.sp.gov.br"><img src="Imagens/brasao.png" alt="Logo Direita" class="logo-pequena">
+        <p class="caption">Prefeitura de<br>Itapecerica da Serra</p></a>
+      </div>
     </div>
+  </header>
 
-    <div class="info">
-        <h2>CHEGOU A HORA, ITAPECERICA!</h2>
-        <h3>A Primeira Edição!</h3> 
-        <p>Cosplays, quadrinhos, games, animes, cultura geek e MUITA diversão!</p>
+<nav>
+    <ul class="menu">
+    <li><a href="inscrição.html">Inscrição</a></li>
+    <li><a href="formulario.html">Equipe</a></li>
+    <li><a href="#sobre">NerdsCon</a></li>
+    <li><a href="#programacao">Programação</a></li>
+    </ul>
+</nav>
+
+<div class="carousel-container">
+    <button class="nav left" onclick="prevSlide()">&#10094;</button>
+    <div class="carousel-track" id="carousel">
+    <div class="carousel-item"><img src="Imagens/meeple.JPG" alt="Meeple"></div>
+    <div class="carousel-item"><img src="Imagens/rpg.jpg" alt="RPG de Mesa"></div>
+    <div class="carousel-item"><img src="Imagens/Magic-The-Gathering-Card-Game-25-Rares-Cards-Boost-Your-Decks-with-25-Unique-Rares-Cards_344e704d-8356-4a52-bdf3-99c2cf06b14e.cda2367e2af64db55e041a07685117fb.jpg" alt="Card Games"></div>
+    <div class="carousel-item"><img src="Imagens/cosplays.jpg" alt="Cosplay"></div>
+    <div class="carousel-item"><img src="Imagens/boardgames.jpg" alt="BoardGame"></div>
+    <div class="carousel-item"><img src="Imagens/mesao.JPG" alt="Mesão"></div>
+    <div class="carousel-item"><img src="Imagens/boardgames2.jpg" alt="Boardgames 2"></div>
+    <div class="carousel-item"><img src="Imagens/pokemon.jpg" alt="Pokémon"></div>
+    <div class="carousel-item"><img src="Imagens/yugioh.jpg" alt="Yu-Gi-Oh!"></div>
     </div>
+    <button class="nav right" onclick="nextSlide()">&#10095;</button>
+</div>
 
-    <div class="quem-somos">
-        <h2>Quem Somos</h2>
-        <p>Somos um grupo apaixonado por RPGs, jogos de tabuleiro, Card Games e eventos geek. Nosso objetivo é criar um ambiente divertido e acolhedor para todos os jogadores.</p>
-        <h1>Role Iniciativa!</h1>
-        <a href="inscrição.html" class="botao-inscrever">Inscreva-se agora</a>
-    </div>
+<div class="info">
+    <h2>CHEGOU A HORA, ITAPECERICA!</h2>
+    <h3>A Primeira Edição!</h3> 
+    <p>Cosplays, quadrinhos, games, animes, cultura geek e MUITA diversão!</p>
+</div>
 
-    <div class="programacao">
-        <h2>Programação Sábado 23/08</h2>
-        <ul>
-            <li><strong>9:00 - Abertura</strong></li>
-            <li><strong>9:30 - Abertura Inscrições</strong></li>
-            <li><strong>10:00 - 1ª Seção RPG</strong></li>
-            <li><strong>10:30 - 1º Campeonato Magic</strong></li>
-            <li><strong>12:00 - Feira Gastronômica</strong></li>
-            <li><strong>13:30 - Video Games</strong></li>
-            <li><strong>15:00 - 2ª Seção RPG</strong></li>
-            <li><strong>15:30 - 2º Campeonato Magic</strong></li>
-            <li><strong>16:00 - Duelo de Klaves</strong></li>
-            <li><strong>17:00 - Concurso de Cosplays</strong></li>
-            <li><strong>18:00 - Peça de Teatro</strong></li>
-            <li><strong>19:30 - Encerramento</strong></li>
-        </ul>
-    </div>
+<div class="quem-somos" id="sobre">
+    <h2>Quem Somos</h2>
+    <p>Somos um grupo apaixonado por RPGs, jogos de tabuleiro, Card Games e eventos geek. Nosso objetivo é criar um ambiente divertido e acolhedor para todos os jogadores.</p>
+    <h1>Role Iniciativa!</h1>
+    <a href="inscrição.html" class="botao-inscrever">Inscreva-se agora</a>
+</div>
 
-    <div class="programacao">
-        <h2>Programação Domingo 24/08</h2>
-        <ul>
-            <li><strong>9:00 - Abertura</strong></li>
-            <li><strong>9:30 - Abertura Inscrições</strong></li>
-            <li><strong>10:00 - 1ª Seção RPG</strong></li>
-            <li><strong>10:30 - 1º Campeonato Magic</strong></li>
-            <li><strong>12:00 - Feira Gastronômica</strong></li>
-            <li><strong>13:30 - Video Games</strong></li>
-            <li><strong>15:00 - 2ª Seção RPG</strong></li>
-            <li><strong>15:30 - 2º Campeonato Magic</strong></li>
-            <li><strong>16:00 - Duelo de Klaves</strong></li>
-            <li><strong>17:00 - Concurso de Cosplays</strong></li>
-            <li><strong>17:30 - Encerramento</strong></li>
-        </ul>
-    </div>
+<div class="programacao" id="programacao">
+    <h2>Programação Sábado 23/08</h2>
+    <ul>
+    <li><strong>9:00 - Abertura</strong></li>
+    <li><strong>9:30 - Abertura Inscrições</strong></li>
+    <li><strong>10:00 - 1ª Seção RPG</strong></li>
+    <li><strong>10:30 - 1º Campeonato Magic</strong></li>
+    <li><strong>12:00 - Feira Gastronômica</strong></li>
+    <li><strong>13:30 - Video Games</strong></li>
+    <li><strong>15:00 - 2ª Seção RPG</strong></li>
+    <li><strong>15:30 - 2º Campeonato Magic</strong></li>
+    <li><strong>16:00 - Duelo de Klaves</strong></li>
+    <li><strong>17:00 - Concurso de Cosplays</strong></li>
+    <li><strong>18:00 - Peça de Teatro</strong></li>
+    <li><strong>19:30 - Encerramento</strong></li>
+    </ul>
+</div>
 
-    <div class="detalhes">
-        <h2>Detalhes do Evento</h2>
-        <p><strong>Data:</strong> 23 e 24 de Agosto de 2025</p>
-        <p><strong>Horário:</strong> Das 10h às 20h</p>
-        <p><strong>Endereço:</strong> Rod. Pref. Bento Rotger Domingues, n° 500, Mombaça, Itapecerica da Serra - SP</p>
-    </div>
+<div class="programacao">
+    <h2>Programação Domingo 24/08</h2>
+    <ul>
+    <li><strong>9:00 - Abertura</strong></li>
+    <li><strong>9:30 - Abertura Inscrições</strong></li>
+    <li><strong>10:00 - 1ª Seção RPG</strong></li>
+    <li><strong>10:30 - 1º Campeonato Magic</strong></li>
+    <li><strong>12:00 - Feira Gastronômica</strong></li>
+    <li><strong>13:30 - Video Games</strong></li>
+    <li><strong>15:00 - 2ª Seção RPG</strong></li>
+    <li><strong>15:30 - 2º Campeonato Magic</strong></li>
+    <li><strong>16:00 - Duelo de Klaves</strong></li>
+    <li><strong>17:00 - Concurso de Cosplays</strong></li>
+    <li><strong>17:30 - Encerramento</strong></li>
+    </ul>
+</div>
 
-    <div class="equipe">
-        <p><strong><a href="formulario.html" class="equipe">Venha Fazer Parte da Nossa Equipe</a></strong></p>
-    </div>
+<div class="detalhes">
+    <h2>Detalhes do Evento</h2>
+    <p><strong>Data:</strong> 23 e 24 de Agosto de 2025</p>
+    <p><strong>Horário:</strong> Das 10h às 20h</p>
+    <p><strong>Endereço:</strong> Rod. Pref. Bento Rotger Domingues, n° 500, Mombaça, Itapecerica da Serra - SP</p>
+</div>
 
-    <footer>
-        <p>&copy; Gabriel Lessa Nascimento</p>
-    </footer>
+<div class="equipe">
+    <p><strong><a href="formulario.html" class="equipe">Venha Fazer Parte da Nossa Equipe</a></strong></p>
+</div>
 
-    <script>
-        let currentIndex = 0;
-        const track = document.querySelector(".carousel-track");
-        const items = document.querySelectorAll(".carousel-item");
+<footer>
+    <p>&copy; Gabriel Lessa Nascimento</p>
+</footer>
 
-        function getVisibleItems() {
-            if (window.innerWidth <= 600) return 1;
-            if (window.innerWidth <= 992) return 2;
-            return 4;
-        }
+<script>
+    let currentIndex = 0;
+    const track = document.querySelector(".carousel-track");
+    const items = document.querySelectorAll(".carousel-item");
 
-        function updateCarousel() {
-            const visibleItems = getVisibleItems();
-            const itemWidth = track.offsetWidth / visibleItems + 15;
-            const offset = currentIndex * itemWidth;
-            track.style.transform = `translateX(-${offset}px)`;
-        }
+    function getVisibleItems() {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 992) return 2;
+    return 4;
+    }
 
-        function nextSlide() {
-            const visibleItems = getVisibleItems();
-            currentIndex++;
-            if (currentIndex > items.length - visibleItems) {
-                currentIndex = 0;
-            }
-            updateCarousel();
-        }
+    function updateCarousel() {
+    const visibleItems = getVisibleItems();
+    const itemWidth = track.offsetWidth / visibleItems + 15;
+      const offset = currentIndex * itemWidth;
+    track.style.transform = `translateX(-${offset}px)`;
+    }
 
-        function prevSlide() {
-            const visibleItems = getVisibleItems();
-            currentIndex--;
-            if (currentIndex < 0) {
-                currentIndex = items.length - visibleItems;
-            }
-            updateCarousel();
-        }
+    function nextSlide() {
+    const visibleItems = getVisibleItems();
+    currentIndex++;
+    if (currentIndex > items.length - visibleItems) {
+        currentIndex = 0;
+    }
+    updateCarousel();
+    }
 
-        window.addEventListener("resize", updateCarousel);
-        window.addEventListener("load", updateCarousel);
-    </script>
+    function prevSlide() {
+    const visibleItems = getVisibleItems();
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = items.length - visibleItems;
+    }
+    updateCarousel();
+    }
+
+    window.addEventListener("resize", updateCarousel);
+    window.addEventListener("load", updateCarousel);
+</script>
 </body>
 </html>
