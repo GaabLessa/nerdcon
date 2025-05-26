@@ -33,6 +33,7 @@
       flex-wrap: wrap;
       max-width: 1000px;
       margin: 0 auto;
+      padding: 0 30px; /* padding lateral adicionado */
     }
 
     .header-img {
@@ -221,19 +222,29 @@
     }
 
     @media (max-width: 600px) {
-      .carousel-item {
-        flex: 0 0 100%;
-      }
-
       .header-content {
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 15px;
         text-align: center;
       }
 
       .header-title {
         font-size: 28px;
+        margin: 15px 0;
+      }
+
+      .header-img {
+        margin: 10px 0;
+      }
+
+      .menu {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .carousel-item {
+        flex: 0 0 100%;
       }
     }
   </style>
