@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscrição</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
 
@@ -12,7 +13,7 @@
             font-family: 'Oxanium', cursive;
             margin: 0;
             padding: 0;
-            background-image: url("Imagens/meeple.JPG");
+            background-image: url("Imagens/imagensotimizadas/meeple.webp");
             background-size: cover;
             background-position: center center;
             background-attachment: fixed;
@@ -111,12 +112,54 @@ a.botao-voltar:hover {
     background: #d400d4;
     transform: scale(1.05);
 }
-    footer{
-    font-size: 20px;
+.footer-completo {
+    margin-top: 60px;
+    background: rgba(10, 0, 20, 0.9);
+    padding: 40px 20px;
+    color: #fff;
     text-align: center;
-    color: #000;
-    }
+    border-top: 2px solid #a200ff;
+    box-shadow: 0 -4px 15px #ff00ff;
+    font-family: 'Oxanium', cursive;
+}
+
+.footer-completo .footer-conteudo {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-completo p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 6px #ff00ff;
+}
+      .footer-completo {
+        padding: 30px 15px;
+      }
+
+      .redes-sociais a {
+        font-size: 24px;
+        margin: 0 10px;
+      }
     
+.redes-sociais a {
+    color: #ff00ff;
+    font-size: 28px;
+    margin: 0 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.redes-sociais a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+    text-shadow: 0 0 10px #ff00ff;
+}
+@media (max-width: 600px) {
+  .form-container,
+  .equipe {
+    padding: 20px;
+  }
+}    
     </style>
 </head>
 <body>
@@ -149,6 +192,20 @@ a.botao-voltar:hover {
         </form>
         <a href="index.html" class="botao-voltar"> Voltar à página principal</a>
     </section>
+    <footer class="footer-completo">
+    <div class="footer-conteudo">
+        <p>Desenvolvido por: <br>&copy; Gabriel Lessa Nascimento </p>
+      <div class="redes-sociais">
+  <a href="https://www.instagram.com/gaab_lessa" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://github.com/Gaablessa" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://www.linkedin.com/in/gabriel-lessa-a52902305/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contatogabriellessanascimento@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+  <a href="https://gabriellessa.com" target="_blank" title="Meu Portfólio"><i class="fas fa-briefcase"></i></a>
+</div>
+</a></div>
+    </div>
+</footer>
+
 
     <script>
         const telefoneInput = document.getElementById('telefone');
@@ -175,8 +232,5 @@ a.botao-voltar:hover {
         
     </script>
 </body>
-<footer>
-    &copy;GabrielLessaNascimento
-</footer>
 
 </html>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NerdCon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
 
@@ -12,8 +13,9 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      background-color: #0a0a0a;
+      background-color: rgba(10, 0, 20, 0.993);
       color: #ffffff;
+      overflow-x: hidden;
     }
 
     header {
@@ -70,7 +72,7 @@
     nav {
       background: #240244;
       padding: 10px 0;
-      box-shadow: 0 4px 10px rgba(162, 0, 255, 0.5);
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
       margin-bottom: 40px;
     }
 
@@ -108,13 +110,12 @@
       display: flex;
       gap: 15px;
       transition: transform 0.5s ease;
-      /* para garantir que o padding não atrapalhe o cálculo */
       box-sizing: border-box;
     }
 
     .carousel-item {
       flex: 0 0 auto;
-      width: calc((100% / 4) - 11.25px); /* Ajusta a largura de 4 itens com gap de 15px */
+      width: calc((100% / 4) - 11.25px);
     }
 
     .carousel-item img {
@@ -123,6 +124,8 @@
       object-fit: cover;
       border-radius: 15px;
       transition: transform 0.3s;
+      border: 2px solid #a200ff;
+      box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
     }
 
     .carousel-item img:hover {
@@ -156,7 +159,8 @@
       background: rgb(64, 8, 114);
       margin: 30px;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(57, 6, 87, 0.849);
+      border: 2px solid #a200ff;
+      box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
     }
 
     .programacao ul {
@@ -218,6 +222,42 @@
       transform: scale(1.05);
     }
 
+.footer-completo {
+  margin-top: 60px;
+  background: rgba(10, 0, 20, 0.9);
+  padding: 10px 20px; /* Reduzi de 40px para 20px */
+  color: #fff;
+  text-align: center;
+  border: 2px solid #a200ff;
+  box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
+  font-family: 'Oxanium', cursive;
+}
+
+    .footer-completo .footer-conteudo {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .footer-completo p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 6px #ff00ff;
+    }
+
+    .redes-sociais a {
+      color: #ff00ff;
+      font-size: 28px;
+      margin: 0 15px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .redes-sociais a:hover {
+      color: #ffffff;
+      transform: scale(1.2);
+      text-shadow: 0 0 10px #ff00ff;
+    }
+
+    /* Responsividade */
     @media (max-width: 992px) {
       .carousel-item {
         width: calc((100% / 2) - 7.5px);
@@ -228,31 +268,51 @@
       .header-content {
         flex-direction: column;
         align-items: center;
-        padding: 0 15px;
+        padding: 0 10px;
         text-align: center;
       }
 
       .header-title {
-        font-size: 28px;
-        margin: 15px 0;
+        font-size: 22px;
+        margin: 10px 0;
+        word-break: break-word;
       }
 
       .header-img {
         margin: 10px 0;
       }
 
+      .logo-pequena {
+        width: 50px;
+        height: 50px;
+      }
+
       .menu {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
+      }
+
+      .menu li a {
+        font-size: 16px;
       }
 
       .carousel-item {
         width: 100% !important;
       }
-    }
-    footer{
-      font-size: 20px;
-      text-align: center;
+
+      .info, .programacao, .detalhes, .quem-somos {
+        padding: 20px 15px;
+        margin: 20px 10px;
+      }
+
+      .footer-completo {
+        padding: 30px 15px;
+      }
+
+      .redes-sociais a {
+        font-size: 24px;
+        margin: 0 10px;
+      }
     }
   </style>
 </head>
@@ -261,14 +321,14 @@
     <div class="header-content">
       <div class="header-img">
         <a href="https://www.facebook.com/tudonossosim/?locale=pt_BR">
-          <img src="Imagens/272039117_1860238454164774_9199699531486288273_n.jpg" alt="Logo Esquerda" class="logo-pequena">
+          <img src="Imagens/imagensotimizadas/272039117_1860238454164774_9199699531486288273_n.webp" alt="Logo Esquerda" class="logo-pequena">
           <p class="caption">Tudo Nosso</p>
         </a>
       </div>
       <h1 class="header-title">NerdCon</h1>
       <div class="header-img">
         <a href="https://www.itapecerica.sp.gov.br">
-          <img src="Imagens/brasao.png" alt="Logo Direita" class="logo-pequena">
+          <img src="Imagens/imagensotimizadas/brasao.webp" alt="Logo Direita" class="logo-pequena">
           <p class="caption">Prefeitura de<br>Itapecerica da Serra</p>
         </a>
       </div>
@@ -288,15 +348,15 @@
   <div class="carousel-container">
     <button class="nav left" onclick="prevSlide()">&#10094;</button>
     <div class="carousel-track" id="carousel">
-      <div class="carousel-item"><img src="Imagens/meeple.JPG" alt="Meeple"></div>
-      <div class="carousel-item"><img src="Imagens/rpg.jpg" alt="RPG de Mesa"></div>
-      <div class="carousel-item"><img src="Imagens/Magic-The-Gathering-Card-Game-25-Rares-Cards-Boost-Your-Decks-with-25-Unique-Rares-Cards_344e704d-8356-4a52-bdf3-99c2cf06b14e.cda2367e2af64db55e041a07685117fb.jpg" alt="Card Games"></div>
-      <div class="carousel-item"><img src="Imagens/cosplays.jpg" alt="Cosplay"></div>
-      <div class="carousel-item"><img src="Imagens/boardgames.jpg" alt="BoardGame"></div>
-      <div class="carousel-item"><img src="Imagens/mesao.JPG" alt="Mesão"></div>
-      <div class="carousel-item"><img src="Imagens/boardgames2.jpg" alt="Boardgames 2"></div>
-      <div class="carousel-item"><img src="Imagens/pokemon.jpg" alt="Pokémon"></div>
-      <div class="carousel-item"><img src="Imagens/yugioh.jpg" alt="Yu-Gi-Oh!"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/meeple.webp" alt="Meeple"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/rpg.webp" alt="RPG de Mesa"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/Magic-The-Gathering-Card-Game-25-Rares-Cards-Boost-Your-Decks-with-25-Unique-Rares-Cards_344e704d-8356-4a52-bdf3-99c2cf06b14e.cda2367e2af64db55e041a07685117fb.webp" alt="Card Games"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/cosplay.webp" alt="Cosplay"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/boardgames.webp" alt="BoardGame"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/mesao.webp" alt="Mesão"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/boardgames2.webp" alt="Boardgames 2"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/pokemon.webp" alt="Pokémon"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/yugioh-1.webp" alt="Yu-Gi-Oh!"></div>
     </div>
     <button class="nav right" onclick="nextSlide()">&#10095;</button>
   </div>
@@ -355,9 +415,20 @@
     <p><strong>Horário:</strong> Das 10h às 20h</p>
     <p><strong>Endereço:</strong> Rod. Pref. Bento Rotger Domingues, n° 500, Mombaça, Itapecerica da Serra - SP</p>
 </div>
-<footer>
-    &copy; GabrielLessaNascimento
+<footer class="footer-completo">
+    <div class="footer-conteudo">
+        <p>Desenvolvido por: <br>&copy; Gabriel Lessa Nascimento </p>
+      <div class="redes-sociais">
+  <a href="https://www.instagram.com/gaab_lessa" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://github.com/Gaablessa" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://www.linkedin.com/in/gabriel-lessa-a52902305/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contatogabriellessanascimento@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+  <a href="https://gabriellessa.com" target="_blank" title="Meu Portfólio"><i class="fas fa-briefcase"></i></a>
+</div>
+</a></div>
+    </div>
 </footer>
+
 
 
   <script>
