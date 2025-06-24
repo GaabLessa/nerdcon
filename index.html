@@ -113,10 +113,31 @@
       box-sizing: border-box;
     }
 
-    .carousel-item {
-      flex: 0 0 auto;
-      width: calc((100% / 4) - 11.25px);
-    }
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  width: 100%;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 25%; /* Desktop */
+
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+
+@media (max-width: 992px) {
+  .carousel-item {
+    width: 50%; /* Tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-item {
+    width: 100%; /* Celular */
+  }
+}
 
     .carousel-item img {
       width: 100%;
@@ -337,8 +358,8 @@
 
   <nav>
     <ul class="menu">
-      <li><a href="#sobre">NerdCon</a></li>
       <li><a href="#programacao">Programação</a></li>
+      <li><a href="#sobre">NerdCon</a></li>
       <li><a href="inscrição.html">Inscrição</a></li>
       <li><a href="formulario.html">Equipe</a></li>
     </ul>
@@ -428,52 +449,50 @@
 
 
 
-  <script>
-    const carousel = document.getElementById('carousel');
-    let currentIndex = 0;
+<script>
+  const carousel = document.getElementById('carousel');
+  let currentIndex = 0;
 
-    function updateCarousel() {
-      const containerWidth = carousel.parentElement.offsetWidth;
-      const item = carousel.querySelector('.carousel-item');
-      const itemStyle = window.getComputedStyle(item);
-      const itemWidth = item.offsetWidth + parseFloat(itemStyle.marginRight || 0);
+  function getItemsVisible() {
+    const width = window.innerWidth;
+    if (width <= 600) return 1;
+    if (width <= 992) return 2;
+    return 4;
+  }
 
-      const itemsVisible = getItemsVisible();
-      const maxIndex = carousel.children.length - itemsVisible;
+  function updateCarousel() {
+  const itemsVisible = getItemsVisible();
+  const totalItems = carousel.children.length;
+  const maxIndex = Math.max(totalItems - itemsVisible, 0);
 
-      if (currentIndex < 0) currentIndex = 0;
-      if (currentIndex > maxIndex) currentIndex = maxIndex;
+  if (currentIndex < 0) currentIndex = 0;
+  if (currentIndex > maxIndex) currentIndex = maxIndex;
 
-      carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    }
+  const item = carousel.querySelector('.carousel-item');
+  const itemWidth = item.offsetWidth;
+  const style = window.getComputedStyle(carousel);
+  const gap = parseInt(style.gap) || 0;
 
-    function getItemsVisible() {
-      const width = window.innerWidth;
-      if (width <= 600) return 1;
-      if (width <= 992) return 2;
-      return 4;
-    }
+  const offset = currentIndex * (itemWidth + gap);
+  carousel.style.transform = `translateX(-${offset}px)`;
+}
 
-    function nextSlide() {
-      currentIndex++;
-      updateCarousel();
-    }
-
-    function prevSlide() {
-      currentIndex--;
-      updateCarousel();
-    }
-
-    window.addEventListener('resize', () => {
-      // Ajusta índice se o número de itens visíveis mudar
-      const itemsVisible = getItemsVisible();
-      const maxIndex = carousel.children.length - itemsVisible;
-      if (currentIndex > maxIndex) currentIndex = maxIndex >= 0 ? maxIndex : 0;
-      updateCarousel();
-    });
-
-    // Inicializa o carrossel
+  function nextSlide() {
+    currentIndex++;
     updateCarousel();
-  </script>
+  }
+
+  function prevSlide() {
+    currentIndex--;
+    updateCarousel();
+  }
+
+  window.addEventListener('resize', () => {
+    updateCarousel();
+  });
+
+  updateCarousel();
+</script>
+
 </body>
 </html>
