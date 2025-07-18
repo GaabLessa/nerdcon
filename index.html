@@ -13,11 +13,35 @@ body {
   margin: 0;
   padding: 0;
   background-color: #0e001f;
-  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  background-image: url('Imagens/expositores.png');
   background-size: cover;
+  background-position: 50% 200%; /* move a imagem para baixo e centraliza */
+  background-repeat: no-repeat;
   color: #ffffff;
   overflow-x: hidden;
   text-align: center;
+}
+
+/* Sobreposição escura para melhorar a leitura */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 0, 31, 0.8); /* tom escuro com transparência */
+  z-index: -1;
+}
+
+/* Container principal do conteúdo */
+main, form, .container {
+  background-color: rgba(0, 0, 0, 0.6); /* fundo semitransparente */
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 12px;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .header {
@@ -165,12 +189,14 @@ nav {
   box-shadow: 0 0 10px #ff00ff55;
 }
 
-    .carousel-container {
-      width: 90%;
-      margin: 40px auto;
-      overflow: hidden;
-      position: relative;
-    }
+.carousel-container {
+  width: 95%;
+  margin: 50px auto;
+  overflow: visible; /* <--- troque de hidden para visible */
+  position: relative;
+  padding-bottom: 20px; /* opcional, para evitar corte inferior */
+  z-index: 1;
+}
 
     .carousel-track {
       display: flex;
@@ -251,12 +277,12 @@ nav {
       right: 10px;
     }
 
-    .info, .programacao, .detalhes, .quem-somos {
+    .info, .programacao, .detalhes, .quem-somos, .mapa-container {
       padding: 40px;
-      background: rgb(64, 8, 114);
+      background: rgba(65, 8, 114, 0.438);
       margin: 30px;
       border-radius: 15px;
-      border: 2px solid #a200ff;
+      border: 2px solid #ff00ff;
       box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
     }
 
@@ -424,12 +450,12 @@ a.botao-inscrever:hover, .equipe:hover {
       }
     }
 .detalhes-card {
-  background: rgb(64, 8, 114);
+  background: rgba(65, 8, 114, 0.438);
   color: #fff;
   padding: 2.5rem 2rem;
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-  border: 2px solid #a200ff;
+  border: 2px solid #ff00ff;
   max-width: 700px;
   margin: 40px auto;
   font-family: 'Oxanium', cursive;
@@ -440,7 +466,7 @@ a.botao-inscrever:hover, .equipe:hover {
 .detalhes-card h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #cf07cf;
+  color: #ffffff;
   text-shadow: 0 0 8px #ff00ff88;
   display: flex;
   align-items: center;
@@ -456,7 +482,7 @@ a.botao-inscrever:hover, .equipe:hover {
   background: rgba(64, 8, 114, 0.3);
   padding: 12px 16px;
   border-radius: 10px;
-  border-left: 3px solid #a200ff;
+  border-left: 3px solid #ff00ff;
   box-shadow: 0 0 8px rgba(255, 0, 255, 0.15);
 }
 
@@ -468,7 +494,7 @@ a.botao-inscrever:hover, .equipe:hover {
 .mapa-container {
   margin-top: 20px;
   box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
-  border: 2px solid #a200ff;
+  border: 2px solid #ff00ff;
   border-radius: 15px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -484,11 +510,11 @@ a.botao-inscrever:hover, .equipe:hover {
           <p class="caption">Tudo Nosso</p>
         </a>
       </div>
-      <h1 class="header-title">NerdCon</h1>
+      <h1 class="header-title"> Festival NerdCon</h1>
       <div class="header-img">
-        <a href="https://www.itapecerica.sp.gov.br" target="_blank">
-          <img src="Imagens/imagensotimizadas/brasao.webp" alt="Logo Direita" class="logo-pequena">
-          <p class="caption">Prefeitura de<br>Itapecerica da Serra</p>
+        <a href="https://www.instagram.com/cultura.itapecerica?utm_source=ig_web_button_share_sheet&igsh=c3lvMmlmZTBudnRi" target="_blank">
+          <img src="Imagens/secretaria.jpg" alt="Logo Direita" class="logo-pequena">
+          <p class="caption">Secretaria de cultura<br>Itapecerica da Serra</p>
         </a>
       </div>
     </div>
@@ -500,6 +526,7 @@ a.botao-inscrever:hover, .equipe:hover {
       <li><a href="#programacao">Programação</a></li>
       <li><a href="#sobre">NerdCon</a></li>
       <li><a href="formulario.html">Equipe</a></li>
+      <li><a href="expositores.html">Expositores</a></li>
     </ul>
   </nav>
 
@@ -517,15 +544,19 @@ a.botao-inscrever:hover, .equipe:hover {
     <button class="nav right" onclick="nextSlide()">&#10095;</button>
   </div>
 
-  <div class="info">
-    <h2>CHEGOU A HORA, ITAPECERICA!</h2>
-    <h3>A Primeira Edição!</h3> 
-    <p>Cosplays, quadrinhos, games, animes, cultura geek e MUITA diversão!</p>
-  </div>
+ <div class="info">
+  <h2>Prepare-se, Itapecerica!</h2>
+  <h3>Vem aí a primeira edição da NerdCon!</h3>
+  <p>Um universo de diversão te espera: cosplays incríveis, quadrinhos, animes, games, cultura geek e experiências únicas.  
+  Reúna sua galera e viva o evento que vai marcar história na cidade!</p>
+</div>
 
   <div class="quem-somos" id="sobre">
-    <h2>Quem Somos</h2>
-    <p>Somos um grupo apaixonado por RPGs, jogos de tabuleiro, Card Games e eventos geek. Nosso objetivo é criar um ambiente divertido e acolhedor para todos os jogadores.</p>
+    <h2> Sobra o Festival NerdCon</h2>
+    <p>Como todo bom encontro nerd, esse começou nos fundos da casa de um dos idealizadores com pouco mais que um refrigerante, uma pizza e muita força de vontade. 
+A mais de 20 anos o mundo geek abriu suas portas para nós, e dele grupos e mais grupos se montaram e se expandiram e hoje posso afirmar que cada um deles carrega consigo um universo maior do que jamais poderíamos sonhar.
+E a verdade é que essa ideia já passou por diversos lugares, por diversas versões até chegarmos onde estamos hoje. Afinal, quem faz parte dessas comunidades sabe o quanto cada uma delas brilha com cada novo jogador, cada novo fã.
+E é com isso que a Nerdcon nasce, com um grupo de amigos e uma secretaria de cultura pronta para apoiar essa comunidade que a muito precisa de um espaço para brilhar. </p>
     <h1>Role Iniciativa!</h1>
     <a href="inscrição.html" class="botao-inscrever">Inscreva-se agora</a>
   </div>
