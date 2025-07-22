@@ -507,7 +507,7 @@ a.botao-inscrever:hover, .equipe:hover {
       <div class="header-img">
         <a href="https://www.facebook.com/tudonossosim/?locale=pt_BR" target="_blank"> 
           <img src="Imagens/imagensotimizadas/272039117_1860238454164774_9199699531486288273_n.webp" alt="Logo Esquerda" class="logo-pequena">
-          <p class="caption">Tudo Nosso</p>
+          <p class="caption"> É Tudo Nosso</p>
         </a>
       </div>
       <h1 class="header-title"> Festival NerdCon</h1>
@@ -524,7 +524,7 @@ a.botao-inscrever:hover, .equipe:hover {
     <ul class="menu">
       <li><a href="inscrição.html">Inscrição</a></li>
       <li><a href="#programacao">Programação</a></li>
-      <li><a href="#sobre">NerdCon</a></li>
+      <li><a href="#sobre">Festival NerdCon</a></li>
       <li><a href="formulario.html">Equipe</a></li>
       <li><a href="expositores.html">Expositores</a></li>
     </ul>
@@ -545,18 +545,30 @@ a.botao-inscrever:hover, .equipe:hover {
   </div>
 
  <div class="info">
-  <h2>Prepare-se, Itapecerica!</h2>
-  <h3>Vem aí a primeira edição da NerdCon!</h3>
+  <h2>Prepare-se, Itapecerica da Serra!</h2>
+  <h3>Vem aí a primeira edição do Festival NerdCon!</h3>
   <p>Um universo de diversão te espera: cosplays incríveis, quadrinhos, animes, games, cultura geek e experiências únicas.  
   Reúna sua galera e viva o evento que vai marcar história na cidade!</p>
 </div>
 
   <div class="quem-somos" id="sobre">
-    <h2> Sobra o Festival NerdCon</h2>
-    <p>Como todo bom encontro nerd, esse começou nos fundos da casa de um dos idealizadores com pouco mais que um refrigerante, uma pizza e muita força de vontade. 
-A mais de 20 anos o mundo geek abriu suas portas para nós, e dele grupos e mais grupos se montaram e se expandiram e hoje posso afirmar que cada um deles carrega consigo um universo maior do que jamais poderíamos sonhar.
-E a verdade é que essa ideia já passou por diversos lugares, por diversas versões até chegarmos onde estamos hoje. Afinal, quem faz parte dessas comunidades sabe o quanto cada uma delas brilha com cada novo jogador, cada novo fã.
-E é com isso que a Nerdcon nasce, com um grupo de amigos e uma secretaria de cultura pronta para apoiar essa comunidade que a muito precisa de um espaço para brilhar. </p>
+<section id="sobre">
+<h2>Sobre o Festival NerdCon</h2>
+<p>
+  Como todo bom encontro nerd, esse começou nos fundos da casa de um dos idealizadores com pouco mais que um refrigerante, uma pizza e muita força de vontade. Há mais de 20 anos o mundo geek abriu suas portas para nós, e dele grupos e mais grupos se montaram e se expandiram. Hoje posso afirmar que cada um deles carrega consigo um universo maior do que jamais poderíamos sonhar.
+</p>
+<p>
+  Essa ideia já passou por diversos lugares, por diversas versões, até chegarmos onde estamos hoje. Afinal, quem faz parte dessas comunidades sabe o quanto cada uma delas brilha com cada novo jogador, cada novo fã.
+</p>
+<p>
+  E foi nesse momento que <strong><a href="https://www.instagram.com/fabiosantana_sonhador?utm_source=ig_web_button_share_sheet&igsh=bnNxcG1sYzR4cGtl" target="_blank">Fábio Santana</strong></a> entrou em cena. Com uma visão cultural e sensível do projeto, ele logo se mostrou entusiasmado e abraçou a ideia, inicialmente por meio do <strong><a href="https://www.facebook.com/tudonossosim/?locale=pt_BR" target="_blank">Espaço É Tudo Nosso</a></strong>. Já era um apaixonado por essa cultura e, após algumas conversas, levou a proposta à <strong><a href="https://www.instagram.com/cultura.itapecerica?utm_source=ig_web_button_share_sheet&igsh=c3lvMmlmZTBudnRi" target="_blank">Secretaria de Cultura</strong></a>, que prontamente acolheu a iniciativa. A partir desse movimento, tivemos o apoio necessário para sair do papel e alcançar ainda mais pessoas dessa comunidade tão rica e grandiosa.
+</p>
+<p>
+  A <strong>NerdCon</strong> nasce assim: de amigos apaixonados pela cultura nerd, com o suporte de parceiros dispostos a abrir espaço para essa comunidade continuar crescendo e brilhando — e de vocês, que fazem tudo isso valer a pena ao comparecerem ao evento.
+</p>
+
+</section>
+
     <h1>Role Iniciativa!</h1>
     <a href="inscrição.html" class="botao-inscrever">Inscreva-se agora</a>
   </div>
@@ -592,7 +604,7 @@ E é com isso que a Nerdcon nasce, com um grupo de amigos e uma secretaria de cu
 <div class="detalhes-card">
   <h2><i class="fas fa-calendar-alt"></i> Detalhes do Evento</h2>
   <p><i class="fas fa-calendar-day"></i> <strong>Data:</strong> 23 e 24 de Agosto de 2025</p>
-  <p><i class="fas fa-clock"></i> <strong>Horário:</strong> Das 10h às 20h</p>
+  <p><i class="fas fa-clock"></i> <strong>Horário Sabado 23/08:</strong> Das 9h às 19:30h</p>   <p><i class="fas fa-clock"></i> <strong>Horário Domingo 24/08:</strong> Das 9h às 17:30h</p> 
   <p><i class="fas fa-map-marker-alt"></i> <strong>Endereço:</strong> Rod. Pref. Bento Rotger Domingues, n° 500, Mombaça, Itapecerica da Serra - SP</p>
   
   <!-- Mapa Google Maps -->
@@ -624,6 +636,7 @@ E é com isso que a Nerdcon nasce, com um grupo de amigos e uma secretaria de cu
 
 
 
+<!-- Carrossel -->
 <script>
   const carousel = document.getElementById('carousel');
   let currentIndex = 0;
@@ -636,21 +649,21 @@ E é com isso que a Nerdcon nasce, com um grupo de amigos e uma secretaria de cu
   }
 
   function updateCarousel() {
-  const itemsVisible = getItemsVisible();
-  const totalItems = carousel.children.length;
-  const maxIndex = Math.max(totalItems - itemsVisible, 0);
+    const itemsVisible = getItemsVisible();
+    const totalItems = carousel.children.length;
+    const maxIndex = Math.max(totalItems - itemsVisible, 0);
 
-  if (currentIndex < 0) currentIndex = 0;
-  if (currentIndex > maxIndex) currentIndex = maxIndex;
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
 
-  const item = carousel.querySelector('.carousel-item');
-  const itemWidth = item.offsetWidth;
-  const style = window.getComputedStyle(carousel);
-  const gap = parseInt(style.gap) || 0;
+    const item = carousel.querySelector('.carousel-item');
+    const itemWidth = item.offsetWidth;
+    const style = window.getComputedStyle(carousel);
+    const gap = parseInt(style.gap) || 0;
 
-  const offset = currentIndex * (itemWidth + gap);
-  carousel.style.transform = `translateX(-${offset}px)`;
-}
+    const offset = currentIndex * (itemWidth + gap);
+    carousel.style.transform = `translateX(-${offset}px)`;
+  }
 
   function nextSlide() {
     currentIndex++;
@@ -667,6 +680,16 @@ E é com isso que a Nerdcon nasce, com um grupo de amigos e uma secretaria de cu
   });
 
   updateCarousel();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WRVYEXMKPT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WRVYEXMKPT');
 </script>
 
 </body>
