@@ -4,191 +4,233 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Formulário de Expositores - NerdCon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="Imagens/nerdcon_favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Oxanium', cursive;
-      margin: 0;
-      padding: 0 20px;
-      background-image: url("Imagens/expositores.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-attachment: scroll;
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+body {
+  font-family: 'Oxanium', cursive;
+  margin: 0;
+  padding: 0 20px;
+  background-image: url("Imagens/expositores.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* muda para coluna */
+}
 
-    .form-container {
-      background: rgba(20, 20, 20, 0.95);
-      padding: 40px 50px;
-      margin: 30px auto;
-      width: 100%;
-      max-width: 700px;
-      border-radius: 20px;
-      box-shadow: 0 2px 8px rgba(162, 0, 255, 0.3);
-      border: 1px solid #ff00ff;
-      animation: surgirFormulario 1s ease forwards;
-      opacity: 0;
-      transform: translateY(50px);
-    }
+.form-container {
+  flex: 1; /* ocupa o espaço vertical restante */
+  background: rgba(20, 20, 20, 0.95);
+  padding: 40px 50px;
+  margin: 30px auto 0 auto; /* margem top e auto horizontal */
+  max-width: 700px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(162, 0, 255, 0.3);
+  border: 1px solid #ff00ff;
+  animation: surgirFormulario 1s ease forwards;
+  opacity: 0;
+  transform: translateY(50px);
+  display: flex;
+  flex-direction: column;
+}
 
-    @keyframes surgirFormulario {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+@keyframes surgirFormulario {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    h1 {
-      text-align: center;
+h1 {
+  text-align: center;
+  color: #ff00ff;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+input,
+textarea,
+select {
+  background: #444;
+  color: white;
+  border: 1px solid #ff00ff;
+  padding: 12px 15px;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #ff00ff;
+  outline: none;
+  background: #7a2aff;
+  color: #fff;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: 'Oxanium', cursive;
+}
+
+button,
+.botao-voltar {
+  padding: 14px 20px;
+  background-color: #a200ff;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover,
+.botao-voltar:hover {
+  background: #d400d4;
+  box-shadow: 0 0 8px #d400d4;
+}
+
+.botao-voltar a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+/* Footer fixo embaixo */
+.footer-completo {
+  background: rgba(10, 0, 20, 0.9);
+  padding: 10px 20px;
+  color: #fff;
+  text-align: center;
+  border-top: 2px solid #a200ff;
+  box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
+  font-family: 'Oxanium', cursive;
+  width: 100%;
+  margin-top: auto; /* força ficar embaixo */
+}
+
+.footer-completo .footer-conteudo {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-completo p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px #ff00ff;
+}
+    .redes-sociais a {
       color: #ff00ff;
-      margin-bottom: 30px;
+      font-size: 28px;
+      margin: 0 15px;
+      transition: transform 0.3s, color 0.3s;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    label {
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    input,
-    textarea,
-    select {
-      background: #444;
-      color: white;
-      border: 1px solid #ff00ff;
-      padding: 12px 15px;
-      border-radius: 6px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-color: #ff00ff;
-      outline: none;
-      background: #7a2aff;
-      color: #fff;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-      font-family: 'Oxanium', cursive;
-    }
-
-    button,
-    .botao-voltar {
-      padding: 14px 20px;
-      background-color: #a200ff;
-      border: none;
-      border-radius: 12px;
+    .redes-sociais a:hover {
       color: #ffffff;
-      cursor: pointer;
-      text-align: center;
-      font-size: 1.1rem;
-      margin-top: 20px;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-      width: 100%;
-      box-sizing: border-box;
-      text-decoration: none;
-      display: inline-block;
+      transform: scale(1.2);
+      text-shadow: 0 0 10px #ff00ff;
     }
 
-    button:hover,
-    .botao-voltar:hover {
-      background: #d400d4;
-      box-shadow: 0 0 8px #d400d4;
-    }
 
-    .botao-voltar a {
-      color: #fff;
-      text-decoration: none;
-      display: block;
-      width: 100%;
-    }
+/* Responsividade continua igual */
+@media (max-width: 900px) {
+  .form-container {
+    padding: 30px 40px;
+    max-width: 600px;
+  }
 
-    @media (max-width: 900px) {
-      .form-container {
-        padding: 30px 40px;
-        max-width: 600px;
-      }
+  h1 {
+    font-size: 1.75rem;
+  }
+}
 
-      h1 {
-        font-size: 1.75rem;
-      }
-    }
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
 
-    @media (max-width: 600px) {
-      body {
-        padding: 10px;
-      }
+  .form-container {
+    padding: 25px 20px;
+    margin: 20px auto 0 auto;
+    border-radius: 14px;
+    box-shadow: none;
+  }
 
-      .form-container {
-        padding: 25px 20px;
-        margin: 20px auto;
-        border-radius: 14px;
-        box-shadow: none;
-      }
+  h1 {
+    font-size: 1.5rem;
+  }
 
-      h1 {
-        font-size: 1.5rem;
-      }
+  input,
+  textarea,
+  select {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
 
-      input,
-      textarea,
-      select {
-        font-size: 0.95rem;
-        padding: 10px 12px;
-      }
+  button,
+  .botao-voltar {
+    font-size: 1rem;
+    padding: 12px 15px;
+  }
+}
 
-      button,
-      .botao-voltar {
-        font-size: 1rem;
-        padding: 12px 15px;
-      }
-    }
+@media (max-width: 400px) {
+  .form-container {
+    padding: 20px 15px;
+    margin: 15px auto 0 auto;
+  }
 
-    @media (max-width: 400px) {
-      .form-container {
-        padding: 20px 15px;
-        margin: 15px auto;
-      }
+  h1 {
+    font-size: 1.3rem;
+  }
 
-      h1 {
-        font-size: 1.3rem;
-      }
+  label {
+    font-size: 0.9rem;
+  }
 
-      label {
-        font-size: 0.9rem;
-      }
+  input,
+  textarea,
+  select {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
 
-      input,
-      textarea,
-      select {
-        font-size: 0.9rem;
-        padding: 8px 10px;
-      }
+  button,
+  .botao-voltar {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}
 
-      button,
-      .botao-voltar {
-        font-size: 0.9rem;
-        padding: 10px 12px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -227,15 +269,15 @@
     </div>
   </div>
 
-  <footer class="footer-completo">
-    <div class="footer-conteudo">
-        <p> &copy;Festival Nerdcon. Todos os direitos reservados </p>
-      <div class="redes-sociais">
-  <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="" target="_blank"><i class="fab fa-facebook"></i></a>
-</div>
-</a></div>
+
+<footer class="footer-completo">
+  <div class="footer-conteudo">
+    <p>&copy; Festival Nerdcon. Todos os direitos reservados</p>
+    <div class="redes-sociais">
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
+  </div>
 </footer>
 
 <script>
