@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NerdCon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="Imagens/nerdcon_favicon.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Oxanium', cursive;
+  margin: 0;
+  padding: 0;
+  background-color: #0e001f;
+  background-image: url('Imagens/expositores.png');
+  background-size: cover;
+  background-position: 50% 200%; /* move a imagem para baixo e centraliza */
+  background-repeat: no-repeat;
+  color: #ffffff;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Sobreposição escura para melhorar a leitura */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 0, 31, 0.8); /* tom escuro com transparência */
+  z-index: -1;
+}
+
+/* Container principal do conteúdo */
+main, form, .container {
+  background-color: rgba(0, 0, 0, 0.6); /* fundo semitransparente */
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 12px;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  background: linear-gradient(to , #8b23ec, #1b003a);
+  padding: 60px 15px 40px;
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.3);
+}
+
+
+
+
+@media (max-width: 768px) {
+  .logo-nerdcon {
+    width: 100px;
+  }
+
+  .header-title {
+    font-size: 28px;
+  }
+  .logo-central img{
+width: 80px;
+  }
+  .header img{
+width: 70px;
+height: 70px;
+  }
+  .caption {
+  font-size: 10px;
+}
+}
+
+nav {
+  background: linear-gradient(90deg, #4a007a, #9d00ff);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-esquerda img {
+  max-height: 110px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.nav {
+  background: linear-gradient(90deg, #4a007a, #9d00ff);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+    height: 80px; /* fixa a altura do nav */
+   /* evita que conteúdos "extrapolem" */
+  /* mantenha o que já tem */
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+
+/* Menu */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+/* Links do menu com linha rosa animada */
+.menu li a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 10px 0;
+  transition: color 0.3s;
+}
+
+/* Linha rosa que aparece ao passar o mouse */
+.menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background-color: #ff00ff;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Ao passar o mouse, a linha cresce de 0 a 100% */
+.menu li a:hover::after {
+  width: 100%;
+}
+
+/* Cor do texto ao passar o mouse */
+.menu li a:hover {
+  color: #ffccff;
+}
+
+/* Submenu */
+.submenu {
+  position: relative;
+}
+
+.submenu .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #6b00b8;
+  padding: 0;
+  list-style: none;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  min-width: 160px;
+  z-index: 20;
+}
+
+.submenu:hover .dropdown {
+  display: block;
+}
+
+.submenu .dropdown li a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 18px;
+  color: #fff;
+  position: relative;
+}
+
+/* Linha rosa animada também no submenu */
+.submenu .dropdown li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #ff00ff;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.submenu .dropdown li a:hover::after {
+  width: 100%;
+}
+
+.submenu .dropdown li a:hover {
+  background-color: #d303c8;
+  color: #fff;
+}
+
+/* Mobile toggle */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .logo-esquerda img {
+    height: 60px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background: #4a007a;
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu li a {
+    padding: 15px 20px;
+    font-size: 18px;
+  }
+
+  .submenu .dropdown {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    min-width: auto;
+  }
+
+  .submenu .dropdown li a {
+    background-color: #6b00b8;
+    font-size: 16px;
+    padding-left: 30px;
+  }
+}
+
+
+.carousel-container {
+  width: 95%;
+  margin: 50px auto;
+  overflow: visible; /* <--- troque de hidden para visible */
+  position: relative;
+  padding-bottom: 20px; /* opcional, para evitar corte inferior */
+  z-index: 1;
+}
+
+    .carousel-track {
+      display: flex;
+      gap: 15px;
+      transition: transform 0.5s ease;
+      box-sizing: border-box;
+    }
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  width: 100%;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 25%; /* Desktop */
+
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+
+@media (max-width: 992px) {
+  .carousel-item {
+    width: 50%; /* Tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-item {
+    width: 100%; /* Celular */
+  }
+}
+
+    .carousel-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s;
+      border: 2px solid #ff00ff;
+      box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
+    }
+
+    .carousel-item img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(235, 14, 235, 0.3);
+    }
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: linear-gradient(145deg, #4a007a, #9d00ff);
+  color: #fff;
+  border: 2px solid #ff00ff88;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.nav:hover {
+  background: rgba(255, 0, 255, 0.1);
+  color: #ffccff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 20px #ff00ffaa;
+}
+
+    .left {
+      left: 10px;
+    }
+
+    .right {
+      right: 10px;
+    }
+
+    .info, .programacao, .detalhes, .quem-somos, .mapa-container {
+      padding: 40px;
+      background: rgba(65, 8, 114, 0.438);
+      margin: 30px;
+      border-radius: 15px;
+      border: 2px solid #ff00ff;
+      box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
+    }
+
+    .programacao ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .programacao li {
+      background: rgba(32, 1, 44, 0.829);
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: rgb(255, 255, 255);
+    }
+
+    button:hover {
+      background-color: rgb(172, 28, 255);
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+a.botao-inscrever, .equipe {
+  background: linear-gradient(90deg, #4a007a, #9d00ff);
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Oxanium', cursive;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #ff00ff99;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+a.botao-inscrever::after, .equipe::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff00ff;
+  box-shadow: 0 0 8px #ff00ff;
+  transition: width 0.3s ease;
+}
+
+a.botao-inscrever:hover::after, .equipe:hover::after {
+  width: 100%;
+}
+
+a.botao-inscrever:hover, .equipe:hover {
+  color: #ffccff;
+  background: rgba(255, 0, 255, 0.1);
+  box-shadow: 0 0 15px #ff00ff88;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.footer-completo {
+  margin-top: 60px;
+  background: rgba(10, 0, 20, 0.9);
+  padding: 10px 20px; /* Reduzi de 40px para 20px */
+  color: #fff;
+  text-align: center;
+  border: 2px solid #a200ff;
+  box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
+  font-family: 'Oxanium', cursive;
+}
+
+    .footer-completo .footer-conteudo {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .footer-completo p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 6px #ff00ff;
+    }
+
+    .redes-sociais a {
+      color: #ff00ff;
+      font-size: 28px;
+      margin: 0 15px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .redes-sociais a:hover {
+      color: #ffffff;
+      transform: scale(1.2);
+      text-shadow: 0 0 10px #ff00ff;
+    }
+
+    /* Responsividade */
+    @media (max-width: 992px) {
+      .carousel-item {
+        width: calc((100% / 2) - 7.5px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+        text-align: center;
+      }
+
+      .header-title {
+        font-size: 22px;
+        margin: 10px 0;
+        word-break: break-word;
+      }
+
+      .header-img {
+        margin: 10px 0;
+      }
+
+      .logo-pequena {
+        width: 50px;
+        height: 50px;
+      }
+
+      .menu {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .menu li a {
+        font-size: 16px;
+      }
+
+      .carousel-item {
+        width: 100% !important;
+      }
+
+      .info, .programacao, .detalhes, .quem-somos {
+        padding: 20px 15px;
+        margin: 20px 10px;
+      }
+
+      .footer-completo {
+        padding: 30px 15px;
+      }
+
+      .redes-sociais a {
+        font-size: 24px;
+        margin: 0 10px;
+      }
+    }
+.detalhes-card {
+  background: rgba(65, 8, 114, 0.438);
+  color: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  border: 2px solid #ff00ff;
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: 'Oxanium', cursive;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.detalhes-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px #ff00ff88;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detalhes-card p {
+  font-size: 1.1rem;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(64, 8, 114, 0.3);
+  padding: 12px 16px;
+  border-radius: 10px;
+  border-left: 3px solid #ff00ff;
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.15);
+}
+
+.detalhes-card i {
+  color: #ffffff;
+  min-width: 20px;
+  font-size: 1.2rem;
+}
+.mapa-container {
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+  border: 2px solid #ff00ff;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.patrocinadores {
+  padding: 40px 20px;
+  text-align: center;
+    border: 2px solid #ff00ff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.patrocinadores h2 {
+  color: #ff00ff;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.cards-patrocinadores {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card-logo {
+  background-color: rgba(65, 8, 114, 0.438);
+  border: 2px solid #ff00ff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #ff00ff;
+}
+
+.card-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.banner {
+  background-color: rgba(65, 8, 114, 0.438);
+  border: 2px solid #ff00ff;
+  border-radius: 15px;
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    text-align: right;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: #4a007a;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+}
+
+.top-bar {
+  background: linear-gradient(to right, #2c004b, #10001e);
+  padding: 15px 0;
+  border-bottom: 2px solid #ff00ff55;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+  z-index: 9;
+}
+
+.top-bar-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.top-bar-logo {
+  flex: 1;
+  text-align: center;
+  min-width: 180px;
+}
+
+.top-bar-logo img {
+  height: 60px;
+  max-width: 100%;
+  object-fit: contain;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 5px #ff00ff77);
+  transition: transform 0.3s;
+  border-radius: 50%;
+}
+
+.top-bar-logo img:hover {
+  transform: scale(1.05);
+}
+
+.apoio-label {
+  font-size: 0.9rem;
+  color: #ffccff;
+  font-style: italic;
+  margin-bottom: 5px;
+  text-shadow: 0 0 5px #ff00ff88;
+}
+
+.logo-label {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-top: 6px;
+  text-shadow: 0 0 5px #ff00ff44;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .top-bar-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-bar-logo {
+    margin-bottom: 15px;
+  }
+
+  .top-bar-logo img {
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .apoio-label {
+    font-size: 0.8rem;
+  }
+
+  .logo-label {
+    font-size: 0.85rem;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+<!-- BARRA SUPERIOR DO SITE -->
+<div class="top-bar">
+  <div class="top-bar-content">
+    
+    <!-- Logo da esquerda com texto -->
+    <div class="top-bar-logo">
+      <p class="apoio-label">Apoio:</p>
+      <a href="https://www.facebook.com/tudonossosim/?locale=pt_BR" target="_blank">
+        <img src="Imagens/imagensotimizadas/272039117_1860238454164774_9199699531486288273_n.webp" alt="Logo É Tudo Nosso">
+        <p class="logo-label">É Tudo Nosso</p>
+      </a>
+    </div>
+
+    <!-- Logo do meio (principal, sem texto extra) -->
+    <div class="top-bar-logo center-logo">
+      <a href="#" target="_blank">
+        <img src="Imagens/nerdcon.png" alt="Logo Central">
+        <p class="logo-label">Festival Nerdcon</p>
+      </a>
+    </div>
+
+    <!-- Logo da direita com texto -->
+    <div class="top-bar-logo">
+      <p class="apoio-label">Apoio:</p>
+      <a href="https://www.instagram.com/cultura.itapecerica" target="_blank">
+        <img src="Imagens/secretaria.jpg" alt="Logo Secretaria">
+        <p class="logo-label">Secretaria de Cultura<br>Itapecerica da Serra</p>
+      </a>
+    </div>
+
+  </div>
+</div>
+<!-- Adicione ao seu HTML existente -->
+<!-- Atualize o NAV com um botão de menu hamburguer -->
+<nav>
+  
+  <div class="nav-container">
+    <div class="logo-esquerda">
+      <img src="Imagens/Prancheta_1_copiaFINAL_SITE teste.png" alt="Logo do Festival NerdCon" class="logo-nerdcon">
+    
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="menu" id="menu">
+      <li><a href="inscrição.html">Inscrição</a></li>
+      <li><a href="#programacao">Programação</a></li>
+      <li><a href="#sobre">Festival NerdCon</a></li>
+      <li><a href="expositores.html">Expositores</a></li>
+      <li class="submenu">
+        <a href="#">Atrações <i class="fas fa-caret-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="inscrição.html">RPG</a></li>
+          <li><a href="#programacao">Cosplays</a></li>
+          <li><a href="#sobre">Cardgame</a></li>
+          <li><a href="expositores.html">BoardGames</a></li>
+          <li><a href="batalha.html">Batalha Campal</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class="banner">
+    <div class="bannerinscrições">
+      <p><strong>p</p></strong>
+    </div>
+  </div>
+
+  <div class="carousel-container">
+    <button class="nav left" onclick="prevSlide()">&#10094;</button>
+    <div class="carousel-track" id="carousel">
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/meeple.webp" alt="Meeple"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/rpg.webp" alt="RPG de Mesa"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/Magic-The-Gathering-Card-Game-25-Rares-Cards-Boost-Your-Decks-with-25-Unique-Rares-Cards_344e704d-8356-4a52-bdf3-99c2cf06b14e.cda2367e2af64db55e041a07685117fb.webp" alt="Card Games"></div>
+      <div class="carousel-item"><img src="Imagens/Prancheta_24x.png" alt="Cosplay"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/boardgames.webp" alt="BoardGame"></div>      <div class="carousel-item"><img src="Imagens/imagensotimizadas/boardgames2.webp" alt="Boardgames 2"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/pokemon.webp" alt="Pokémon"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/yugioh-1.webp" alt="Yu-Gi-Oh!"></div>
+    </div>
+    <button class="nav right" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+ <div class="info">
+  <h2>Prepare-se, Itapecerica da Serra!</h2>
+  <h3>Vem aí a primeira edição do Festival NerdCon!</h3>
+  <p>Um universo de diversão te espera: cosplays incríveis, quadrinhos, animes, games, cultura geek e experiências únicas.  
+  Reúna sua galera e viva o evento que vai marcar história na cidade!</p>
+</div>
+
+  <div class="quem-somos" id="sobre">
+<section id="sobre">
+<h2>Sobre o Festival NerdCon</h2>
+<p>
+  Como todo bom encontro nerd, esse começou nos fundos da casa de um dos idealizadores com pouco mais que um refrigerante, uma pizza e muita força de vontade. Há mais de 20 anos o mundo geek abriu suas portas para nós, e dele grupos e mais grupos se montaram e se expandiram. Hoje posso afirmar que cada um deles carrega consigo um universo maior do que jamais poderíamos sonhar.
+</p>
+<p>
+  Essa ideia já passou por diversos lugares, por diversas versões, até chegarmos onde estamos hoje. Afinal, quem faz parte dessas comunidades sabe o quanto cada uma delas brilha com cada novo jogador, cada novo fã.
+</p>
+<p>
+  E foi nesse momento que <strong><a href="https://www.instagram.com/fabiosantana_sonhador?utm_source=ig_web_button_share_sheet&igsh=bnNxcG1sYzR4cGtl" target="_blank">Fábio Santana</strong></a> entrou em cena. Com uma visão cultural e sensível do projeto, ele logo se mostrou entusiasmado e abraçou a ideia, inicialmente por meio do <strong><a href="https://www.facebook.com/tudonossosim/?locale=pt_BR" target="_blank">Espaço É Tudo Nosso</a></strong>. Já era um apaixonado por essa cultura e, após algumas conversas, levou a proposta à <strong><a href="https://www.instagram.com/cultura.itapecerica?utm_source=ig_web_button_share_sheet&igsh=c3lvMmlmZTBudnRi" target="_blank">Secretaria de Cultura</strong></a>, que prontamente acolheu a iniciativa. A partir desse movimento, tivemos o apoio necessário para sair do papel e alcançar ainda mais pessoas dessa comunidade tão rica e grandiosa.
+</p>
+<p>
+  A <strong>NerdCon</strong> nasce assim: de amigos apaixonados pela cultura nerd, com o suporte de parceiros dispostos a abrir espaço para essa comunidade continuar crescendo e brilhando — e de vocês, que fazem tudo isso valer a pena ao comparecerem ao evento.
+</p>
+
+</section>
+
+    <h1>Role Iniciativa!</h1>
+    <a href="inscrição.html" class="botao-inscrever">Inscreva-se agora</a>
+  </div>
+
+  <div class="programacao" id="programacao">
+    <h2>Programação Sábado 23/08</h2>
+    <ul>
+    <li><strong> Abertura</strong></li>
+    <li><strong>1ª Sessão RPG</strong></li>
+    <li><strong>1º Campeonato Magic</strong></li>
+    <li><strong>2ª Sessão RPG</strong></li>
+    <li><strong>2º Campeonato Magic</strong></li>
+    <li><strong>Duelo de Klaves</strong></li>
+    <li><strong>Concurso de Cosplays</strong></li>
+  
+    <li><strong>Encerramento</strong></li>
+    </ul>
+</div>
+
+<div class="programacao" id="programacao">
+    <h2>Programação Domingo 24/08</h2>
+    <ul>
+    <li><strong>9:00 - Abertura</strong></li>
+    <li><strong>10:00 - 1ª Sessão RPG</strong></li>
+    <li><strong>10:30 - 1º Campeonato Magic</strong></li>
+    <li><strong>15:00 - 2ª Sessão RPG</strong></li>
+    <li><strong>15:30 - 2º Campeonato Magic</strong></li>
+    <li><strong>16:00 - Duelo de Klaves</strong></li>
+    <li><strong>17:00 - Concurso de Cosplays</strong></li>
+    <li><strong>17:30 - Encerramento</strong></li>
+    </ul>
+</div>
+
+<div class="detalhes-card">
+  <h2><i class="fas fa-calendar-alt"></i> Detalhes do Evento</h2>
+  <p><i class="fas fa-calendar-day"></i> <strong>Data:</strong> 23 e 24 de Agosto de 2025</p>
+  <p><i class="fas fa-clock"></i> <strong>Horário Sabado 23/08:</strong> Das 9h às 19:30h</p>   <p><i class="fas fa-clock"></i> <strong>Horário Domingo 24/08:</strong> Das 9h às 17:30h</p> 
+  <p><i class="fas fa-map-marker-alt"></i> <strong>Endereço:</strong> Rua Delfim Verde, 500, Jd. das Palmeiras - Itapecerica da Serra/ SP, Itapecerica, Sao Paulo</p>
+  
+  <!-- Mapa Google Maps -->
+  <div class="mapa-container">
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.197099524925!2d-46.847228924708255!3d-23.667586478738636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce53dfef802805%3A0x35c4c79d8b0bc3e4!2sR.%20Delfim%20Verde%2C%20500%20-%20Jardim%20das%20Palmeiras%2C%20Itapecerica%20da%20Serra%20-%20SP%2C%2006817-390!5e0!3m2!1spt-BR!2sbr!4v1721830891013!5m2!1spt-BR!2sbr"
+  width="100%"
+  height="300"
+  style="border:0; border-radius: 15px;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+  </div>
+</div>
+
+<section class="patrocinadores">
+  <h2>Patrocinadores</h2>
+  <div class="cards-patrocinadores">
+    <div class="card-logo">
+      <img src="imagens/espetinhosdokleber_page_1.png" alt="Espetinhos do Kleber" />
+    </div>
+    <div class="card-logo">
+      <img src="imagens/mandu_assistencia_page_1.png" alt="Mandu Assistência Funeral" />
+    </div>
+    <div class="card-logo">
+      <img src="imagens/allservice.jpg" alt="AllService AllPrinter"/>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-completo">
+  <div class="footer-conteudo">
+    <p>&copy; Festival Nerdcon. Todos os direitos reservados</p>
+    <div class="redes-sociais">
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+<!-- Scripts -->
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('show');
+  }
+</script>
+
+<!-- Carrossel -->
+<script>
+  const carousel = document.getElementById('carousel');
+  let currentIndex = 0;
+
+  function getItemsVisible() {
+    const width = window.innerWidth;
+    if (width <= 600) return 1;
+    if (width <= 992) return 2;
+    return 4;
+  }
+
+  function updateCarousel() {
+    const itemsVisible = getItemsVisible();
+    const totalItems = carousel.children.length;
+    const maxIndex = Math.max(totalItems - itemsVisible, 0);
+
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+    const item = carousel.querySelector('.carousel-item');
+    const itemWidth = item.offsetWidth;
+    const style = window.getComputedStyle(carousel);
+    const gap = parseInt(style.gap) || 0;
+
+    const offset = currentIndex * (itemWidth + gap);
+    carousel.style.transform = `translateX(-${offset}px)`;
+  }
+
+  function nextSlide() {
+    currentIndex++;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex--;
+    updateCarousel();
+  }
+
+  window.addEventListener('resize', updateCarousel);
+  window.addEventListener('load', updateCarousel);
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WRVYEXMKPT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-WRVYEXMKPT');
+</script>
+</body>
+</html>
