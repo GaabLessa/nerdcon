@@ -124,8 +124,25 @@ button:hover,
   width: 100%;
 }
 
-/* Footer fixo embaixo */
+/* Estilo para a informação de preço */
+.preco-info {
+  background: #330066;
+  padding: 15px;
+  border-radius: 8px;
+  color: #ffccff;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border: 1px solid #ff00ff;
+  font-family: 'Oxanium', cursive;
+}
+
 .footer-completo {
+  position: relative; /* ou fixed se quiser fixar embaixo */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
   background: rgba(10, 0, 20, 0.9);
   padding: 10px 20px;
   color: #fff;
@@ -133,34 +150,39 @@ button:hover,
   border-top: 2px solid #a200ff;
   box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
   font-family: 'Oxanium', cursive;
-  width: 100%;
-  margin-top: auto; /* força ficar embaixo */
 }
 
 .footer-completo .footer-conteudo {
-  max-width: 1000px;
-  margin: 0 auto;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .footer-completo p {
-  font-size: 18px;
-  margin-bottom: 20px;
-  text-shadow: 0 0 6px #ff00ff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 6px #ff00ff;
 }
-    .redes-sociais a {
-      color: #ff00ff;
-      font-size: 28px;
-      margin: 0 15px;
-      transition: transform 0.3s, color 0.3s;
-    }
+      .footer-completo {
+        padding: 30px 15px;
+      }
 
-    .redes-sociais a:hover {
-      color: #ffffff;
-      transform: scale(1.2);
-      text-shadow: 0 0 10px #ff00ff;
-    }
+      .redes-sociais a {
+        font-size: 24px;
+        margin: 0 10px;
+      }
+    
+.redes-sociais a {
+    color: #ff00ff;
+    font-size: 28px;
+    margin: 0 15px;
+    transition: transform 0.3s, color 0.3s;
+}
 
-
+.redes-sociais a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+    text-shadow: 0 0 10px #ff00ff;
+}
 /* Responsividade continua igual */
 @media (max-width: 900px) {
   .form-container {
@@ -243,7 +265,7 @@ button:hover,
       <label for="responsavel">Nome do responsável</label>
       <input type="text" name="responsavel" id="responsavel" required />
 
-      <label for="cpf">CPF/CNPJ do Responsavel</label>
+      <label for="cpf">CPF/CNPJ do Responsável</label>
       <input type="tel" name="cpf" id="cpf" required />
       
       <label for="whatsapp">WhatsApp</label>
@@ -261,7 +283,18 @@ button:hover,
       <label for="produtos">Produtos que vai vender</label>
       <textarea name="produtos" id="produtos" rows="3" required></textarea>
 
+      <!-- Informação sobre preço -->
+      <div class="preco-info">
+        Aluguel da barraca: <strong>R$200,00</strong> pelo final de semana (sábado e domingo).<br>
+        <em>Não é possível alugar por apenas um dia, o valor é fixo pelo final de semana completo.</em>
+      </div>
 
+      <!-- Campo tamanho da barraca -->
+<!-- Informação sobre tamanho da barraca -->
+<div class="preco-info" style="margin-top: 0;">
+  Tamanho da barraca: <strong>Pequena (2m x 2m)</strong>
+</div>
+<input type="hidden" name="tamanho-barraca" value="pequena" />
       <button type="submit">Enviar</button>
     </form>
     <div class="botao-voltar">
@@ -311,17 +344,3 @@ button:hover,
       console.error(err);
     }
   });
-  
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WRVYEXMKPT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WRVYEXMKPT');
-</script>
-
-</body>
-</html>

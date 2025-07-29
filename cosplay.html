@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concurso Cosplay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Oxanium', cursive;
+    margin: 0;
+    padding: 0;
+    background-image: url("Imagens/cosplay.png");
+    background-size: 100% 100%;  /* Estica a imagem */
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; /* evita repetição */
+    color: #ffffff;
+}
+
+
+.form-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 66px;
+    margin: 50px auto;
+    max-width: 650px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(163, 4, 168, 0.7);
+    text-align: left;
+    border: 2px solid #50007e;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Inputs e Textareas */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    background: #222;
+    color: white;
+    border: 2px solid #50007e;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive;
+    resize: vertical;
+}
+
+/* Botão enviar */
+input[type="submit"] {
+    background: #850496;
+    color: white;
+    border: 2px solid #50007e;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 10px;
+    font-family: 'Oxanium', cursive;
+}
+
+input[type="submit"]:hover {
+    background: #ff04ea;
+}
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  user-select: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Oxanium', cursive;
+  position: relative; /* para o ::after se basear aqui */
+}
+
+.checkbox-group input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  width: 20px;
+  height: 20px;
+  border: 2px solid #50007e;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  /* position: relative;  REMOVIDO */
+  display: inline-block;
+  vertical-align: middle;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox-group input[type="checkbox"]:hover {
+  border-color: #ff00ff;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: #ff00ff;
+  border-color: #ff00ff;
+}
+
+/* Ajuste do check para basear no checkbox */
+.checkbox-group input[type="checkbox"]:checked::after {
+    align-items: center;
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+
+/* Botão voltar */
+a.botao-voltar {
+    background: #310936;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: 2px solid #50007e;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 30px;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+a.botao-voltar:hover {
+    background: #d400d4;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer-completo {
+    margin-top: 60px;
+    background: rgba(10, 0, 20, 0.9);
+    padding: 40px 20px;
+    color: #fff;
+    text-align: center;
+    border-top: 2px solid #a200ff;
+    box-shadow: 0 -4px 15px #ff00ff;
+    font-family: 'Oxanium', cursive;
+}
+
+.footer-completo .footer-conteudo {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-completo p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 6px #ff00ff;
+}
+
+.footer-completo {
+    padding: 30px 15px;
+}
+
+.redes-sociais a {
+    color: #ff00ff;
+    font-size: 28px;
+    margin: 0 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.redes-sociais a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .form-container,
+    .equipe {
+        padding: 20px;
+    }
+}
+   
+    </style>
+</head>
+<body>
+    
+<section class="form-container">
+    <h2>NerdCon</h2>
+    <h3>Inscreva-se no Concurso de Cosplay</h3>
+    <form action="https://script.google.com/macros/s/AKfycbwdRhp5xzZCM0dIzq3eO6QpYZXvtOYxjqwzbMvF-Ix9myiCX-iFEBYw9XBOX1-vZPRM/exec" method="POST" onsubmit="gerarNumeroInscricao()">
+
+        <!-- Dados Pessoais -->
+        <label for="nome">Nome completo: *</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="apelido">Apelido ou nome de palco:</label>
+        <input type="text" id="apelido" name="apelido" placeholder="Opcional">
+
+        <label for="data_nascimento">Data de nascimento: *</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" required>
+
+        <label for="email">E-mail: *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefone">Telefone: *</label>
+        <input type="tel" id="telefone" name="telefone" required placeholder="(11) 91234-5678">
+
+        <!-- Informações do Cosplay -->
+        <label for="personagem">Nome do personagem: *</label>
+        <input type="text" id="personagem" name="personagem" required>
+
+        <label for="origem">Origem do personagem: *</label>
+        <select id="origem" name="origem" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="Anime">Anime</option>
+            <option value="Filme">Filme</option>
+            <option value="Jogo">Jogo</option>
+            <option value="HQ">HQ</option>
+            <option value="Série">Série</option>
+            <option value="Outro">Outro</option>
+        </select>
+
+        <label for="descricao_cosplay">Descrição breve do cosplay:</label>
+        <textarea id="descricao_cosplay" name="descricao_cosplay" placeholder="Detalhes especiais, acessórios, etc"></textarea>
+
+        <!-- Regras e consentimento -->
+<div class="checkbox-group">
+  <input type="checkbox" id="aceito_regulamento" name="aceito_regulamento" required>
+  <label for="aceito_regulamento">Li e aceito o regulamento do concurso. *</label>
+</div>
+
+
+        <label for="como_ficou_sabendo">Como ficou sabendo do concurso?</label>
+        <input type="text" id="como_ficou_sabendo" name="como_ficou_sabendo">
+
+        <!-- Redes sociais -->
+        <label for="instagram_cosplay">Instagram/TikTok do cosplay (opcional):</label>
+        <input type="text" id="instagram_cosplay" name="instagram_cosplay" placeholder="@exemplo">
+
+        <label for="perfil_pessoal">Perfil pessoal para divulgação (opcional):</label>
+        <input type="text" id="perfil_pessoal" name="perfil_pessoal" placeholder="@exemplo">
+
+        <!-- Campos ocultos -->
+        <input type="hidden" id="numero_inscricao" name="numero_inscricao">
+        <input type="hidden" name="_subject" value="Nova inscrição no Concurso de Cosplay!">
+        <input type="hidden" name="_autoresponse" id="autoresponse" value="Obrigado por se inscrever no concurso!">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+
+        <input type="submit" value="Enviar Inscrição">
+    </form>
+
+    <a href="index.html" class="botao-voltar"> Voltar à página principal</a>
+</section>
+
+<footer class="footer-completo">
+    <div class="footer-conteudo">
+        <p> &copy;Festival Nerdcon. Todos os direitos reservados </p>
+      <div class="redes-sociais">
+  <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="" target="_blank"><i class="fab fa-facebook"></i></a>
+</div>
+</a></div>
+    </div>
+</footer>
+
+
+    <script>
+        const telefoneInput = document.getElementById('telefone');
+        telefoneInput.addEventListener('input', function (e) {
+            let x = e.target.value.replace(/\D/g, '').slice(0, 11);
+            let formatado = '';
+            if (x.length > 0) formatado = '(' + x.substring(0, 2);
+            if (x.length >= 3) formatado += ') ' + x.substring(2, 7);
+            if (x.length >= 8) formatado += '-' + x.substring(7, 11);
+            e.target.value = formatado;
+        });
+
+
+        function gerarNumeroInscricao() {
+            const email = document.getElementById('email').value;
+            const hash = email.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+            let numero = hash % 10000; // Gera um número baseado no e-mail
+
+            const numeroInscricao = 'NC' + numero.toString().padStart(4, '0');
+            document.getElementById('numero_inscricao').value = numeroInscricao;
+
+            document.getElementById('autoresponse').value = `Olá! Sua inscrição foi recebida com sucesso.\nSeu número de inscrição é ${numeroInscricao}.\nNos vemos no evento!`;
+        }
+        
+    </script>
+    
+</body>
+
+</html>

@@ -538,7 +538,7 @@ a.botao-inscrever:hover, .equipe:hover {
   color: #fff;
   padding: 2.5rem 2rem;
   border-radius: 20px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 25px #ff00ff;
   border: 2px solid #ff00ff;
   max-width: 700px;
   margin: 40px auto;
@@ -698,6 +698,19 @@ a.botao-inscrever:hover, .equipe:hover {
   transform: scale(1.05);
 }
 
+.center-logo img {
+  height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 5px #ff00ff77);
+  transition: transform 0.3s;
+  border-radius: 50%;
+}
+
+.center-logo img:hover {
+  transform: scale(1.05);
+}
 .apoio-label {
   font-size: 0.9rem;
   color: #ffccff;
@@ -738,7 +751,142 @@ a.botao-inscrever:hover, .equipe:hover {
   }
 }
 
+.atracoes-explicacao {
+  padding: 40px;
+  background: rgba(65, 8, 114, 0.438);
+  margin: 30px;
+  border-radius: 15px;
+  border: 2px solid #ff00ff;
+  box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
+  color: #fff;
+}
 
+.atracoes-explicacao h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ffccff;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+.atracao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  background: rgba(32, 1, 44, 0.85);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+  transition: transform 0.3s;
+}
+
+.atracao:hover {
+  transform: scale(1.02);
+}
+
+.atracao-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 300px;
+  gap: 10px;
+  text-align: center;
+}
+.atracao-img img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 16px #ff00ffaa;
+}
+
+.atracao-img img {
+  max-width: 100%;
+  height: 210px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.atracao-img figcaption {
+  font-size: 1rem;
+  color: #ffccff;
+  font-style: italic;
+  text-shadow: 0 0 5px #ff00ff70;
+  margin-top: 5px;
+}
+
+
+
+.atracao-texto {
+  flex: 2 1 400px;
+}
+
+.atracao-texto h3 {
+  font-size: 1.5rem;
+  color: #ff99ff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #ff00ff;
+}
+
+.atracao-texto p {
+  font-size: 1rem;
+  color: #eee;
+  line-height: 1.6;
+}
+.atracao-img-cardgames {
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;           /* Não quebra linha para manter lado a lado */
+  justify-content: center;     /* Centraliza as imagens no container */
+  flex: 1 1 300px;             /* Ocupa espaço proporcional */
+  max-width: 320px;            /* Limita a largura para o grupo de imagens */
+}
+
+.atracao-img-cardgames {
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;   /* evita quebra de linha */
+  max-width: 500px;    /* controla o espaço das imagens **/
+}
+
+.atracao-img-cardgames img {
+  width: 150px;
+  height: 195px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 8px #ff00ff66;
+  transition: transform 0.3s ease;
+}
+
+.atracao-img-cardgames img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 16px #ff00ffaa;
+}
+
+.atracao-texto {
+  flex: 2 1 400px;  /* Garante que o texto ocupe mais espaço */
+  min-width: 250px; /* Para que não fique muito pequeno */
+  color: #eee;
+}
+
+.btn-inscreva-se {
+  margin-top: 15px;
+  padding: 12px 25px;
+  background-color: #ff00ff;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff00ffcc;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-inscreva-se:hover {
+  background-color: #cc00cc;
+  box-shadow: 0 0 15px #cc00ccdd;
+}
   </style>
 </head>
 <body>
@@ -757,7 +905,7 @@ a.botao-inscrever:hover, .equipe:hover {
     </div>
 
     <!-- Logo do meio (principal, sem texto extra) -->
-    <div class="top-bar-logo center-logo">
+    <div class="center-logo">
       <a href="#" target="_blank">
         <img src="Imagens/nerdcon.png" alt="Logo Central">
         <p class="logo-label">Festival Nerdcon</p>
@@ -820,7 +968,7 @@ a.botao-inscrever:hover, .equipe:hover {
       <div class="carousel-item"><img src="Imagens/imagensotimizadas/meeple.webp" alt="Meeple"></div>
       <div class="carousel-item"><img src="Imagens/imagensotimizadas/rpg.webp" alt="RPG de Mesa"></div>
       <div class="carousel-item"><img src="Imagens/imagensotimizadas/Magic-The-Gathering-Card-Game-25-Rares-Cards-Boost-Your-Decks-with-25-Unique-Rares-Cards_344e704d-8356-4a52-bdf3-99c2cf06b14e.cda2367e2af64db55e041a07685117fb.webp" alt="Card Games"></div>
-      <div class="carousel-item"><img src="Imagens/Prancheta_24x.png" alt="Cosplay"></div>
+      <div class="carousel-item"><img src="Imagens/imagensotimizadas/cosplay.webp" alt="Cosplay"></div>
       <div class="carousel-item"><img src="Imagens/imagensotimizadas/boardgames.webp" alt="BoardGame"></div>      <div class="carousel-item"><img src="Imagens/imagensotimizadas/boardgames2.webp" alt="Boardgames 2"></div>
       <div class="carousel-item"><img src="Imagens/imagensotimizadas/pokemon.webp" alt="Pokémon"></div>
       <div class="carousel-item"><img src="Imagens/imagensotimizadas/yugioh-1.webp" alt="Yu-Gi-Oh!"></div>
@@ -867,13 +1015,16 @@ a.botao-inscrever:hover, .equipe:hover {
       A <strong>NerdCon</strong> nasce assim: de amigos apaixonados pela cultura nerd, com o suporte de parceiros dispostos a abrir espaço para essa comunidade continuar crescendo e brilhando.
     </p>
   </section>
-</div>
 
-</section>
+  </section>
 
     <h1>Role Iniciativa!</h1>
     <a href="inscrição.html" class="botao-inscrever">Inscreva-se agora</a>
-  </div>
+</div>
+
+
+
+
 
   <div class="programacao" id="programacao">
     <h2>Programação Sábado 23/08</h2>
@@ -903,6 +1054,70 @@ a.botao-inscrever:hover, .equipe:hover {
     <li><strong>17:30 - Encerramento</strong></li>
     </ul>
 </div>
+
+<section class="atracoes-explicacao" id="atracoes">
+  <h2>Conheça Nossas Atrações</h2>
+
+  <div class="atracao">
+    <figure class="atracao-img">
+      <img src="imagens/rpg.jpg" alt="RPG de Mesa">
+      <figcaption>RPG de Mesa</figcaption>
+    </figure>
+    <div class="atracao-texto">
+      <h3><i class="fas fa-dice-d20"></i> RPG de Mesa</h3>
+      <p>Embarque em aventuras épicas onde cada jogador assume o papel de um personagem único. Com a orientação de um mestre, histórias ganham vida por meio da imaginação, estratégia e trabalho em equipe. Crie, lute, explore e descubra mundos fantásticos!</p>
+    </div>
+  </div>
+
+<div class="atracao">
+  <div class="atracao-img-cardgames">
+  <img src="Imagens/magic.png" alt="Magic: The Gathering">
+  <img src="Imagens/pokemon.png" alt="Pokémon TCG">
+  <img src="Imagens/yugioh.png" alt="Yu-Gi-Oh!">
+</div>
+  <div class="atracao-texto">
+    <h3><i class="fas fa-clone"></i> Card Games</h3>
+    <p>Desafie seus amigos e teste suas habilidades em clássicos como Magic: The Gathering, Pokémon TCG e Yu-Gi-Oh!. Estratégia, combos e muita emoção em partidas que exigem raciocínio rápido e domínio das cartas!</p>
+  </div>
+</div>
+
+
+  <div class="atracao">
+    <figure class="atracao-img">
+      <img src="imagens/boardgames.png" alt="Jogos de Tabuleiro">
+      <figcaption>Board Games</figcaption>
+    </figure>
+    <div class="atracao-texto">
+      <h3><i class="fas fa-chess-board"></i> Board Games</h3>
+      <p>De jogos clássicos a lançamentos modernos, a diversão é garantida! Participe de partidas estratégicas, cooperativas ou competitivas que promovem interação e desafio para todas as idades e níveis de experiência.</p>
+    </div>
+  </div>
+
+  <div class="atracao">
+    <figure class="atracao-img">
+      <img src="imagens/batalha.jpg" alt="Batalha Campal">
+      <figcaption>Batalha Campal</figcaption>
+    </figure>
+    <div class="atracao-texto">
+      <h3><i class="fas fa-shield-alt"></i> Batalha Campal</h3>
+      <p>Prepare-se para a ação! Em um ambiente seguro, com espadas de espuma e regras claras, os participantes entram em combate em duelos ou batalhas em equipe. Diversão, adrenalina e muita energia esperam por você!</p>
+    </div>
+  </div>
+
+<div class="atracao">
+  <figure class="atracao-img">
+    <img src="Imagens/Prancheta_24x.png" alt="Concurso de Cosplay">
+    <figcaption>Concurso de Cosplay</figcaption>
+  </figure>
+  <div class="atracao-texto">
+    <h3><i class="fas fa-user-ninja"></i> Concurso de Cosplay</h3>
+    <p>Mostre todo seu talento no palco! Participe do nosso concurso de cosplay com sua fantasia de personagem favorita. Valorizamos criatividade, caracterização e performance. Venha brilhar com a sua paixão pela cultura pop!</p>
+    <button class="btn-inscreva-se">Inscreva-se</button>
+  </div>
+</div>
+</section>
+
+
 
 <div class="detalhes-card">
   <h2><i class="fas fa-calendar-alt"></i> Detalhes do Evento</h2>
