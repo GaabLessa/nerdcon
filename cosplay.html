@@ -1,306 +1,278 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concurso Cosplay</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-     <link rel="icon" href="Imagens/nerdcon_favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inscrição Concurso Cosplay - NerdCon</title>
 
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;800&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    font-family: 'Oxanium', cursive;
-    margin: 0;
-    padding: 0;
-    background-image: url("Imagens/cosplay.png");
-    background-size: 100% 100%;  /* Estica a imagem */
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat; /* evita repetição */
-    color: #ffffff;
+  font-family: 'Oxanium', cursive;
+  margin: 0;
+  padding: 0 20px;
+  background-image: url("Imagens/cosplay.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* muda para coluna */
+  align-items: center;
 }
 
-
-.form-container {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 66px;
-    margin: 50px auto;
-    max-width: 650px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(163, 4, 168, 0.7);
-    text-align: left;
-    border: 2px solid #50007e;
-}
-
-/* Formulário */
+/* FORMULÁRIO */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  background: rgba(20, 0, 40, 0.85);
+  border: 2px solid #a200ff;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #a200ff66;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  backdrop-filter: blur(8px);
 }
 
+/* TÍTULO */
+form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 28px;
+  text-shadow: 0 0 8px #a200ff;
+}
+
+/* CAMPOS */
 label {
-    font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #ccc;
 }
 
-/* Inputs e Textareas */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
+input,
 select,
 textarea {
-    background: #222;
-    color: white;
-    border: 2px solid #50007e;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: 'Oxanium', cursive;
-    resize: vertical;
-}
-
-/* Botão enviar */
-input[type="submit"] {
-    background: #850496;
-    color: white;
-    border: 2px solid #50007e;
-    padding: 15px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    border-radius: 10px;
-    font-family: 'Oxanium', cursive;
-}
-
-input[type="submit"]:hover {
-    background: #ff04ea;
-}
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-  user-select: none;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #a200ff80;
+  background: #1c012f;
   color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  font-family: 'Oxanium', cursive;
-  position: relative; /* para o ::after se basear aqui */
+  outline: none;
+  transition: 0.3s;
 }
 
-.checkbox-group input[type="checkbox"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  width: 20px;
-  height: 20px;
-  border: 2px solid #50007e;
-  border-radius: 6px;
-  background-color: transparent;
-  cursor: pointer;
-  /* position: relative;  REMOVIDO */
-  display: inline-block;
-  vertical-align: middle;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ff00cc;
+  box-shadow: 0 0 10px #ff00cc77;
 }
 
-.checkbox-group input[type="checkbox"]:hover {
-  border-color: #ff00ff;
-}
-
-.checkbox-group input[type="checkbox"]:checked {
-  background-color: #ff00ff;
-  border-color: #ff00ff;
-}
-
-/* Ajuste do check para basear no checkbox */
-.checkbox-group input[type="checkbox"]:checked::after {
-    align-items: center;
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  width: 5px;
-  height: 10px;
-  border: solid #000;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
-}
-
-
-/* Botão voltar */
-a.botao-voltar {
-    background: #310936;
-    color: white;
-    padding: 15px 25px;
-    font-size: 18px;
-    border: 2px solid #50007e;
-    text-decoration: none;
-    display: inline-flex;
-    justify-content: center;
-    margin-top: 30px;
-    border-radius: 10px;
-    transition: background 0.3s, transform 0.2s;
-}
-
-a.botao-voltar:hover {
-    background: #d400d4;
-    transform: scale(1.05);
-}
-
-/* Footer */
-.footer-completo {
-    margin-top: 60px;
-    background: rgba(10, 0, 20, 0.9);
-    padding: 40px 20px;
-    color: #fff;
-    text-align: center;
-    border-top: 2px solid #a200ff;
-    box-shadow: 0 -4px 15px #ff00ff;
-    font-family: 'Oxanium', cursive;
-}
-
-.footer-completo .footer-conteudo {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.footer-completo p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 6px #ff00ff;
-}
-
-.footer-completo {
-    padding: 30px 15px;
-}
-
-.redes-sociais a {
-    color: #ff00ff;
-    font-size: 28px;
-    margin: 0 15px;
-    transition: transform 0.3s, color 0.3s;
-}
-
-.redes-sociais a:hover {
-    color: #ffffff;
-    transform: scale(1.2);
-    text-shadow: 0 0 10px #ff00ff;
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-    .form-container,
-    .equipe {
-        padding: 20px;
-    }
-}
-   
-#popup-sucesso {
-  display: none;
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 15px 30px;
-  border-radius: 8px;
-  color: white;
+/* BOTÃO */
+button,
+input[type="submit"] {
+  background: linear-gradient(90deg, #a200ff, #ff00cc);
+  color: #fff;
   font-weight: 600;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 9999;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
-  pointer-events: none;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px #a200ff88;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
-/* Quando mostrar, ativa visibilidade e pointer-events */
-#popup-sucesso.show {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
+button:hover,
+input[type="submit"]:hover {
+  background: linear-gradient(90deg, #ff00cc, #a200ff);
+  box-shadow: 0 0 18px #ff00ccaa;
 }
-    </style>
+
+/* MENSAGEM DE CONFIRMAÇÃO */
+.confirmacao {
+  background-color: #00ff88;
+  color: #000;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: 0 0 10px #00ff88aa;
+  text-align: center;
+}
+
+/* ERRO */
+.erro {
+  background-color: #ff0044;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: 0 0 10px #ff0044aa;
+  text-align: center;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 600px) {
+  form {
+    padding: 20px;
+  }
+
+  form h2 {
+    font-size: 22px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+}
+.popup-neon {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1e0033;
+  color: #fff;
+  padding: 30px 40px;
+  border: 2px solid #a200ff;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #a200ff, 0 0 50px #ff00ff;
+  font-size: 1.2rem;
+  font-family: 'Oxanium', sans-serif;
+  text-align: center;
+  z-index: 9999;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+  </style>
 </head>
 <body>
-<section class="form-container">
-  <h2>NerdCon</h2>
-  <h3>Inscreva-se no Concurso de Cosplay</h3>
 
-  <form id="cosplayForm">
-    <label for="nome">Nome completo: *</label>
-    <input type="text" id="nome" name="nome" required placeholder="Ex: Ana Maria da Silva" />
+  <form id="formulario-cosplay">
+    <label>Nome completo: *</label>
+    <input type="text" name="nome" required placeholder="Ex: Ana Beatriz dos Santos" />
 
-    <label for="apelido">Apelido ou nome de palco:</label>
-    <input type="text" id="apelido" name="apelido" placeholder="Ex: Lady Cosplay" />
+    <label>Apelido artístico (se tiver):</label>
+    <input type="text" name="apelido" placeholder="Ex: Bia-Chan" />
 
-    <label for="data_nascimento">Data de nascimento: *</label>
-    <input type="date" id="data_nascimento" name="data_nascimento" required />
+    <label>Data de nascimento: *</label>
+    <input type="date" name="data_nascimento" required />
 
-    <label for="email">E-mail: *</label>
-    <input type="email" id="email" name="email" required placeholder="Ex: seuemail@email.com" />
+    <label>E-mail: *</label>
+    <input type="email" name="email" required placeholder="Ex: voce@email.com" />
 
-    <label for="telefone">Telefone: *</label>
-    <input type="tel" id="telefone" name="telefone" required placeholder="(DDD) 91234-5678" />
+    <label>Telefone para contato: *</label>
+    <input type="tel" name="telefone" required placeholder="(00) 00000-0000" />
 
-    <label for="personagem">Nome do personagem: *</label>
-    <input type="text" id="personagem" name="personagem" required placeholder="Ex: Naruto Uzumaki" />
+    <label>Nome do personagem: *</label>
+    <input type="text" name="personagem" required placeholder="Ex: Naruto Uzumaki" />
 
-    <label for="origem">Origem do personagem: *</label>
-    <input type="text" id="origem" name="origem" required placeholder="Ex: Naruto (anime)" />
+    <label>Origem do personagem (anime, jogo, filme...): *</label>
+    <input type="text" name="origem" required placeholder="Ex: Naruto Shippuden" />
 
-    <label for="descricao_cosplay">Descrição breve do cosplay:</label>
-    <textarea id="descricao_cosplay" name="descricao_cosplay" rows="3" placeholder="Fale um pouco sobre o traje, acessórios, maquiagem..."></textarea>
+    <label>Descreva seu cosplay (materiais usados, detalhes, etc):</label>
+    <textarea name="descricao_cosplay" rows="4" placeholder="Opcional, mas pode destacar sua criatividade :)"></textarea>
 
-    <div class="checkbox-group">
-      <input type="checkbox" id="aceito_regulamento" name="aceito_regulamento" required />
-      <label for="aceito_regulamento">Li e aceito o regulamento *</label>
-    </div>
+    <label>Como ficou sabendo do concurso?</label>
+    <input type="text" name="como_ficou_sabendo" placeholder="Ex: Instagram da NerdCon, amigos, site..." />
 
-    <label for="como_ficou_sabendo">Como ficou sabendo do concurso?</label>
-    <input type="text" id="como_ficou_sabendo" name="como_ficou_sabendo" placeholder="Ex: Instagram, amigo, site oficial..." />
+    <label>Instagram do cosplay:</label>
+    <input type="text" name="instagram_cosplay" placeholder="@seu_cosplay" />
 
-    <label for="instagram_cosplay">Instagram/TikTok do cosplay (opcional):</label>
-    <input type="text" id="instagram_cosplay" name="instagram_cosplay" placeholder="@seucosplay" />
+    <label>Perfil pessoal (Instagram ou outro):</label>
+    <input type="text" name="perfil_pessoal" placeholder="@seuperfil" />
 
-    <label for="perfil_pessoal">Perfil pessoal para divulgação (opcional):</label>
-    <input type="text" id="perfil_pessoal" name="perfil_pessoal" placeholder="@seuperfil" />
-
-    <input type="hidden" id="numero_inscricao" name="numero_inscricao" />
-
-    <input type="submit" value="Enviar Inscrição" />
+    <button type="submit">Enviar Inscrição</button>
+    <p id="mensagem-envio"></p>
   </form>
 
-  <div id="popup-sucesso" class="popup"></div>
+<!-- POPUP -->
+<div id="popup-sucesso" class="popup-neon" style="display: none;">
+  Inscrição enviada com sucesso! 💜<br/>
+  Redirecionando para a página inicial...
+</div>
 
+<div style="text-align: center; margin-top: 30px;">
   <a href="index.html" class="botao-voltar">Voltar à página principal</a>
-</section>
+</div>
 
-<script> 
-form.addEventListener('submit', e => {
-  e.preventDefault();
+  <script>
+    const form = document.getElementById('formulario-cosplay');
+    const mensagem = document.getElementById('mensagem-envio');
 
-  const formData = new FormData(form);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      mensagem.style.color = "#cccccc";
+      mensagem.textContent = 'Enviando...';
 
-  fetch('https://script.google.com/macros/s/SEU_SCRIPT_ID/exec', {
-    method: 'POST',
-    body: formData
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.status === 'ok') {
-      alert(`Inscrição enviada! Nº: ${data.numero}`);
-      form.reset();
-    } else {
-      alert(`Erro: ${data.message || 'Tente novamente.'}`);
-    }
-  })
-  .catch(() => alert('Erro na conexão. Tente novamente.'));
-});
+      const dados = new FormData(form);
+
+      fetch("https://script.google.com/macros/s/AKfycbyicPseverPK6Yq-6ifeMe4493_kaTZTqHycBlWCBQ2wgk8E7rEZDLXCIKPbQRK9VkTpA/exec", {
+        method: "POST",
+        body: dados
+      })
+      .then(res => res.text())
+      .then(msg => {
+        mensagem.style.color = "#00ff99";
+        mensagem.textContent = msg;
+        form.reset();
+      })
+      .catch(err => {
+        mensagem.style.color = "#ff5555";
+        mensagem.textContent = "Erro ao enviar. Tente novamente.";
+      });
+    });
+  </script>
+  <script>
+  document.getElementById('formulario-cosplay').addEventListener('submit', function (e) {
+    e.preventDefault(); // Impede o envio tradicional do formulário
+
+    // Aqui você coloca a lógica de envio para a planilha (via fetch ou google script)
+    // Depois do envio com sucesso, exibe o popup:
+
+    document.getElementById('popup-sucesso').style.display = 'block';
+
+    // Redireciona após 4 segundos
+    setTimeout(function () {
+      window.location.href = 'index.html';
+    }, 4000);
+  });
 </script>
+</body>
+</html>
