@@ -15,12 +15,14 @@ body {
   padding: 0;
   background-color: #0e001f;
   background-image: url('Imagens/expositores.png');
-  background-size: cover;
-  background-position: 50% 200%; /* move a imagem para baixo e centraliza */
+  background-size: 100% auto; /* ocupa toda a largura apenas */
+  background-position: top center;
   background-repeat: no-repeat;
   color: #ffffff;
   overflow-x: hidden;
   text-align: center;
+  max-width: 100vw; /* nunca ultrapassa a tela */
+  overflow-y: auto;
 }
 
 /* Sobreposição escura para melhorar a leitura */
@@ -133,11 +135,11 @@ nav {
 
 /* Links do menu com linha rosa animada */
 .menu li a {
-  position: relative;
+  position:relative;
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 20px;
   padding: 10px 0;
   transition: color 0.3s;
 }
@@ -275,10 +277,11 @@ nav {
 
 .carousel-container {
   width: 95%;
-  margin: 50px auto;
-  overflow: visible; /* <--- troque de hidden para visible */
+  margin: 10px;
+  overflow: hidden; /* <--- troque de hidden para visible */
   position: relative;
   padding-bottom: 20px; /* opcional, para evitar corte inferior */
+  padding-right: 50px; /* dá espaço extra para última imagem */
   z-index: 1;
 }
 
@@ -338,7 +341,7 @@ nav {
   background: linear-gradient(145deg, #4a007a, #9d00ff);
   color: #fff;
   border: 2px solid #ff00ff88;
-  border-radius: 50%;
+  border-radius: 20%;
   padding: 15px;
   cursor: pointer;
   box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
@@ -940,6 +943,91 @@ a.botao-inscrever:hover, .equipe:hover {
   background-color: #cc00cc;
   box-shadow: 0 0 15px #cc00ccdd;
 }
+.duelo-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  border-radius: 12px;
+  
+}
+
+.duelo-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.duelo-carousel-item {
+  min-width: 100%;
+}
+
+.duelo-carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+}
+
+.duelo-carousel-item img {
+  width: auto;
+  max-width: 100%;
+  max-height: 300px; /* Ajuste conforme sua preferência */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #ff00ff66;
+}
+
+.duelo-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 0, 255, 0.7);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  z-index: 2;
+  transition: all 0.3s;
+}
+
+.duelo-nav:hover {
+  background-color: #ff00ff;
+}
+
+.duelo-nav.left {
+  left: 10px;
+}
+
+.duelo-nav.right {
+  right: 10px;
+}
+.banner-sorteio {
+  width: 100vw;        /* largura total da viewport */
+  max-width: 100%;
+  text-align: center;
+  padding: 0;          /* tirar padding para não influenciar altura */
+  background: transparent;
+  overflow: hidden;   
+  margin-top: 10px; /* reduz espaço abaixo do banner */
+  padding-bottom: 0;   /* garante que não tenha padding extra */ /* pra evitar scroll horizontal por causa do img */
+}
+
+.banner-sorteio img {
+  width: 100vw;        /* imagem também ocupa toda largura da viewport */
+  height: 100px;        /* define uma altura bem fina, ajusta como quiser */
+  object-fit: cover;   /* mantém proporção, corta o excesso */
+  border-radius: 0;    /* sem bordas arredondadas pra ficar reto */
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+  transition: transform 0.3s ease;
+  display: block;      /* remove espaçamento em linha */
+  margin: 20px auto;      /* centraliza, só por segurança */
+}
+
+.banner-sorteio img:hover {
+  transform: scale(1.02);
+}
   </style>
 </head>
 <body>
@@ -995,6 +1083,8 @@ a.botao-inscrever:hover, .equipe:hover {
       <li><a href="#programacao">Programação</a></li>
       <li><a href="#sobre">Festival NerdCon</a></li>
       <li><a href="expositores.html">Expositores</a></li>
+      <li><a href="cosplay.html">Concurso Cosplay</a></li>
+
       <li class="submenu">
         <a href="#">Atrações <i class="fas fa-caret-down"></i></a>
         <ul class="dropdown">
@@ -1009,11 +1099,10 @@ a.botao-inscrever:hover, .equipe:hover {
   </div>
 </nav>
 
-  <div class="banner">
-    <div class="bannerinscrições">
-      <p><strong>p</p></strong>
-    </div>
-  </div>
+  <section class="banner-sorteio">
+  <img src="Imagens/ps5.png" alt="Participe do sorteio de um PS5!" />
+</section>
+
 
   <div class="carousel-container">
     <button class="nav left" onclick="prevSlide()">&#10094;</button>
@@ -1037,46 +1126,33 @@ a.botao-inscrever:hover, .equipe:hover {
 </div>
 
 <div class="quem-somos" id="sobre">
-  <section id="sobre">
+  <section>
     <h2>Sobre o Festival NerdCon</h2>
 
-    <p>
-      Como todo bom encontro nerd, esse começou nos fundos da casa de um dos idealizadores com pouco mais que um refrigerante, uma pizza e muita força de vontade.
-      Há mais de 20 anos o mundo geek abriu suas portas para nós, e dele grupos e mais grupos se montaram e se expandiram.
-      Hoje posso afirmar que cada um deles carrega consigo um universo maior do que jamais poderíamos sonhar.
-    </p>
+    <p>Como todo bom encontro nerd, esse começou nos fundos da casa de um dos idealizadores com pouco mais que um refrigerante, uma pizza e muita força de vontade.</p>
+
+    <p>Há mais de 20 anos o mundo geek abriu suas portas para nós, e dele grupos e mais grupos se montaram e se expandiram. Hoje posso afirmar que cada um deles carrega consigo um universo maior do que jamais poderíamos sonhar.</p>
+
+    <p>Essa ideia já passou por diversos lugares, por diversas versões, até chegarmos onde estamos hoje. Afinal, quem faz parte dessas comunidades sabe o quanto cada uma delas brilha com cada novo jogador, cada novo fã.</p>
+
+    <p>Mas todos nós sabemos o quão difícil é tirar uma proposta dessa do papel, afinal nenhum de nós tem tantos braços pra abraçar a todos. Mas quando a esperança parecia perdida, novos heróis apareceram pra salvar nosso rumo — e eles não usavam capa ou tinham super poderes.</p>
+
+    <p>Eles acreditaram que a nossa gente precisava de voz e de espaço, e nos forneceram isso.</p>
 
     <p>
-      Essa ideia já passou por diversos lugares, por diversas versões, até chegarmos onde estamos hoje.
-      Afinal, quem faz parte dessas comunidades sabe o quanto cada uma delas brilha com cada novo jogador, cada novo fã.
+      Quando <strong><a href="https://www.instagram.com/fabiosantana_sonhador?utm_source=ig_web_button_share_sheet&igsh=bnNxcG1sYzR4cGtl" target="_blank">Fábio Santana</a></strong> nos pediu "Me explica mais sobre esse universo".</p>
+
+      <p>Quando a <strong><a href="https://www.instagram.com/cultura.itapecerica?utm_source=ig_web_button_share_sheet&igsh=c3lvMmlmZTBudnRi" target="_blank">Secretaria de Cultura</a></strong> nos pediu para trazermos essa acessibilidade ao povo.</p>
+      <p>Quando o <strong><a href="https://www.facebook.com/tudonossosim/?locale=pt_BR" target="_blank">Espaço É Tudo Nosso</a></strong> nos forneceu os braços que não tínhamos para abraçar, deles o projeto saiu do papel e agora se torna nossa realidade.
     </p>
 
-    <p>
-      Mas todos nós sabemos o quão difícil é tirar uma proposta dessa do papel, afinal nenhum de nós tem tantos braços pra abraçar a todos.
-      Mas quando a esperança parecia perdida, novos heróis apareceram pra salvar nosso rumo — e eles não usavam capa ou tinham super poderes.
-      Eles acreditaram que a nossa gente precisava de voz e de espaço, e nos forneceram isso.
-    </p>
-
-    <p>
-      Quando <strong><a href="https://www.instagram.com/fabiosantana_sonhador?utm_source=ig_web_button_share_sheet&igsh=bnNxcG1sYzR4cGtl" target="_blank">Fábio Santana</a></strong> nos pediu "Me explica mais sobre esse universo",<br>
-      quando a <strong><a href="https://www.instagram.com/cultura.itapecerica?utm_source=ig_web_button_share_sheet&igsh=c3lvMmlmZTBudnRi" target="_blank">Secretaria de Cultura</a></strong> nos pediu para trazermos essa acessibilidade ao povo,<br>
-      e quando o <strong><a href="https://www.facebook.com/tudonossosim/?locale=pt_BR" target="_blank">Espaço É Tudo Nosso</a></strong> nos forneceu os braços que não tínhamos para abraçar,<br>
-      deles o projeto saiu do papel e agora se torna nossa realidade.
-    </p>
-
-    <p>
-      A <strong>NerdCon</strong> nasce assim: de amigos apaixonados pela cultura nerd, com o suporte de parceiros dispostos a abrir espaço para essa comunidade continuar crescendo e brilhando.
-    </p>
-  </section>
-
-  </section>
-
-    <h1>Role Iniciativa!</h1>
-    <a href="inscrição.html" class="botao-inscrever">Inscreva-se agora</a>
+    <p>O <strong>Festival NerdCon</strong> nasce assim: de amigos apaixonados pela cultura nerd, com o suporte de parceiros dispostos a abrir espaço para essa comunidade continuar crescendo e brilhando.</p>
+    
+    <h1>Se inscreva agora e participe de um sorteio de um Ps5</h1>
+    <a href="inscrição.html" class="botao-inscrever">Inscreva-se</a>
 </div>
-
-
-
+  </section>
+</div>
 
 
   <div class="programacao" id="programacao">
@@ -1145,7 +1221,7 @@ Ou para os itinerantes, que pisaram nesse reino extraordinário pela primeira 
 
   <div class="atracao">
     <figure class="atracao-img">
-      <img src="imagens/boardgames.png" alt="Jogos de Tabuleiro">
+      <img src="Imagens/boardgames2.jpg" alt="Jogos de Tabuleiro">
       <figcaption>Board Games</figcaption>
     </figure>
     <div class="atracao-texto">
@@ -1154,26 +1230,37 @@ Ou para os itinerantes, que pisaram nesse reino extraordinário pela primeira 
     </div>
   </div>
 
-  <div class="atracao">
-    <figure class="atracao-img">
-      <img src="imagens/batalha.jpg" alt="Batalha Campal">
-      <figcaption>Batalha Campal</figcaption>
-    </figure>
-    <div class="atracao-texto">
-      <h3><i class="fas fa-shield-alt"></i> Batalha Campal</h3>
-      <p>Prepare-se para a ação! Em um ambiente seguro, com espadas de espuma e regras claras, os participantes entram em combate em duelos ou batalhas em equipe. Diversão, adrenalina e muita energia esperam por você!</p>
+<div class="atracao duelo-claves">
+  <div class="duelo-carousel-container">
+    <button class="duelo-nav left" onclick="prevClaves()">&#10094;</button>
+    <div class="duelo-carousel-track" id="dueloCarousel">
+      <div class="duelo-carousel-item"><img src="Imagens/claves1.jpg" alt="Duelo 1"></div>
+      <div class="duelo-carousel-item"><img src="Imagens/claves2.jpg" alt="Duelo 2"></div>
+      <div class="duelo-carousel-item"><img src="Imagens/claves3.jpg" alt="Duelo 3"></div>
+      <div class="duelo-carousel-item"><img src="Imagens/claves4.jpg" alt="Duelo 4"></div>
+      <div class="duelo-carousel-item"><img src="Imagens/claves5.jpg" alt="Duelo 5"></div>
+      <div class="duelo-carousel-item"><img src="Imagens/claves6.jpg" alt="Duelo 6"></div>
+      <div class="duelo-carousel-item"><img src="Imagens/claves7.jpg" alt="Duelo 7"></div>
     </div>
+    <button class="duelo-nav right" onclick="nextClaves()">&#10095;</button>
   </div>
+
+  <div class="atracao-texto">
+    <h3><i class="fas fa-crossed-swords"></i> Duelo de Claves</h3>
+    <p>Entre no campo de batalha com sua clave de espuma e desafie outros participantes em duelos cheios de estratégia e diversão. Vença com honra e torne-se o campeão do evento!</p>
+  </div>
+</div>
+
 
 <div class="atracao">
   <figure class="atracao-img">
-    <img src="Imagens/Prancheta_24x.png" alt="Concurso de Cosplay">
+    <img src="Imagens/cosplay.png" alt="Concurso de Cosplay">
     <figcaption>Concurso de Cosplay</figcaption>
   </figure>
   <div class="atracao-texto">
     <h3><i class="fas fa-user-ninja"></i> Concurso de Cosplay</h3>
     <p>Mostre todo seu talento no palco! Participe do nosso concurso de cosplay com sua fantasia de personagem favorita. Valorizamos criatividade, caracterização e performance. Venha brilhar com a sua paixão pela cultura pop!</p>
-    <button class="btn-inscreva-se">Inscreva-se</button>
+    <button class="btn-inscreva-se"> <a href="cosplay.html">Inscreva-se</a></button>
   </div>
 </div>
 </section>
@@ -1281,6 +1368,29 @@ Ou para os itinerantes, que pisaram nesse reino extraordinário pela primeira 
   function gtag(){ dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', 'G-WRVYEXMKPT');
+</script>
+<script>
+  let currentClaves = 0;
+
+  function updateClavesCarousel() {
+    const track = document.getElementById("dueloCarousel");
+    const width = track.clientWidth;
+    track.style.transform = `translateX(-${currentClaves * width}px)`;
+  }
+
+  function prevClaves() {
+    const total = document.querySelectorAll(".duelo-carousel-item").length;
+    currentClaves = (currentClaves - 1 + total) % total;
+    updateClavesCarousel();
+  }
+
+  function nextClaves() {
+    const total = document.querySelectorAll(".duelo-carousel-item").length;
+    currentClaves = (currentClaves + 1) % total;
+    updateClavesCarousel();
+  }
+
+  window.addEventListener("resize", updateClavesCarousel);
 </script>
 </body>
 </html>

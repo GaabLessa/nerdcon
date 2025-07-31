@@ -19,40 +19,56 @@
 
 body {
   font-family: 'Oxanium', cursive;
-  margin: 0;
-  padding: 0 20px;
   background-image: url("Imagens/cosplay.png");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #ffffff;
+  padding: 20px;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column; /* muda para coluna */
-  align-items: center;
 }
 
 /* FORMULÁRIO */
 form {
-  background: rgba(20, 0, 40, 0.85);
+  background: rgba(0, 0, 0, 0.85);
   border: 2px solid #a200ff;
   border-radius: 20px;
   box-shadow: 0 0 15px #a200ff66;
-  padding: 30px;
-  width: 100%;
-  max-width: 600px;
-  backdrop-filter: blur(8px);
+  padding: 40px;
+  max-width: 700px;
+  margin: 30px auto;
+  backdrop-filter: blur(10px);
+  animation: surgirFormulario 1s ease forwards;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+@keyframes surgirFormulario {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* TÍTULO */
 form h2 {
   text-align: center;
   margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 30px;
   color: #fff;
-  font-weight: 600;
-  font-size: 28px;
-  text-shadow: 0 0 8px #a200ff;
+  text-shadow: 0 0 8px #ff00ff;
+  animation: neonGlow 1s infinite alternate;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #a200ff;
+  }
+  to {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #a200ff;
+  }
 }
 
 /* CAMPOS */
@@ -67,14 +83,19 @@ input,
 select,
 textarea {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   margin-bottom: 20px;
   border-radius: 10px;
-  border: 1px solid #a200ff80;
+  border: 2px solid #a200ff;
   background: #1c012f;
   color: #fff;
-  outline: none;
   transition: 0.3s;
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: #f5f5f5;
+  opacity: 0.9;
 }
 
 input:focus,
@@ -82,31 +103,12 @@ select:focus,
 textarea:focus {
   border-color: #ff00cc;
   box-shadow: 0 0 10px #ff00cc77;
+  outline: none;
 }
 
-/* BOTÃO */
-button,
-input[type="submit"] {
-  background: linear-gradient(90deg, #a200ff, #ff00cc);
-  color: #fff;
-  font-weight: 600;
-  padding: 14px 30px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 0 12px #a200ff88;
-  font-size: 16px;
-  text-transform: uppercase;
-}
 
-button:hover,
-input[type="submit"]:hover {
-  background: linear-gradient(90deg, #ff00cc, #a200ff);
-  box-shadow: 0 0 18px #ff00ccaa;
-}
 
-/* MENSAGEM DE CONFIRMAÇÃO */
+/* CONFIRMAÇÃO */
 .confirmacao {
   background-color: #00ff88;
   color: #000;
@@ -130,27 +132,7 @@ input[type="submit"]:hover {
   text-align: center;
 }
 
-/* RESPONSIVO */
-@media screen and (max-width: 600px) {
-  form {
-    padding: 20px;
-  }
-
-  form h2 {
-    font-size: 22px;
-  }
-
-  input,
-  select,
-  textarea {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 14px;
-    padding: 12px 24px;
-  }
-}
+/* POPUP NEON */
 .popup-neon {
   position: fixed;
   top: 50%;
@@ -178,6 +160,82 @@ input[type="submit"]:hover {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 600px) {
+  form {
+    padding: 20px;
+  }
+
+  form h2 {
+    font-size: 22px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 14px;
+  }
+
+  input[type="submit"],
+  button {
+    font-size: 14px;
+    padding: 12px 24px;
+    width: 100%;
+  }
+
+  .popup-neon {
+    font-size: 1rem;
+    padding: 20px 25px;
+  }
+}
+/* BOTÃO ENVIAR */
+input[type="submit"],
+button {
+  background: linear-gradient(90deg, #a200ff, #ff00cc);
+  color: #fff;
+  padding: 14px 30px;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px #ff00ff88;
+  transition: 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background: linear-gradient(90deg, #ff00cc, #a200ff);
+  box-shadow: 0 0 20px #ff00ffcc;
+  transform: scale(1.05);
+}
+
+
+/* BOTÃO VOLTAR - VISUAL DIFERENTE */
+.botao-voltar {
+  display: inline-block;
+  background: transparent;
+  color: #ff00ff;
+  padding: 12px 26px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #ff00ff;
+  border-radius: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Oxanium', cursive;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px #ff00ff55;
+}
+
+.botao-voltar:hover {
+  background: #ff00cc22;
+  color: #fff;
+  box-shadow: 0 0 15px #ff00ffcc;
+  transform: scale(1.05);
 }
 
   </style>
@@ -220,6 +278,10 @@ input[type="submit"]:hover {
 
     <button type="submit">Enviar Inscrição</button>
     <p id="mensagem-envio"></p>
+    <br>
+    <div style="text-align: center; margin-top: 30px;">
+  <a href="index.html" class="botao-voltar">Voltar à página principal</a>
+</div>
   </form>
 
 <!-- POPUP -->
@@ -228,9 +290,6 @@ input[type="submit"]:hover {
   Redirecionando para a página inicial...
 </div>
 
-<div style="text-align: center; margin-top: 30px;">
-  <a href="index.html" class="botao-voltar">Voltar à página principal</a>
-</div>
 
   <script>
     const form = document.getElementById('formulario-cosplay');
