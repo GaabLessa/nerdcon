@@ -123,6 +123,7 @@ nav {
 }
 
 
+
 /* Menu */
 .menu {
   list-style: none;
@@ -219,6 +220,7 @@ nav {
   background-color: #d303c8;
   color: #fff;
 }
+
 
 /* Mobile toggle */
 .menu-toggle {
@@ -968,6 +970,7 @@ a.botao-inscrever:hover, .equipe:hover {
   min-width: 100%;
 }
 
+
 .duelo-carousel-item img {
   width: auto;
   max-width: 100%;
@@ -1028,6 +1031,7 @@ a.botao-inscrever:hover, .equipe:hover {
 .banner-sorteio img:hover {
   transform: scale(1.02);
 }
+
   </style>
 </head>
 <body>
@@ -1039,7 +1043,7 @@ a.botao-inscrever:hover, .equipe:hover {
     <!-- Logo da esquerda com texto -->
     <div class="top-bar-logo">
       <p class="apoio-label">Apoio:</p>
-      <a href="https://www.facebook.com/tudonossosim/?locale=pt_BR" target="_blank">
+      <a href="https://www.instagram.com/espacoetudonosso" target="_blank">
         <img src="Imagens/imagensotimizadas/272039117_1860238454164774_9199699531486288273_n.webp" alt="Logo É Tudo Nosso">
         <p class="logo-label">É Tudo Nosso</p>
       </a>
@@ -1047,7 +1051,7 @@ a.botao-inscrever:hover, .equipe:hover {
 
     <!-- Logo do meio (principal, sem texto extra) -->
     <div class="center-logo">
-      <a href="#" target="_blank">
+      <a href="https://www.instagram.com/festival.nerdcon?igsh=MTdhM2huY2tvbmZlNA%3D%3D" target="_blank">
         <img src="Imagens/nerdcon.png" alt="Logo Central">
         <p class="logo-label">Festival Nerdcon</p>
       </a>
@@ -1070,7 +1074,7 @@ a.botao-inscrever:hover, .equipe:hover {
   
   <div class="nav-container">
     <div class="logo-esquerda">
-      <img src="Imagens/Prancheta_1_copiaFINAL_SITE teste.png" alt="Logo do Festival NerdCon" class="logo-nerdcon">
+      <a href="index.html"><img src="Imagens/Prancheta_1_copiaFINAL_SITE teste.png" alt="Logo do Festival NerdCon" class="logo-nerdcon"></a>
     
     </div>
 
@@ -1088,11 +1092,11 @@ a.botao-inscrever:hover, .equipe:hover {
       <li class="submenu">
         <a href="#">Atrações <i class="fas fa-caret-down"></i></a>
         <ul class="dropdown">
-          <li><a href="inscrição.html">RPG</a></li>
-          <li><a href="#programacao">Cosplays</a></li>
-          <li><a href="#sobre">Cardgame</a></li>
-          <li><a href="expositores.html">BoardGames</a></li>
-          <li><a href="batalha.html">Batalha Campal</a></li>
+          <li><a href="#rpg">RPG</a></li>
+          <li><a href="cosplay.html">Cosplays</a></li>
+          <li><a href="#cardgames">Cardgame</a></li>
+          <li><a href="#boardgames">BoardGames</a></li>
+          <li><a href="#duelodeclaves"> Duelo de Claves</a></li>
         </ul>
       </li>
     </ul>
@@ -1189,7 +1193,7 @@ a.botao-inscrever:hover, .equipe:hover {
 <section class="atracoes-explicacao" id="atracoes">
   <h2>Conheça Nossas Atrações</h2>
 
-  <div class="atracao">
+  <div class="atracao" id="rpg">
     <figure class="atracao-img">
       <img src="Imagens/rpg-de-mesa.jpg" alt="RPG de Mesa">
       <figcaption>RPG de Mesa</figcaption>
@@ -1208,20 +1212,20 @@ Ou para os itinerantes, que pisaram nesse reino extraordinário pela primeira 
     </div>
   </div>
 
-<div class="atracao">
-  <div class="atracao-img-cardgames">
+<div class="atracao" >
+  <div class="atracao-img-cardgames" id="">
   <img src="Imagens/magic.png" alt="Magic: The Gathering">
   <img src="Imagens/pokemon.png" alt="Pokémon TCG">
   <img src="Imagens/yugioh.png" alt="Yu-Gi-Oh!">
 </div>
-  <div class="atracao-texto">
+  <div class="atracao-texto"id="cardgames">
     <h3><i class="fas fa-clone"></i> Card Games</h3>
     <p>Desafie seus amigos e teste suas habilidades em clássicos como Magic: The Gathering, Pokémon TCG e Yu-Gi-Oh!. Estratégia, combos e muita emoção em partidas que exigem raciocínio rápido e domínio das cartas!</p>
   </div>
 </div>
 
 
-  <div class="atracao">
+  <div class="atracao" id="boardgames">
     <figure class="atracao-img">
       <img src="Imagens/boardgames2.jpg" alt="Jogos de Tabuleiro">
       <figcaption>Board Games</figcaption>
@@ -1232,7 +1236,7 @@ Ou para os itinerantes, que pisaram nesse reino extraordinário pela primeira 
     </div>
   </div>
 
-<div class="atracao duelo-claves">
+<div class="atracao duelo-claves" id="duelodeclaves">
   <div class="duelo-carousel-container">
     <button class="duelo-nav left" onclick="prevClaves()">&#10094;</button>
     <div class="duelo-carousel-track" id="dueloCarousel">
@@ -1308,7 +1312,7 @@ Ou para os itinerantes, que pisaram nesse reino extraordinário pela primeira 
   <div class="footer-conteudo">
     <p>&copy; Festival Nerdcon. Todos os direitos reservados</p>
     <div class="redes-sociais">
-      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.instagram.com/festival.nerdcon?igsh=MTdhM2huY2tvbmZlNA%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
   </div>

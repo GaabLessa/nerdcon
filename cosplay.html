@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inscrição Concurso Cosplay - NerdCon</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="Imagens/nerdcon_favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;800&display=swap');
 
@@ -237,7 +237,53 @@ button:hover {
   box-shadow: 0 0 15px #ff00ffcc;
   transform: scale(1.05);
 }
+.footer-completo {
+  position: relative; /* ou fixed se quiser fixar embaixo */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background: rgba(10, 0, 20, 0.9);
+  padding: 10px 20px;
+  color: #fff;
+  text-align: center;
+  border-top: 2px solid #a200ff;
+  box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
+  font-family: 'Oxanium', cursive;
+}
 
+.footer-completo .footer-conteudo {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-completo p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 6px #ff00ff;
+}
+      .footer-completo {
+        padding: 30px 15px;
+      }
+
+      .redes-sociais a {
+        font-size: 24px;
+        margin: 0 10px;
+      }
+    
+.redes-sociais a {
+    color: #ff00ff;
+    font-size: 28px;
+    margin: 0 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.redes-sociais a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+    text-shadow: 0 0 10px #ff00ff;
+}
   </style>
 </head>
 <body>
@@ -290,6 +336,15 @@ button:hover {
   Redirecionando para a página inicial...
 </div>
 
+<footer class="footer-completo">
+  <div class="footer-conteudo">
+    <p>&copy; Festival Nerdcon. Todos os direitos reservados</p>
+    <div class="redes-sociais">
+      <a href="https://www.instagram.com/festival.nerdcon?igsh=MTdhM2huY2tvbmZlNA%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+</footer>
 
   <script>
     const form = document.getElementById('formulario-cosplay');
