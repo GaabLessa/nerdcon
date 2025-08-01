@@ -1032,6 +1032,26 @@ a.botao-inscrever:hover, .equipe:hover {
   transform: scale(1.02);
 }
 
+.carrossel {
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.carrossel .slides {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+}
+
+.carrossel .slide {
+  flex: 0 0 100%; /* Cada slide ocupa 100% da largura visível */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+}
   </style>
 </head>
 <body>
