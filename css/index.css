@@ -386,12 +386,6 @@ a:hover {
     color: rgb(255, 255, 255);
 }
 
-/* button:hover {
-    background-color: rgb(172, 28, 255);
-    border-radius: 10px;
-    cursor: pointer;
-} */
-
 a.botao-inscrever, .equipe {
     background: linear-gradient(90deg, #4a007a, #9d00ff);
     color: #fff;
@@ -799,15 +793,11 @@ html, body {
     overflow-x: hidden;
 }
 
-.carrossel {
+.mainSite {
     position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
 }
 
-.boxPs5 {
+.mainSite .boxPs5 {
     position: absolute;
     background-color: #4a007a;
     z-index: 30;
@@ -815,7 +805,22 @@ html, body {
     left: 10vw;
     padding: 3vh;
     color: #000000;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 1px 31px 0px rgba(184,77,255,0.75);
+}
+
+.mainSite .boxPs5 .titulo {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: #9d00ff;
+}
+
+.mainSite .carrossel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
 }
 
 .slides {
@@ -861,6 +866,29 @@ html, body {
     background: #6b00b3;
     opacity: 70%;
     transition: background 0.1s ease-in;
+}
+
+.button {
+    background-color: #e9ecef ;
+    color: #b84dff ;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Oxanium', cursive;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    border: 2px solid #b84dff ;
+}
+
+.button:hover {
+    background-color: #6b00b3;
 }
 
 /* Coisas que o Gab Adicionou depois */
