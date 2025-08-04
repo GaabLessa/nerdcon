@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inscrição Concurso Cosplay - NerdCon</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="Imagens/nerdcon_favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;800&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oxanium', cursive;
+    margin: 0;
+    padding: 0;
+    background-image: url("Imagens/ps5.png");
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #ffffff;
+}
+
+/* FORMULÁRIO */
+form {
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid #a200ff;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #a200ff66;
+  padding: 40px;
+  max-width: 700px;
+  margin: 30px auto;
+  backdrop-filter: blur(10px);
+  animation: surgirFormulario 1s ease forwards;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+@keyframes surgirFormulario {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TÍTULO */
+form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 0 0 8px #ff00ff;
+  animation: neonGlow 1s infinite alternate;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #a200ff;
+  }
+  to {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #a200ff;
+  }
+}
+
+/* CAMPOS */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #ccc;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid #a200ff;
+  background: #1c012f;
+  color: #fff;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: #f5f5f5;
+  opacity: 0.9;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ff00cc;
+  box-shadow: 0 0 10px #ff00cc77;
+  outline: none;
+}
+
+
+
+/* CONFIRMAÇÃO */
+.confirmacao {
+  background-color: #00ff88;
+  color: #000;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: 0 0 10px #00ff88aa;
+  text-align: center;
+}
+
+/* ERRO */
+.erro {
+  background-color: #ff0044;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: 0 0 10px #ff0044aa;
+  text-align: center;
+}
+
+/* POPUP NEON */
+.popup-neon {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1e0033;
+  color: #fff;
+  padding: 30px 40px;
+  border: 2px solid #a200ff;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #a200ff, 0 0 50px #ff00ff;
+  font-size: 1.2rem;
+  font-family: 'Oxanium', sans-serif;
+  text-align: center;
+  z-index: 9999;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 600px) {
+  form {
+    padding: 20px;
+  }
+
+  form h2 {
+    font-size: 22px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 14px;
+  }
+
+  input[type="submit"],
+  button {
+    font-size: 14px;
+    padding: 12px 24px;
+    width: 100%;
+  }
+
+  .popup-neon {
+    font-size: 1rem;
+    padding: 20px 25px;
+  }
+}
+/* BOTÃO ENVIAR */
+input[type="submit"],
+button {
+  background: linear-gradient(90deg, #a200ff, #ff00cc);
+  color: #fff;
+  padding: 14px 30px;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px #ff00ff88;
+  transition: 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background: linear-gradient(90deg, #ff00cc, #a200ff);
+  box-shadow: 0 0 20px #ff00ffcc;
+  transform: scale(1.05);
+}
+
+
+/* BOTÃO VOLTAR - VISUAL DIFERENTE */
+.botao-voltar {
+  display: inline-block;
+  background: transparent;
+  color: #ff00ff;
+  padding: 12px 26px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #ff00ff;
+  border-radius: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Oxanium', cursive;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px #ff00ff55;
+}
+
+.botao-voltar:hover {
+  background: #ff00cc22;
+  color: #fff;
+  box-shadow: 0 0 15px #ff00ffcc;
+  transform: scale(1.05);
+}
+.footer-completo {
+  position: relative; /* ou fixed se quiser fixar embaixo */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background: rgba(10, 0, 20, 0.9);
+  padding: 10px 20px;
+  color: #fff;
+  text-align: center;
+  border-top: 2px solid #a200ff;
+  box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
+  font-family: 'Oxanium', cursive;
+}
+
+.footer-completo .footer-conteudo {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-completo p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 6px #ff00ff;
+}
+      .footer-completo {
+        padding: 30px 15px;
+      }
+
+      .redes-sociais a {
+        font-size: 24px;
+        margin: 0 10px;
+      }
+    
+.redes-sociais a {
+    color: #ff00ff;
+    font-size: 28px;
+    margin: 0 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.redes-sociais a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+    text-shadow: 0 0 10px #ff00ff;
+}
+  </style>
+</head>
+<body>
+
+  <form id="formulario-cosplay">
+    <label>Nome completo: *</label>
+    <input type="text" name="nome" required placeholder="Ex: Ana Beatriz dos Santos" />
+
+    <label>Apelido artístico (se tiver):</label>
+    <input type="text" name="apelido" placeholder="Ex: Bia-Chan" />
+
+    <label>Data de nascimento: *</label>
+    <input type="date" name="data_nascimento" required />
+
+    <label>E-mail: *</label>
+    <input type="email" name="email" required placeholder="Ex: voce@email.com" />
+
+    <label>Telefone para contato: *</label>
+    <input type="tel" name="telefone" required placeholder="(00) 00000-0000" />
+
+    <label>Nome do personagem: *</label>
+    <input type="text" name="personagem" required placeholder="Ex: Naruto Uzumaki" />
+
+    <label>Origem do personagem (anime, jogo, filme...): *</label>
+    <input type="text" name="origem" required placeholder="Ex: Naruto Shippuden" />
+
+    <label>Descreva seu cosplay (materiais usados, detalhes, etc):</label>
+    <textarea name="descricao_cosplay" rows="4" placeholder="Opcional, mas pode destacar sua criatividade :)"></textarea>
+
+    <label>Como ficou sabendo do concurso?</label>
+    <input type="text" name="como_ficou_sabendo" placeholder="Ex: Instagram da NerdCon, amigos, site..." />
+
+    <label>Instagram do cosplay:</label>
+    <input type="text" name="instagram_cosplay" placeholder="@seu_cosplay" />
+
+    <label>Perfil pessoal (Instagram ou outro):</label>
+    <input type="text" name="perfil_pessoal" placeholder="@seuperfil" />
+
+    <button type="submit">Enviar Inscrição</button>
+    <p id="mensagem-envio"></p>
+    <br>
+    <div style="text-align: center; margin-top: 30px;">
+  <a href="index.html" class="botao-voltar">Voltar à página principal</a>
+</div>
+  </form>
+
+<!-- POPUP -->
+<div id="popup-sucesso" class="popup-neon" style="display: none;">
+  Inscrição enviada com sucesso! 💜<br/>
+  Redirecionando para a página inicial...
+</div>
+
+<footer class="footer-completo">
+  <div class="footer-conteudo">
+    <p>&copy; Festival Nerdcon. Todos os direitos reservados</p>
+    <div class="redes-sociais">
+      <a href="https://www.instagram.com/festival.nerdcon?igsh=MTdhM2huY2tvbmZlNA%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    const form = document.getElementById('formulario-cosplay');
+    const mensagem = document.getElementById('mensagem-envio');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      mensagem.style.color = "#cccccc";
+      mensagem.textContent = 'Enviando...';
+
+      const dados = new FormData(form);
+
+      fetch("https://script.google.com/macros/s/AKfycbyicPseverPK6Yq-6ifeMe4493_kaTZTqHycBlWCBQ2wgk8E7rEZDLXCIKPbQRK9VkTpA/exec", {
+        method: "POST",
+        body: dados
+      })
+      .then(res => res.text())
+      .then(msg => {
+        mensagem.style.color = "#00ff99";
+        mensagem.textContent = msg;
+        form.reset();
+      })
+      .catch(err => {
+        mensagem.style.color = "#ff5555";
+        mensagem.textContent = "Erro ao enviar. Tente novamente.";
+      });
+    });
+  </script>
+  <script>
+  document.getElementById('formulario-cosplay').addEventListener('submit', function (e) {
+    e.preventDefault(); // Impede o envio tradicional do formulário
+
+    // Aqui você coloca a lógica de envio para a planilha (via fetch ou google script)
+    // Depois do envio com sucesso, exibe o popup:
+
+    document.getElementById('popup-sucesso').style.display = 'block';
+
+    // Redireciona após 4 segundos
+    setTimeout(function () {
+      window.location.href = 'index.html';
+    }, 4000);
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WRVYEXMKPT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-WRVYEXMKPT');
+</script>
+</body>
+</html>
