@@ -431,13 +431,10 @@ a.botao-inscrever:hover, .equipe:hover {
 }
 
 .footer-completo {
-    margin-top: 60px;
     background: rgba(10, 0, 20, 0.9);
-    padding: 10px 20px; /* Reduzi de 40px para 20px */
+    padding: 20px 20px; /* Reduzi de 40px para 20px */
     color: #fff;
     text-align: center;
-    border: 2px solid #a200ff;
-    box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
     font-family: 'Oxanium', cursive;
 }
 
@@ -449,11 +446,10 @@ a.botao-inscrever:hover, .equipe:hover {
 .footer-completo p {
     font-size: 18px;
     margin-bottom: 20px;
-    text-shadow: 0 0 6px #ff00ff;
 }
 
 .redes-sociais a {
-    color: #ff00ff;
+    color: #b84dff;
     font-size: 28px;
     margin: 0 15px;
     transition: transform 0.3s, color 0.3s;
@@ -462,7 +458,7 @@ a.botao-inscrever:hover, .equipe:hover {
 .redes-sociais a:hover {
     color: #ffffff;
     transform: scale(1.2);
-    text-shadow: 0 0 10px #ff00ff;
+    
 }
 
 .detalhes-card {
@@ -800,19 +796,33 @@ html, body {
 .mainSite .boxPs5 {
     position: absolute;
     background-color: #4a007a;
-    z-index: 30;
-    top: 30vh;
-    left: 10vw;
+    z-index: 10;
     padding: 3vh;
-    color: #000000;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0px 1px 31px 0px rgba(184,77,255,0.75);
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.705);
+    top: 0;
+    left: 0vw;
+    width: 100%;
+    height: 100vh;
+
 }
 
-.mainSite .boxPs5 .titulo {
-    font-size: 1.5em;
+.mainSite .boxPs5 .conteudops5 p.conteudo{
+     color: white!important;
+     text-shadow: 0 0 5px #00000088;
+     font-size: 3.0em;
+}
+.mainSite .boxPs5 .conteudops5 p.subtitulo{
+    color: white;
+     text-shadow: 0 0 5px #00000088;
+     font-size: 3.0em;
+}
+.mainSite .boxPs5 .conteudops5 .titulo {
+    font-size: 4.0em;
     font-weight: 900;
     color: #9d00ff;
+    text-shadow: 0 0 5px #000000fd;
+    left: 0vw;
 }
 
 .mainSite .carrossel {
@@ -821,6 +831,15 @@ html, body {
     height: 100vh;
     overflow: hidden;
     box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
+}
+.mainSite .boxPs5 .conteudops5 {
+    position: absolute;
+    color: #ffffff;
+    top: 350px;
+    width: 100%;
+    left: 12vw;
+    text-align: left
+
 }
 
 .slides {
@@ -870,7 +889,7 @@ html, body {
 
 .button {
     background-color: #e9ecef ;
-    color: #b84dff ;
+    color: #b84dff !important;
     padding: 10px 40px;
     font-size: 16px;
     font-weight: 700;
@@ -886,14 +905,22 @@ html, body {
     margin-top: 10px;
     border: 2px solid #b84dff ;
 }
+.button a {
+    color: #b84dff;
+}
 
 .button:hover {
     background-color: #6b00b3;
 }
+.button:hover a{
+    color: #ffffff;
+}
+
 
 /* Coisas que o Gab Adicionou depois */
 
 .atracoes-explicacao {
+
   padding: 7vh 4vh 0;
     position: relative;
     width: 100%;
@@ -907,6 +934,7 @@ html, body {
 }
 
 .atracao {
+
   display: flex;
   height: 40vh;
   gap: 30px;
