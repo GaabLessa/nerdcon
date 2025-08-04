@@ -1,117 +1,211 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscrição</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
+    <title>Inscrições</title>
+</head>
+    <link rel="icon" href="Imagens/nerdcon_favicon.ico" type="image/x-icon">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
 
-        body {
-            
-            font-family: 'Oxanium', cursive;
-            margin: 0;
-            padding: 0;
-            background-image: url("Imagens/imagensotimizadas/meeple.webp");
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed;
-            color: #ffffff;
-        }
+body {
+    font-family: 'Oxanium', cursive;
+    margin: 0;
+    padding: 0;
+    background-image: url("Imagens/ps5.png");
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #ffffff;
+}
 
+/* Ajuste para telas pequenas (evita zoom exagerado) */
+@media (max-width: 768px) {
+    body {
+        background-position: center center;
+    }
+}
+    .form-container {
+       /* quadro do formulario, se quiser adicionar so usar (backgroud color)*/
+        background: rgba(0, 0, 0, 0.8);
+        padding: 50px;
+        margin: 30px auto;
+        width: 90%;
+        max-width: 700px;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(162, 0, 255, 0.5);
+        border: 2px solid #a200ff;
+    }
 
-        .form-container {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 66px;
-            margin: 50px auto;
-            width: 200;
-            max-width: 650px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(163, 4, 168, 0.7);
-            text-align: left;
-            border: 2px solid #50007e;
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
 
-        }
-        
-        
+    label {
+        font-weight: bold;
+    }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+    input, textarea {
+        background: #6b6b6b;
+        color: white;
+        border: 2px solid #a200ff;
+        padding: 12px;
+        width: auto;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+   input::placeholder {
+  color: #fffefe; /* ou qualquer cor que quiser */
+  opacity: 1;  /* opcional, deixa a cor mais forte */
+}
 
-        label {
-            font-weight: bold;
-        }
+    textarea {
+        resize: vertical;
+    }
 
-        input, textarea {
-            background: #222;
-            color: white;
-            border: 2px solid #50007e;
-            padding: 10px;
-            border-radius: 10px;
-            font-size: 16px;
-            width: 200% auto
-            
-        }
+    input[type="submit"] {
+        flex: 1 1 calc(33.333% - 10px);
+        padding: 10px;
+        background-color:rgb(250, 0, 237);
+        border: 2px solid #a200ff;
+        border-radius: 10px;
+        color: #ffffff;
+        cursor: pointer;
+        text-align: center;
+        transition: 0.3s;;
+    }
 
-        input[type="submit"] {
-            background: #000000;
-            color: white;
-            border: 1px color(srgb red green blue); 
-            padding: 15px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+    input[type="submit"]:hover {
+        background:#d400d4; 
+        transform: scale(1.05);
+    }
 
-        input[type="submit"]:hover {
-            background: #880794;
-        }
-        .checkbox-group label {
+    .checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+.checkbox-group input[type="checkbox"],
+.checkbox-group.coluna-area input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+    .checkbox-group.coluna-area label {
+        flex: 1 1 calc(33.333% - 10px);
+        padding: 10px;
+        background-color: #1a1a1a;
+        border: 2px solid #a200ff;
+        border-radius: 10px;
+        color: #ffffff;
+        cursor: pointer;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .checkbox-group.coluna-area label:hover {
+        background-color: #7404be;
+        color: #fff;
+    }
+
+    .checkbox-group.coluna-area input[type="checkbox"]:checked + label {
+        background-color: #ff00ff;
+        color: #000;
+        font-weight: bold;
+        border-color: #ff00ff;
+    }
+
+    .checkbox-group label {
         padding: 10px 16px;
         background-color: #1a1a1a;
-        border: 2px solid #50007e;
+        border: 2px solid #a200ff;
         border-radius: 10px;
         color: #ffffff;
         cursor: pointer;
         transition: all 0.3s ease;
         user-select: none;
-        
-        }
-    
+    }
+
+    .checkbox-group label:hover {
+        background-color: #7404be;
+        color: #fff;
+    }
+
     .checkbox-group input[type="checkbox"]:checked + label {
         background-color: #ff00ff;
         color: #000;
         font-weight: bold;
         border-color: #ff00ff;
     }
-    
-    .checkbox-group input[type="checkbox"] {
-        display: none;
+
+    button a {
+        text-decoration: none;
+        color: white;
     }
-    a.botao-voltar {
-    background: #310936;
+
+    button {
+        margin-top: 20px;
+        background-color: #a200ff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #6a00ff;
+    }
+    .galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #0a0a0a;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #a200ff;
+    
+}
+
+.galeria img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #a200ff;
+}
+
+a.botao-voltar {
+    background: #ff00ff;
     color: white;
     padding: 15px 25px;
     font-size: 18px;
-    border: 2px solid #50007e;
+    border-radius: 8px;
     text-decoration: none;
-    display: inline-block;
     transition: background 0.3s, transform 0.2s;
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    border-radius: 10px;
 }
-
 
 a.botao-voltar:hover {
     background: #d400d4;
     transform: scale(1.05);
 }
+.equipe {
+      background: rgba(0, 0, 0, 0.8);
+      margin: 40px auto 20px;
+      padding: 40px;
+      width: 90%;
+      max-width: 700px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(162, 0, 255, 0.6);
+      border: 2px solid #a200ff;
+      text-align: center;
+    }
 .footer-completo {
     margin-top: 60px;
     background: rgba(10, 0, 20, 0.9);
@@ -119,7 +213,7 @@ a.botao-voltar:hover {
     color: #fff;
     text-align: center;
     border-top: 2px solid #a200ff;
-    box-shadow: 0 -4px 15px #ff00ff;
+    box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
     font-family: 'Oxanium', cursive;
 }
 
@@ -133,15 +227,7 @@ a.botao-voltar:hover {
     margin-bottom: 20px;
     text-shadow: 0 0 6px #ff00ff;
 }
-      .footer-completo {
-        padding: 30px 15px;
-      }
 
-      .redes-sociais a {
-        font-size: 24px;
-        margin: 0 10px;
-      }
-    
 .redes-sociais a {
     color: #ff00ff;
     font-size: 28px;
@@ -159,76 +245,388 @@ a.botao-voltar:hover {
   .equipe {
     padding: 20px;
   }
-}    
-    </style>
-</head>
-<body>
-    
-    <section class="form-container">
-        <h2>NerdCon</h2>
-        <h3>Inscreva-se</h3>
-        <form action="https://script.google.com/macros/s/AKfycbwdRhp5xzZCM0dIzq3eO6QpYZXvtOYxjqwzbMvF-Ix9myiCX-iFEBYw9XBOX1-vZPRM/exec" method="POST" onsubmit="gerarNumeroInscricao()">
-            <label for="nome">Nome completo: *</label>
-            <input type="text" id="nome" name="nome" required>
 
-            <label for="email">E-mail: *</label>
-            <input type="email" id="email" name="email" required>
+  input[type="submit"],
+  a.botao-voltar,
+  button {
+    width: 100%;
+    font-size: 16px;
+  }
 
-            <label for="telefone">Telefone: *</label>
-            <input type="tel" id="telefone" name="telefone" required placeholder="(11) 91234-5678">
+  .checkbox-group.coluna-area label {
+    flex: 1 1 100%;
+  }
 
-            </label>
-            
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem"></textarea>
+  .galeria img {
+    width: 100px;
+  }
 
-            <input type="hidden" id="numero_inscricao" name="numero_inscricao">
-            <input type="hidden" name="_subject" value="Nova inscrição no Evento!">
-            <input type="hidden" name="_autoresponse" id="autoresponse">
-            <input type="hidden" name="_template" value="box">
-            <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+  .footer-completo {
+    padding: 20px 10px;
+  }
 
-            <input type="submit" value="Enviar Inscrição">
-        </form>
-        <a href="index.html" class="botao-voltar"> Voltar à página principal</a>
-    </section>
+  .footer-completo p {
+    font-size: 14px;
+  }
+
+  .redes-sociais a {
+    font-size: 22px;
+    margin: 0 10px;
+  }
+
+  .form-container h2,
+  .equipe h1 {
+    font-size: 22px;
+  }
+
+  .equipe p {
+    font-size: 16px;
+  }
+}
+
+/* 2. Fade-in na galeria de imagens */
+.galeria img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 0.8s ease forwards;
+  transition: transform 0.3s ease; /* Para o zoom hover */
+}
+
+.galeria img:nth-child(1) { animation-delay: 0.2s; }
+.galeria img:nth-child(2) { animation-delay: 0.4s; }
+.galeria img:nth-child(3) { animation-delay: 0.6s; }
+.galeria img:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 4. Zoom ao passar o mouse nas imagens da galeria */
+.galeria img:hover {
+  transform: scale(1.1);
+}
+
+/* 3. Texto piscando neon */
+.equipe h1 {
+  animation: neonGlow 1s infinite alternate;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #a200ff;
+  }
+  to {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #a200ff;
+  }
+}
+
+/* 5. Formulário deslizando de baixo pra cima */
+.form-container {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: surgirFormulario 1s ease forwards;
+}
+
+@keyframes surgirFormulario {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botão para abrir modal, já no estilo do site */
+.btn-regras {
+  background-color: #a200ff;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 700;
+  font-family: 'Oxanium', cursive;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff00ffaa;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-regras:hover {
+  background-color: #7404be;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff00ffcc;
+}
+
+/* Fundo escurecido (overlay) */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(10, 0, 30, 0.9); /* um pouco mais escuro com tom azul-roxo */
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Caixa do modal */
+.modal-content {
+  background-color: #1a0033; /* roxo bem escuro */
+  color: #eee;
+  max-width: 600px;
+  margin: 5% auto;
+  padding: 35px 30px;
+  border-radius: 25px;
+  position: relative;
+  box-shadow:
+    0 0 15px #a200ff88,
+    0 0 40px #ff00ff88;
+  font-family: 'Oxanium', cursive;
+  text-align: left;
+}
+
+/* Botão fechar */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ff00ffdd;
+  transition: color 0.3s ease;
+}
+.modal-close:hover {
+  color: #ffffff;
+}
+
+/* Título */
+.modal-content h2,h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #d3c7d3;
+  text-align: center;
+  text-shadow: 0 0 10px #ff00ffbb;
+}
+
+/* Lista de regras */
+.modal-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+.modal-content li {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 30px;
+  color: #ddd;
+  font-weight: 600;
+}
+.modal-content li::before {
+  content: "⭐";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.3rem;
+  color: #ff00ff;
+  text-shadow: 0 0 8px #ff00ffaa;
+}
+
+.footer-completo {
+  margin-top: 60px;
+  background: rgba(10, 0, 20, 0.9);
+  padding: 10px 20px; /* Reduzi de 40px para 20px */
+  color: #fff;
+  text-align: center;
+  border: 2px solid #a200ff;
+  box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
+  font-family: 'Oxanium', cursive;
+}
+
+    .footer-completo .footer-conteudo {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .footer-completo p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 6px #ff00ff;
+    }
+</style>
+<body> 
+<div class="equipe">
+  <h1>Inscreva-se e participe de um sorteio de um Playstation 5  </h1>
+  <!-- Botão para abrir o modal -->
+  <button class="btn-regras" onclick="document.getElementById('modal-regras').style.display='block'">
+    📜 Ver Regras do Sorteio
+  </button>
+
+<!-- Modal escondido -->
+<div id="modal-regras" class="modal-overlay" style="display:none;">
+  <!-- Caixa do conteúdo -->
+  <div class="modal-content">
+    <span class="modal-close" onclick="document.getElementById('modal-regras').style.display='none'">&times;</span>
+    <h1> Sorteio Playstation 5 </h1>
+    <h2>Regras:</h2>
+    <ul>
+      <li> Você deve estar seguindo nosso perfil no Instagram.</li>
+      <li> Você deve estar seguindo o perfil da pagina é tudo nosso no Instagram</li>
+      <li> Você deve estar seguindo o perfil da pagina da secretaria de culutura no Instagram</li>
+      <li> Voce deve curtir, comentar e repostar a postagem oficial do sorteio </li>
+      <li> O sorteio será realizado no dia <strong>23/08</strong> no proprio evento.</li>
+      <li> O prêmio é intransferível e não pode ser trocado por dinheiro.</li>
+      <li> Você deve estar presencialmente no dia do evento, e no horario do sorteio.</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+</html>
+<section class="form-container">
+  <h2>Inscreva-se Agora</h2>
+  <form id="form-inscricao">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required><br><br>
+
+    <label for="data-nascimento">Data de nascimento:</label>
+    <input type="date" id="data-nascimento" name="data-nascimento" required><br><br>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id="telefone" name="telefone" required placeholder="(11 91234-5678)"><br><br>
+
+    <label for="municipio">De qual cidade ou município você vem?</label>
+    <input type="text" id="municipio" name="municipio" placeholder="Ex: Itapecerica da Serra - SP" required><br><br>
+
+    <label>Quais atrações ou áreas do evento mais te interessaram?<br>(Pode marcar até 3 opções, se quiser!)</label>
+    <div class="checkbox-group coluna-area">
+      <input type="checkbox" id="rpg" name="area[]" value="RPG">
+      <label for="rpg">RPG</label>
+
+      <input type="checkbox" id="cardgame" name="area[]" value="Card Game">
+      <label for="cardgame">Card Game</label>
+
+      <input type="checkbox" id="boardgame" name="area[]" value="Board Game">
+      <label for="boardgame">Board Game</label>
+
+      <input type="checkbox" id="cosplay" name="area[]" value="Cosplay">
+      <label for="cosplay">Concurso de Cosplay</label>
+
+      <input type="checkbox" id="campal" name="area[]" value="Batalha Campal">
+      <label for="campal">Batalha Campal</label>
+
+      <input type="checkbox" id="qualquer" name="area[]" value="Qualquer área">
+      <label for="qualquer">Qualquer área</label>
+    </div>
+
+    <br>
+    <input type="submit" value="Enviar Inscrição">
+  </form>
+  <div id="mensagem"></div> <br>
+
+
+<section class="galeria">
+    <img src="Imagens/imagensotimizadas/DSC07613.webp" alt="Foto 1">
+    <img src="Imagens/imagensotimizadas/capital.webp" alt="Foto 2">
+    <img src="Imagens/imagensotimizadas/guardiões.webp" alt="Foto 3">
+    <img src="Imagens/imagensotimizadas/submundo.webp" alt="Foto 4">
+  </section>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="index.html" class="botao-voltar">Voltar à página principal</a>
+</div>
+</body>
 <footer class="footer-completo">
     <div class="footer-conteudo">
         <p> &copy;Festival Nerdcon. Todos os direitos reservados </p>
       <div class="redes-sociais">
-  <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.instagram.com/festival.nerdcon?igsh=MTdhM2huY2tvbmZlNA%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
   <a href="" target="_blank"><i class="fab fa-facebook"></i></a>
 </div>
 </a></div>
     </div>
 </footer>
 
+<script>
+  // Formata o telefone enquanto o usuário digita
+  const telefoneInput = document.getElementById('telefone');
+  telefoneInput.addEventListener('input', function (e) {
+    let x = e.target.value.replace(/\D/g, '').slice(0, 11);
+    let formatado = '';
+    if (x.length > 0) {
+      formatado = '(' + x.substring(0, 2);
+    }
+    if (x.length >= 3) {
+      formatado += ') ' + x.substring(2, 7);
+    }
+    if (x.length >= 8) {
+      formatado += '-' + x.substring(7, 11);
+    }
+    e.target.value = formatado;
+  });
 
-    <script>
-        const telefoneInput = document.getElementById('telefone');
-        telefoneInput.addEventListener('input', function (e) {
-            let x = e.target.value.replace(/\D/g, '').slice(0, 11);
-            let formatado = '';
-            if (x.length > 0) formatado = '(' + x.substring(0, 2);
-            if (x.length >= 3) formatado += ') ' + x.substring(2, 7);
-            if (x.length >= 8) formatado += '-' + x.substring(7, 11);
-            e.target.value = formatado;
-        });
+  // Limita seleção a no máximo 3 checkboxes para "area[]"
+  const areaCheckboxes = document.querySelectorAll('input[name="area[]"]');
+  areaCheckboxes.forEach(chk => {
+    chk.addEventListener('change', () => {
+      const checkedCount = document.querySelectorAll('input[name="area[]"]:checked').length;
+      if (checkedCount > 3) {
+        chk.checked = false;
+        alert('Você pode selecionar no máximo 3 áreas.');
+      }
+    });
+  });
 
+  // Envio do formulário via fetch e tratamento da resposta JSON
+  const form = document.getElementById('form-inscricao');
+  const mensagemDiv = document.getElementById('mensagem');
 
-        function gerarNumeroInscricao() {
-            const email = document.getElementById('email').value;
-            const hash = email.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-            let numero = hash % 10000; // Gera um número baseado no e-mail
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // não recarregar página
 
-            const numeroInscricao = 'NC' + numero.toString().padStart(4, '0');
-            document.getElementById('numero_inscricao').value = numeroInscricao;
+    const formData = new FormData(form);
 
-            document.getElementById('autoresponse').value = `Olá! Sua inscrição foi recebida com sucesso.\nSeu número de inscrição é ${numeroInscricao}.\nNos vemos no evento!`;
-        }
-        
-    </script>
-    
-</body>
+    mensagemDiv.textContent = ''; // limpa mensagem antiga
+    mensagemDiv.style.color = '';
 
-</html>
+    fetch('https://script.google.com/macros/s/AKfycbwQsK9p9OY23AOOPitpZ08MgQUwY5KMh7ns0zhrXEf1nfHJzagGO0RywIz_udi2m3fs/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.result === "error") {
+        mensagemDiv.style.color = 'red';
+        mensagemDiv.textContent = data.error || "Erro ao enviar inscrição.";
+      } else {
+        mensagemDiv.style.color = 'limegreen';
+        mensagemDiv.textContent = typeof data === 'string' ? data : "Inscrição enviada com sucesso!";
+        form.reset(); // limpa o formulário após sucesso
+      }
+    })
+    .catch(error => {
+      mensagemDiv.style.color = 'red';
+      mensagemDiv.textContent = "Erro na conexão: " + error.message;
+    });
+  });
+</script>
+
+<script>
+  // Abre o modal automaticamente ao carregar a página
+  window.addEventListener('load', () => {
+    document.getElementById('modal-regras').style.display = 'block';
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WRVYEXMKPT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-WRVYEXMKPT');
+</script>
+
