@@ -785,6 +785,14 @@ a.botao-inscrever:hover, .equipe:hover {
     font-size: 0.48rem;
   }
 }
+@media (max-width: 768px) {
+  .mainSite .conteudo {
+    font-size: 0.28rem;
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: left;
+}
+}
 /* Gabi mudanças */
 
 
