@@ -784,11 +784,17 @@ a.botao-inscrever:hover, .equipe:hover {
   .mainSite {
     font-size: 0.35rem;
     text-align: left;
+    box-sizing: border-box;
+    padding: 20 30px;
+    text-align: left;
+    height: auto;
+    width: auto;
+    top: 10px;
   }
 }
 @media (max-width: 768px) {
   .mainSite .conteudo .titulo .subtitulo{
-    font-size: 0.18rem;
+    font-size: 0.38rem;
     box-sizing: border-box;
     padding: 10 30px;
     text-align: left;
