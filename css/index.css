@@ -323,10 +323,9 @@ nav {
 }
 
 .programacao, .detalhes, .mapa-container {
-    padding: 50px;
-    background: rgba(65, 8, 114, 0.438);
-    margin: 30px;
-    border: 2px solid #b84dff ;
+    position: relative;
+    padding: 6vh;
+    background-color: #e9ecef ;
     box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
 }
 
@@ -465,9 +464,7 @@ a.botao-inscrever:hover, .equipe:hover {
     background: rgba(65, 8, 114, 0.438);
     color: #fff;
     padding: 2.5rem 2rem;
-    border-radius: 20px;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-    border: 2px solid #ff00ff;
+    box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
     max-width: 700px;
     margin: 40px auto;
     font-family: 'Oxanium', cursive;
@@ -493,9 +490,8 @@ a.botao-inscrever:hover, .equipe:hover {
     gap: 10px;
     background: rgba(64, 8, 114, 0.3);
     padding: 12px 16px;
-    border-radius: 10px;
-    border-left: 3px solid #ff00ff;
-    box-shadow: 0 0 8px rgba(255, 0, 255, 0.15);
+    border-left: 3px solid #b84dff;
+    
 }
 
 .detalhes-card i {
@@ -505,12 +501,10 @@ a.botao-inscrever:hover, .equipe:hover {
 }
 
 .mapa-container {
-    margin-top: 20px;
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
-    border: 2px solid #ff00ff;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    position: relative;
+    padding: 6vh;
+    background-color: rgba(65, 8, 114, 0.438);
+    box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
 }
 
 .patrocinadores {
@@ -787,7 +781,7 @@ a.botao-inscrever:hover, .equipe:hover {
 }
 
 .mainSite{
-    font-size: 0.5rem;
+    font-size: 0.43rem;
 }
 /* Gabi mudanças */
 
