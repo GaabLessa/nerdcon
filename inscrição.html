@@ -453,6 +453,39 @@ a.botao-voltar:hover {
       margin-bottom: 20px;
       text-shadow: 0 0 6px #ff00ff;
     }
+    .modal-content a{
+      text-decoration: none;
+      color: white;
+    }
+    
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 25px 20px;
+    margin: 10% 10px;
+    font-size: 0.9rem;
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+  }
+
+  .modal-content h2,
+  .modal-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .modal-content li {
+    font-size: 1rem;
+    padding-left: 25px;
+  }
+
+  .modal-content li::before {
+    font-size: 1.1rem;
+  }
+}
 </style>
 <body> 
 <div class="equipe">
@@ -470,9 +503,9 @@ a.botao-voltar:hover {
     <h1> Sorteio Playstation 5 </h1>
     <h2>Regras:</h2>
     <ul>
-      <li> Você deve estar seguindo nosso perfil no Instagram.</li>
-      <li> Você deve estar seguindo o perfil da pagina é tudo nosso no Instagram</li>
-      <li> Você deve estar seguindo o perfil da pagina da secretaria de culutura no Instagram</li>
+      <li> Você deve estar seguindo o perfil <a href="https://www.instagram.com/nerdcon.festival?igsh=MXkxbzl4Y2psMHFyMA=="> Festival Nerdcon</a> no Instagram.</li>
+      <li> Você deve estar seguindo o perfil <a href="https://www.instagram.com/espacoetudonosso?utm_source=ig_web_button_share_sheet&igsh=dTd5eDN4dTV6OTV5">É Tudo Nosso no Instagram</a></li>
+      <li> Você deve estar seguindo o perfil da <a href="https://www.instagram.com/cultura.itapecerica">Secretaria de Cultura</a> no Instagram</li>
       <li> Voce deve curtir, comentar e repostar a postagem oficial do sorteio </li>
       <li> O sorteio será realizado no dia <strong>23/08</strong> no proprio evento.</li>
       <li> O prêmio é intransferível e não pode ser trocado por dinheiro.</li>
