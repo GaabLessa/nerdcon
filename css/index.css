@@ -782,14 +782,16 @@ a.botao-inscrever:hover, .equipe:hover {
 
 @media (max-width: 768px) {
   .mainSite {
-    font-size: 0.35rem;
-    text-align: left;
+  font-size: 0.35rem;
+    display: block;
+    max-width: 100%;
     box-sizing: border-box;
-    padding: 20 30px;
+
     text-align: left;
-    height: auto;
-    width: auto;
-    top: 10px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
   }
 }
 @media (max-width: 768px) {
