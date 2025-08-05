@@ -476,7 +476,7 @@ a.botao-inscrever:hover, .equipe:hover {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: #ffffff;
-    text-shadow: 0 0 8px #ff00ff88;
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.3);
     display: flex;
     align-items: center;
     gap: 12px;
@@ -780,8 +780,10 @@ a.botao-inscrever:hover, .equipe:hover {
   }
 }
 
-.mainSite{
-    font-size: 0.43rem;
+@media (max-width: 768px) {
+  .mainSite {
+    font-size: 0.48rem;
+  }
 }
 /* Gabi mudanças */
 
