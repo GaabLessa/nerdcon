@@ -625,6 +625,26 @@ a.botao-inscrever:hover, .equipe:hover {
     }
 }
 
+@media (max-width: 900px) {
+    .atracao.impar, .atracao.par{
+        flex-direction: column!important;
+        height: fit-content;
+    }
+
+    .atracao-img {
+        flex: 0!important;
+    }
+
+    .atracao-img-cardgames {
+        flex-direction: column!important;
+    }
+
+    .atracao-texto {
+        min-width: fit-content!important;
+        flex: 0!important;
+    }
+}
+
 @media (max-width: 600px) {
     .header-content {
         flex-direction: column;
@@ -815,7 +835,7 @@ html, body {
 .mainSite .boxPs5 .conteudops5 p.subtitulo{
     color: white;
      text-shadow: 0 0 5px #00000088;
-     font-size: 3.0em;
+     font-size: 2.5em;
 }
 .mainSite .boxPs5 .conteudops5 .titulo {
     font-size: 4.0em;
@@ -934,7 +954,6 @@ html, body {
 }
 
 .atracao {
-
   display: flex;
   height: 40vh;
   gap: 30px;
