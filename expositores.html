@@ -9,34 +9,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
 body {
-  font-family: 'Oxanium', cursive;
-  margin: 0;
-  padding: 0 20px;
-  background-image: url("Imagens/expositores.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: scroll;
-  color: #ffffff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column; /* muda para coluna */
+    font-family: 'Oxanium', cursive;
+    margin: 0;
+    padding: 0;
+    background-image: url("Imagens/ps5.png");
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #ffffff;
 }
 
 .form-container {
-  flex: 1; /* ocupa o espaço vertical restante */
-  background: rgba(20, 20, 20, 0.95);
-  padding: 40px 50px;
-  margin: 30px auto 0 auto; /* margem top e auto horizontal */
+  margin-top: 50%;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px;
   max-width: 700px;
-  border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(162, 0, 255, 0.3);
-  border: 1px solid #ff00ff;
+  margin: 30px auto;
+  backdrop-filter: blur(10px);
   animation: surgirFormulario 1s ease forwards;
   opacity: 0;
   transform: translateY(50px);
-  display: flex;
-  flex-direction: column;
 }
 
 @keyframes surgirFormulario {
@@ -48,7 +41,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #ff00ff;
+  color: #ffffff;
   margin-bottom: 30px;
 }
 
@@ -68,7 +61,6 @@ textarea,
 select {
   background: #444;
   color: white;
-  border: 1px solid #ff00ff;
   padding: 12px 15px;
   border-radius: 6px;
   font-size: 1rem;
@@ -80,7 +72,7 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: #ff00ff;
+  
   outline: none;
   background: #7a2aff;
   color: #fff;
@@ -92,37 +84,68 @@ textarea {
   font-family: 'Oxanium', cursive;
 }
 
-button,
-.botao-voltar {
-  padding: 14px 20px;
-  background-color: #a200ff;
-  border: none;
-  border-radius: 12px;
-  color: #ffffff;
-  cursor: pointer;
-  text-align: center;
-  font-size: 1.1rem;
-  margin-top: 20px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
-  width: 100%;
-  box-sizing: border-box;
-  text-decoration: none;
-  display: inline-block;
+button {
+      background-color: #e9ecef ;
+    color: #b84dff !important;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Oxanium', cursive;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    border: 2px solid #b84dff ;
+    
+}
+button a {
+    color: #b84dff;
+    text-decoration: none;
 }
 
-button:hover,
-.botao-voltar:hover {
-  background: #d400d4;
-  box-shadow: 0 0 8px #d400d4;
+button:hover {
+    background-color: #6b00b3;
+    color: white !important;
+}
+button:hover a{
+    color: #ffffff !important;
 }
 
-.botao-voltar a {
-  color: #fff;
-  text-decoration: none;
-  display: block;
-  width: 100%;
+.button {
+    background-color: #e9ecef ;
+    color: #b84dff !important;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Oxanium', cursive;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    border: 2px solid #b84dff ;
 }
+.button a {
+    color: #b84dff;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #6b00b3;
+}
+.button:hover a{
+    color: #ffffff;
+}
+
 
 /* Estilo para a informação de preço */
 .preco-info {
@@ -132,7 +155,6 @@ button:hover,
   color: #ffccff;
   font-weight: 600;
   margin-bottom: 20px;
-  border: 1px solid #ff00ff;
   font-family: 'Oxanium', cursive;
 }
 
@@ -147,8 +169,6 @@ button:hover,
   padding: 10px 20px;
   color: #fff;
   text-align: center;
-  border-top: 2px solid #a200ff;
-  box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
   font-family: 'Oxanium', cursive;
 }
 
@@ -160,7 +180,7 @@ button:hover,
 .footer-completo p {
     font-size: 18px;
     margin-bottom: 20px;
-    text-shadow: 0 0 6px #ff00ff;
+
 }
       .footer-completo {
         padding: 30px 15px;
@@ -172,7 +192,7 @@ button:hover,
       }
     
 .redes-sociais a {
-    color: #ff00ff;
+    color: #b84dff ;
     font-size: 28px;
     margin: 0 15px;
     transition: transform 0.3s, color 0.3s;
@@ -181,7 +201,6 @@ button:hover,
 .redes-sociais a:hover {
     color: #ffffff;
     transform: scale(1.2);
-    text-shadow: 0 0 10px #ff00ff;
 }
 /* Responsividade continua igual */
 @media (max-width: 900px) {
@@ -252,10 +271,222 @@ button:hover,
     padding: 10px 12px;
   }
 }
+nav {
+    background: #4a007a;
+    opacity: 90%;
+    top: 0;
+    z-index: 10;
+
+    position: absolute;
+    width: 100vw;
+    height: 15vh;
+    max-height: 130px;
+}
+
+.nav-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-container .logo-esquerda {
+    position: relative;
+    height: 100%;
+    width: 20%;
+    max-width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-esquerda img {
+    position: relative;
+    height: 70%;
+    width: auto;
+}
+
+.nav-container .menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    position: relative;
+}
+
+.nav-container .menu li a {
+    position: relative;
+    color: #ffffffd7;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+/* Linha rosa que aparece ao passar o mouse */
+.menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Ao passar o mouse, a linha cresce de 0 a 100% */
+.menu li a:hover::after {
+    width: 100%;
+}
+
+/* Cor do texto ao passar o mouse */
+.menu li a:hover {
+    color: #FFFFFF;
+}
+
+/* Submenu */
+.submenu {
+    position: relative;
+}
+
+.submenu .dropdown {
+    position: absolute;
+    top: 100%;
+    left: -25px;
+    padding-top: 10px;
+    background: #4a007a;
+    padding: 0;
+    list-style: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    width: 0px;
+    opacity: 0;
+    z-index: 20;
+    transition: width 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.submenu:hover .dropdown {
+    width: max-content;
+    opacity: 100%;
+}
+
+.submenu .dropdown li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+}
+
+.submenu .dropdown li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #6b00b3;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.submenu .dropdown li a:hover::after {
+    width: 100%;
+}
+
+.submenu .dropdown li a:hover {
+    background-color: #6b00b3;
+    color: #fff;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        text-align: right;
+    }
+
+    .menu {
+        display: none!important;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: #4a007a;
+    }
+
+    .menu.show {
+        display: flex!important;
+    }
+
+    .top-bar-content {
+    flex-direction: column;
+    align-items: center;
+    }
+  }
+  
+  body::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  scrollbar-color: #6b00b3 #e0e0e0;
+  scrollbar-width: thin;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
 
   </style>
 </head>
 <body>
+    <nav>
+    <div class="nav-container">
+      <div class="logo-esquerda">
+        <img src="Imagens/Prancheta_1_copiaFINAL_SITE teste.png" alt="Logo do Festival NerdCon" class="logo-nerdcon">
+      </div>
+
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <ul class="menu" id="menu">
+        <li><a href="inscrição.html">Inscrição</a></li>
+        <li><a href="#detalhes">Onde Estamos</a></li>
+        <li><a href="#sobre">Festival NerdCon</a></li>
+        <li><a href="expositores.html">Expositores</a></li>
+        <li><a href="cosplay.html">Concurso Cosplay</a></li>
+        <li class="submenu">
+          <a href="#">Atrações <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown" id="dropdown">
+            <li><a href="#rpg">RPG</a></li>
+            <li><a href="#sobrecosplay">Cosplays</a></li>
+            <li><a href="#cardgames">Cardgame</a></li>
+            <li><a href="#boardgames">BoardGames</a></li>
+            <li><a href="#claves">Duelo de Claves</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br><br><br>
   <div class="form-container">
     <h1>Cadastro de Expositores - NerdCon</h1>
     <form id="form-expositores">
@@ -297,7 +528,7 @@ button:hover,
 <input type="hidden" name="tamanho-barraca" value="pequena" />
       <button type="submit">Enviar</button>
     </form>
-    <div class="botao-voltar">
+    <div class="button">
       <a href="index.html">Voltar à página principal</a>
     </div>
   </div>
