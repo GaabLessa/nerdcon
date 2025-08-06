@@ -31,10 +31,8 @@ body {
 
 /* FORMULÁRIO */
 form {
+  margin-top: 50%;
   background: rgba(0, 0, 0, 0.85);
-  border: 2px solid #a200ff;
-  border-radius: 20px;
-  box-shadow: 0 0 15px #a200ff66;
   padding: 40px;
   max-width: 700px;
   margin: 30px auto;
@@ -58,8 +56,6 @@ form h2 {
   font-weight: 700;
   font-size: 30px;
   color: #fff;
-  text-shadow: 0 0 8px #ff00ff;
-  animation: neonGlow 1s infinite alternate;
 }
 
 @keyframes neonGlow {
@@ -85,23 +81,25 @@ textarea {
   width: 100%;
   padding: 14px;
   margin-bottom: 20px;
-  border-radius: 10px;
-  border: 2px solid #a200ff;
   background: #1c012f;
   color: #fff;
   transition: 0.3s;
   font-size: 16px;
+          background: #6b6b6b;
+        color: white;
+        border-radius: 4px;
+        font-size: 16px;
 }
 
 input::placeholder {
-  color: #f5f5f5;
+  color: #0e0d0d;
   opacity: 0.9;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: #ff00cc;
+  border-color: #b84dff;
   box-shadow: 0 0 10px #ff00cc77;
   outline: none;
 }
@@ -193,17 +191,22 @@ textarea:focus {
 /* BOTÃO ENVIAR */
 input[type="submit"],
 button {
-  background: linear-gradient(90deg, #a200ff, #ff00cc);
-  color: #fff;
-  padding: 14px 30px;
-  font-weight: 700;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 16px;
-  text-transform: uppercase;
-  box-shadow: 0 0 15px #ff00ff88;
-  transition: 0.3s ease;
+    background-color: #4a007a ;
+    color: #ffffff !important;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Oxanium', cursive;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    border: 2px solid #b84dff ;
 }
 
 input[type="submit"]:hover,
@@ -211,32 +214,39 @@ button:hover {
   background: linear-gradient(90deg, #ff00cc, #a200ff);
   box-shadow: 0 0 20px #ff00ffcc;
   transform: scale(1.05);
+  color: white !important;
+}
+
+.button {
+    background-color: #e9ecef ;
+    color: #b84dff !important;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Oxanium', cursive;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    border: 2px solid #b84dff ;
+}
+.button a {
+    color: #b84dff;
+}
+
+.button:hover {
+    background-color: #6b00b3;
+}
+.button:hover a{
+    color: #ffffff;
 }
 
 
-/* BOTÃO VOLTAR - VISUAL DIFERENTE */
-.botao-voltar {
-  display: inline-block;
-  background: transparent;
-  color: #ff00ff;
-  padding: 12px 26px;
-  font-size: 16px;
-  font-weight: 700;
-  border: 2px solid #ff00ff;
-  border-radius: 30px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: 'Oxanium', cursive;
-  transition: 0.3s ease;
-  box-shadow: 0 0 8px #ff00ff55;
-}
-
-.botao-voltar:hover {
-  background: #ff00cc22;
-  color: #fff;
-  box-shadow: 0 0 15px #ff00ffcc;
-  transform: scale(1.05);
-}
 .footer-completo {
   position: relative; /* ou fixed se quiser fixar embaixo */
   left: 50%;
@@ -284,11 +294,224 @@ button:hover {
     transform: scale(1.2);
     text-shadow: 0 0 10px #ff00ff;
 }
+nav {
+    background: #4a007a;
+    opacity: 90%;
+    top: 0;
+    z-index: 10;
+
+    position: absolute;
+    width: 100vw;
+    height: 15vh;
+    max-height: 130px;
+}
+
+.nav-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-container .logo-esquerda {
+    position: relative;
+    height: 100%;
+    width: 20%;
+    max-width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-esquerda img {
+    position: relative;
+    height: 70%;
+    width: auto;
+}
+
+.nav-container .menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    position: relative;
+}
+
+.nav-container .menu li a {
+    position: relative;
+    color: #ffffffd7;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+/* Linha rosa que aparece ao passar o mouse */
+.menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Ao passar o mouse, a linha cresce de 0 a 100% */
+.menu li a:hover::after {
+    width: 100%;
+}
+
+/* Cor do texto ao passar o mouse */
+.menu li a:hover {
+    color: #FFFFFF;
+}
+
+/* Submenu */
+.submenu {
+    position: relative;
+}
+
+.submenu .dropdown {
+    position: absolute;
+    top: 100%;
+    left: -25px;
+    padding-top: 10px;
+    background: #4a007a;
+    padding: 0;
+    list-style: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    width: 0px;
+    opacity: 0;
+    z-index: 20;
+    transition: width 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.submenu:hover .dropdown {
+    width: max-content;
+    opacity: 100%;
+}
+
+.submenu .dropdown li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+}
+
+.submenu .dropdown li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #6b00b3;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.submenu .dropdown li a:hover::after {
+    width: 100%;
+}
+
+.submenu .dropdown li a:hover {
+    background-color: #6b00b3;
+    color: #fff;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        text-align: right;
+    }
+
+    .menu {
+        display: none!important;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: #4a007a;
+    }
+
+    .menu.show {
+        display: flex!important;
+    }
+
+    .top-bar-content {
+    flex-direction: column;
+    align-items: center;
+    }
+  }
+  
+  body::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  scrollbar-color: #6b00b3 #e0e0e0;
+  scrollbar-width: thin;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
   </style>
 </head>
 <body>
+    <nav>
+    <div class="nav-container">
+      <div class="logo-esquerda">
+        <img src="Imagens/Prancheta_1_copiaFINAL_SITE teste.png" alt="Logo do Festival NerdCon" class="logo-nerdcon">
+      </div>
 
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <ul class="menu" id="menu">
+        <li><a href="inscrição.html">Inscrição</a></li>
+        <li><a href="#detalhes">Onde Estamos</a></li>
+        <li><a href="#sobre">Festival NerdCon</a></li>
+        <li><a href="expositores.html">Expositores</a></li>
+        <li><a href="cosplay.html">Concurso Cosplay</a></li>
+        <li class="submenu">
+          <a href="#">Atrações <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown" id="dropdown">
+            <li><a href="#rpg">RPG</a></li>
+            <li><a href="#sobrecosplay">Cosplays</a></li>
+            <li><a href="#cardgames">Cardgame</a></li>
+            <li><a href="#boardgames">BoardGames</a></li>
+            <li><a href="#claves">Duelo de Claves</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br><br><br>
   <form id="formulario-cosplay">
+    <h2>Concurso de Cosplay</h2>
     <label>Nome completo: *</label>
     <input type="text" name="nome" required placeholder="Ex: Ana Beatriz dos Santos" />
 
@@ -326,7 +549,7 @@ button:hover {
     <p id="mensagem-envio"></p>
     <br>
     <div style="text-align: center; margin-top: 30px;">
-  <a href="index.html" class="botao-voltar">Voltar à página principal</a>
+  <a href="index.html" class="button">Voltar à página principal</a>
 </div>
   </form>
 
@@ -346,48 +569,42 @@ button:hover {
   </div>
 </footer>
 
-  <script>
-    const form = document.getElementById('formulario-cosplay');
-    const mensagem = document.getElementById('mensagem-envio');
+<script>
+  const form = document.getElementById('formulario-cosplay');
+  const mensagem = document.getElementById('mensagem-envio');
+  const popup = document.getElementById('popup-sucesso');
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      mensagem.style.color = "#cccccc";
-      mensagem.textContent = 'Enviando...';
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    mensagem.style.color = "#cccccc";
+    mensagem.textContent = 'Enviando...';
 
-      const dados = new FormData(form);
+    const dados = new FormData(form);
 
-      fetch("https://script.google.com/macros/s/AKfycbyicPseverPK6Yq-6ifeMe4493_kaTZTqHycBlWCBQ2wgk8E7rEZDLXCIKPbQRK9VkTpA/exec", {
-        method: "POST",
-        body: dados
-      })
-      .then(res => res.text())
-      .then(msg => {
-        mensagem.style.color = "#00ff99";
-        mensagem.textContent = msg;
+    fetch("https://script.google.com/macros/s/AKfycbwhmSYx5X6rbnjmhR2tCiR9ufCxOvySYFUE6TBTrGyOUA4k-LdJnwMEjwq5cihY3cN27g/exec", {
+      method: "POST",
+      body: dados
+    })
+    .then(res => res.json())
+    .then(resposta => {
+      if (resposta.result === "success") {
+        popup.style.display = 'block';
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 4000);
         form.reset();
-      })
-      .catch(err => {
+      } else {
         mensagem.style.color = "#ff5555";
-        mensagem.textContent = "Erro ao enviar. Tente novamente.";
-      });
+        mensagem.textContent = resposta.error || "Erro ao enviar. Tente novamente.";
+      }
+    })
+    .catch(() => {
+      mensagem.style.color = "#ff5555";
+      mensagem.textContent = "Erro ao enviar. Tente novamente.";
     });
-  </script>
-  <script>
-  document.getElementById('formulario-cosplay').addEventListener('submit', function (e) {
-    e.preventDefault(); // Impede o envio tradicional do formulário
-
-    // Aqui você coloca a lógica de envio para a planilha (via fetch ou google script)
-    // Depois do envio com sucesso, exibe o popup:
-
-    document.getElementById('popup-sucesso').style.display = 'block';
-
-    // Redireciona após 4 segundos
-    setTimeout(function () {
-      window.location.href = 'index.html';
-    }, 4000);
   });
 </script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WRVYEXMKPT"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -395,5 +612,6 @@ button:hover {
   gtag('js', new Date());
   gtag('config', 'G-WRVYEXMKPT');
 </script>
+
 </body>
 </html>

@@ -6,6 +6,7 @@
     <title>Inscrições</title>
 </head>
     <link rel="icon" href="Imagens/nerdcon_favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
 
@@ -34,9 +35,6 @@ body {
         margin: 30px auto;
         width: 90%;
         max-width: 700px;
-        border-radius: 20px;
-        box-shadow: 0 4px 15px rgba(162, 0, 255, 0.5);
-        border: 2px solid #a200ff;
     }
 
     form {
@@ -52,7 +50,6 @@ body {
     input, textarea {
         background: #6b6b6b;
         color: white;
-        border: 2px solid #a200ff;
         padding: 12px;
         width: auto;
         border-radius: 4px;
@@ -68,19 +65,26 @@ body {
     }
 
     input[type="submit"] {
-        flex: 1 1 calc(33.333% - 10px);
-        padding: 10px;
-        background-color:rgb(250, 0, 237);
-        border: 2px solid #a200ff;
-        border-radius: 10px;
-        color: #ffffff;
-        cursor: pointer;
-        text-align: center;
-        transition: 0.3s;;
+    background-color: #e9ecef ;
+    color: #b84dff !important;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Oxanium', cursive;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
     }
 
     input[type="submit"]:hover {
-        background:#d400d4; 
+            background-color: #6b00b3;
+    color: white !important;
         transform: scale(1.05);
     }
 
@@ -101,7 +105,6 @@ body {
         flex: 1 1 calc(33.333% - 10px);
         padding: 10px;
         background-color: #1a1a1a;
-        border: 2px solid #a200ff;
         border-radius: 10px;
         color: #ffffff;
         cursor: pointer;
@@ -118,7 +121,6 @@ body {
         background-color: #ff00ff;
         color: #000;
         font-weight: bold;
-        border-color: #ff00ff;
     }
 
     .checkbox-group label {
@@ -141,37 +143,40 @@ body {
         background-color: #ff00ff;
         color: #000;
         font-weight: bold;
-        border-color: #ff00ff;
+        
     }
 
-    button a {
-        text-decoration: none;
-        color: white;
-    }
 
-    button {
-        margin-top: 20px;
-        background-color: #a200ff;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 10px;
-        font-size: 16px;
-        cursor: pointer;
-    }
 
-    button:hover {
-        background-color: #6a00ff;
-    }
-    .galeria {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: #0a0a0a;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px #a200ff;
-    
+
+.button {
+    background-color: #e9ecef ;
+    color: #b84dff !important;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Oxanium', cursive;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    border: 2px solid #b84dff ;
+}
+.button a {
+    color: #b84dff;
+}
+
+.button:hover {
+    background-color: #6b00b3;
+    color: white !important;
+}
+.button:hover a{
+    color: #ffffff !important;
 }
 
 .galeria img {
@@ -181,30 +186,15 @@ body {
     box-shadow: 0 0 10px #a200ff;
 }
 
-a.botao-voltar {
-    background: #ff00ff;
-    color: white;
-    padding: 15px 25px;
-    font-size: 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s, transform 0.2s;
-}
 
-a.botao-voltar:hover {
-    background: #d400d4;
-    transform: scale(1.05);
-}
 .equipe {
       background: rgba(0, 0, 0, 0.8);
-      margin: 40px auto 20px;
+      margin: 120px auto 20px;
       padding: 40px;
       width: 90%;
       max-width: 700px;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(162, 0, 255, 0.6);
-      border: 2px solid #a200ff;
       text-align: center;
+      top: 30%;
     }
 .footer-completo {
     margin-top: 60px;
@@ -222,24 +212,7 @@ a.botao-voltar:hover {
     margin: 0 auto;
 }
 
-.footer-completo p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 6px #ff00ff;
-}
 
-.redes-sociais a {
-    color: #ff00ff;
-    font-size: 28px;
-    margin: 0 15px;
-    transition: transform 0.3s, color 0.3s;
-}
-
-.redes-sociais a:hover {
-    color: #ffffff;
-    transform: scale(1.2);
-    text-shadow: 0 0 10px #ff00ff;
-}
 @media (max-width: 600px) {
   .form-container,
   .equipe {
@@ -284,31 +257,6 @@ a.botao-voltar:hover {
   }
 }
 
-/* 2. Fade-in na galeria de imagens */
-.galeria img {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: aparecer 0.8s ease forwards;
-  transition: transform 0.3s ease; /* Para o zoom hover */
-}
-
-.galeria img:nth-child(1) { animation-delay: 0.2s; }
-.galeria img:nth-child(2) { animation-delay: 0.4s; }
-.galeria img:nth-child(3) { animation-delay: 0.6s; }
-.galeria img:nth-child(4) { animation-delay: 0.8s; }
-
-@keyframes aparecer {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 4. Zoom ao passar o mouse nas imagens da galeria */
-.galeria img:hover {
-  transform: scale(1.1);
-}
-
 /* 3. Texto piscando neon */
 .equipe h1 {
   animation: neonGlow 1s infinite alternate;
@@ -337,25 +285,7 @@ a.botao-voltar:hover {
   }
 }
 
-/* Botão para abrir modal, já no estilo do site */
-.btn-regras {
-  background-color: #a200ff;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  font-weight: 700;
-  font-family: 'Oxanium', cursive;
-  font-size: 1.1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0 0 10px #ff00ffaa;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-.btn-regras:hover {
-  background-color: #7404be;
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #ff00ffcc;
-}
+
 
 /* Fundo escurecido (overlay) */
 .modal-overlay {
@@ -378,9 +308,6 @@ a.botao-voltar:hover {
   padding: 35px 30px;
   border-radius: 25px;
   position: relative;
-  box-shadow:
-    0 0 15px #a200ff88,
-    0 0 40px #ff00ff88;
   font-family: 'Oxanium', cursive;
   text-align: left;
 }
@@ -405,7 +332,6 @@ a.botao-voltar:hover {
   font-size: 2rem;
   color: #d3c7d3;
   text-align: center;
-  text-shadow: 0 0 10px #ff00ffbb;
 }
 
 /* Lista de regras */
@@ -429,30 +355,38 @@ a.botao-voltar:hover {
   top: 0;
   font-size: 1.3rem;
   color: #ff00ff;
-  text-shadow: 0 0 8px #ff00ffaa;
 }
 
 .footer-completo {
-  margin-top: 60px;
-  background: rgba(10, 0, 20, 0.9);
-  padding: 10px 20px; /* Reduzi de 40px para 20px */
-  color: #fff;
-  text-align: center;
-  border: 2px solid #a200ff;
-  box-shadow: 0 -4px 15px rgba(255, 0, 255, 0.3);
-  font-family: 'Oxanium', cursive;
+    background: rgba(10, 0, 20, 0.9);
+    padding: 20px 20px; /* Reduzi de 40px para 20px */
+    color: #fff;
+    text-align: center;
+    font-family: 'Oxanium', cursive;
 }
 
-    .footer-completo .footer-conteudo {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+.footer-completo .footer-conteudo {
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
-    .footer-completo p {
-      font-size: 18px;
-      margin-bottom: 20px;
-      text-shadow: 0 0 6px #ff00ff;
-    }
+.footer-completo p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.redes-sociais a {
+    color: #b84dff;
+    font-size: 28px;
+    margin: 0 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.redes-sociais a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+    
+}
     .modal-content a{
       text-decoration: none;
       color: white;
@@ -486,12 +420,224 @@ a.botao-voltar:hover {
     font-size: 1.1rem;
   }
 }
+nav {
+    background: #4a007a;
+    opacity: 90%;
+    top: 0;
+    z-index: 10;
+
+    position: absolute;
+    width: 100vw;
+    height: 15vh;
+    max-height: 130px;
+}
+
+.nav-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-container .logo-esquerda {
+    position: relative;
+    height: 100%;
+    width: 20%;
+    max-width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-esquerda img {
+    position: relative;
+    height: 70%;
+    width: auto;
+}
+
+.nav-container .menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    position: relative;
+}
+
+.nav-container .menu li a {
+    position: relative;
+    color: #ffffffd7;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+/* Linha rosa que aparece ao passar o mouse */
+.menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Ao passar o mouse, a linha cresce de 0 a 100% */
+.menu li a:hover::after {
+    width: 100%;
+}
+
+/* Cor do texto ao passar o mouse */
+.menu li a:hover {
+    color: #FFFFFF;
+}
+
+/* Submenu */
+.submenu {
+    position: relative;
+}
+
+.submenu .dropdown {
+    position: absolute;
+    top: 100%;
+    left: -25px;
+    padding-top: 10px;
+    background: #4a007a;
+    padding: 0;
+    list-style: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    width: 0px;
+    opacity: 0;
+    z-index: 20;
+    transition: width 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.submenu:hover .dropdown {
+    width: max-content;
+    opacity: 100%;
+}
+
+.submenu .dropdown li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+}
+
+.submenu .dropdown li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #6b00b3;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.submenu .dropdown li a:hover::after {
+    width: 100%;
+}
+
+.submenu .dropdown li a:hover {
+    background-color: #6b00b3;
+    color: #fff;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        text-align: right;
+    }
+
+    .menu {
+        display: none!important;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: #4a007a;
+    }
+
+    .menu.show {
+        display: flex!important;
+    }
+
+    .top-bar-content {
+    flex-direction: column;
+    align-items: center;
+    }
+  }
+  
+  body::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  scrollbar-color: #6b00b3 #e0e0e0;
+  scrollbar-width: thin;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
 </style>
 <body> 
+    <nav>
+    <div class="nav-container">
+      <div class="logo-esquerda">
+        <img src="Imagens/Prancheta_1_copiaFINAL_SITE teste.png" alt="Logo do Festival NerdCon" class="logo-nerdcon">
+      </div>
+
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <ul class="menu" id="menu">
+        <li><a href="inscrição.html">Inscrição</a></li>
+        <li><a href="#detalhes">Onde Estamos</a></li>
+        <li><a href="#sobre">Festival NerdCon</a></li>
+        <li><a href="expositores.html">Expositores</a></li>
+        <li><a href="cosplay.html">Concurso Cosplay</a></li>
+        <li class="submenu">
+          <a href="#">Atrações <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown" id="dropdown">
+            <li><a href="#rpg">RPG</a></li>
+            <li><a href="#sobrecosplay">Cosplays</a></li>
+            <li><a href="#cardgames">Cardgame</a></li>
+            <li><a href="#boardgames">BoardGames</a></li>
+            <li><a href="#claves">Duelo de Claves</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
 <div class="equipe">
   <h1>Inscreva-se e participe de um sorteio de um Playstation 5  </h1>
   <!-- Botão para abrir o modal -->
-  <button class="btn-regras" onclick="document.getElementById('modal-regras').style.display='block'">
+  <button class="button" onclick="document.getElementById('modal-regras').style.display='block'">
     📜 Ver Regras do Sorteio
   </button>
 
@@ -560,20 +706,11 @@ a.botao-voltar:hover {
   </form>
   <div id="mensagem"></div> <br>
 
-
-<section class="galeria">
-    <img src="Imagens/imagensotimizadas/DSC07613.webp" alt="Foto 1">
-    <img src="Imagens/imagensotimizadas/capital.webp" alt="Foto 2">
-    <img src="Imagens/imagensotimizadas/guardiões.webp" alt="Foto 3">
-    <img src="Imagens/imagensotimizadas/submundo.webp" alt="Foto 4">
-  </section>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
   <div style="text-align: center; margin-top: 30px;">
-    <a href="index.html" class="botao-voltar">Voltar à página principal</a>
+    <a href="index.html" class="button">Voltar à página principal</a>
 </div>
 </body>
+</section>
 <footer class="footer-completo">
     <div class="footer-conteudo">
         <p> &copy;Festival Nerdcon. Todos os direitos reservados </p>
@@ -581,8 +718,8 @@ a.botao-voltar:hover {
   <a href="https://www.instagram.com/festival.nerdcon?igsh=MTdhM2huY2tvbmZlNA%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
   <a href="" target="_blank"><i class="fab fa-facebook"></i></a>
 </div>
-</a></div>
-    </div>
+</div>
+    
 </footer>
 
 <script>
