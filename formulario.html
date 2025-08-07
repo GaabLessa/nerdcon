@@ -385,10 +385,10 @@
         <label>Em qual área gostaria de atuar? (Selecione até 3 opções)</label>
         <div class="checkbox-group coluna-area">
             <input type="checkbox" id="rpg" name="area[]" value="RPG">
-            <label for="rpg">RPG</label><br>
+            <label for="rpg">RPG</label>
 
             <input type="checkbox" id="cardgame" name="area[]" value="Card Game">
-            <label for="cardgame">Card Game</label><br>
+            <label for="cardgame">Card Game</label>
 
             <input type="checkbox" id="boardgame" name="area[]" value="Board Game">
             <label for="boardgame">Board Game</label>
@@ -413,7 +413,7 @@
         <input type="submit" value="Enviar Inscrição">
     </form>
 
-    <div id="mensagem" style="margin-top:20px; font-weight: bold; color: #ff00ff;"></div>
+    <div id="mensagem" style="margin-top:20px; font-weight: bold; color: #0dc216;"></div>
 
     <section class="galeria">
         <img src="Imagens/imagensotimizadas/DSC07613.webp" alt="Foto 1">
@@ -497,7 +497,7 @@
         .then(response => response.json())
         .then(data => {
             if(data.status === 'sucesso') {
-                mensagem.style.color = '#ff00ff';
+                mensagem.style.color = '#0dc216';
                 mensagem.textContent = data.message;
                 form.reset();
             } else {
