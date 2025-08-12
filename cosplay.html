@@ -473,15 +473,95 @@ html, body {
     height: 100%;
     overflow-x: hidden;
 }
+.logo-esquerda a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
 
+@media (max-width: 768px) {
+    .nav-container .menu-toggle {
+        display: block;
+    }
+
+    .nav-container .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #4a007a;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .menu.show {
+        display: flex;
+        position: absolute;
+        top: 130px;
+        padding: 30px 0;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu li a {
+        padding: 15px 20px;
+        font-size: 18px;
+    }
+
+    .submenu {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .submenu .dropdown {
+        display: none;
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        min-width: auto;
+    }
+
+    .submenu:hover .dropdown {
+        display: block;
+    } 
+
+    .submenu .dropdown li a {
+        font-size: 16px;
+    }
+    .logo-nerdcon {
+        width: 100px;
+    }
+
+    .header-title {
+        font-size: 28px;
+    }
+    .logo-central img{
+        width: 80px;
+    }
+    .header img{
+        width: 70px;
+        height: 70px;
+    }
+    .caption {
+        font-size: 10px;
+    }
+}
   </style>
 </head>
 <body>
     <nav>
     <div class="nav-container">
       <div class="logo-esquerda">
-        <img src="Imagens/Prancheta_1_copiaFINAL_SITE teste.png" alt="Logo do Festival NerdCon" class="logo-nerdcon">
-      </div>
+  <a href="index.html">
+    <img src="Imagens/Prancheta_1_copiaFINAL_SITE teste.png" alt="Logo do Festival NerdCon" class="logo-nerdcon" />
+  </a>
+</div>
 
       <div class="menu-toggle" onclick="toggleMenu()">
         <i class="fas fa-bars"></i>
@@ -489,18 +569,18 @@ html, body {
 
       <ul class="menu" id="menu">
         <li><a href="inscrição.html">Inscrição</a></li>
-        <li><a href="#detalhes">Onde Estamos</a></li>
-        <li><a href="#sobre">Festival NerdCon</a></li>
+        <li><a href="index.html#detalhes">Onde Estamos</a></li>
+        <li><a href="index.html#sobre">Festival NerdCon</a></li>
         <li><a href="expositores.html">Expositores</a></li>
         <li><a href="cosplay.html">Concurso Cosplay</a></li>
         <li class="submenu">
           <a href="#">Atrações <i class="fas fa-caret-down"></i></a>
           <ul class="dropdown" id="dropdown">
-            <li><a href="#rpg">RPG</a></li>
-            <li><a href="#sobrecosplay">Cosplays</a></li>
-            <li><a href="#cardgames">Cardgame</a></li>
-            <li><a href="#boardgames">BoardGames</a></li>
-            <li><a href="#claves">Duelo de Claves</a></li>
+            <li><a href="index.html#rpg">RPG</a></li>
+            <li><a href="index.html#sobrecosplay">Cosplays</a></li>
+            <li><a href="index.html#cardgames">Cardgame</a></li>
+            <li><a href="index.html#boardgames">BoardGames</a></li>
+            <li><a href="index.html#claves">Duelo de Claves</a></li>
           </ul>
         </li>
       </ul>
@@ -609,6 +689,10 @@ html, body {
   gtag('js', new Date());
   gtag('config', 'G-WRVYEXMKPT');
 </script>
-
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
