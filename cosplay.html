@@ -616,11 +616,9 @@ html, body {
     <label>Como ficou sabendo do concurso?</label>
     <input type="text" name="como_ficou_sabendo" placeholder="Ex: Instagram da NerdCon, amigos, site..." />
 
-    <label>Instagram do cosplay:</label>
-    <input type="text" name="instagram_cosplay" placeholder="@seu_cosplay" />
+    <label>Instagram:</label>
+    <input type="text" name="instagram_cosplay" placeholder=" se tiver um perfil do cosplay adicione aqui tambem os dois @" />
 
-    <label>Perfil pessoal (Instagram ou outro):</label>
-    <input type="text" name="perfil_pessoal" placeholder="@seuperfil" />
 
     <button type="submit">Enviar Inscrição</button>
     <p id="mensagem-envio"></p>
@@ -658,7 +656,7 @@ html, body {
 
     const dados = new FormData(form);
 
-    fetch("https://script.google.com/macros/s/AKfycbwhmSYx5X6rbnjmhR2tCiR9ufCxOvySYFUE6TBTrGyOUA4k-LdJnwMEjwq5cihY3cN27g/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwuUc4sLfJxGaIzgadQI2EDvA_u-oCcG-fg0YQVRcUYF_HD3QWDcTqfCPbGHYrfmnulsw/exec", {
       method: "POST",
       body: dados
     })
